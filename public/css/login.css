@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    background-image: url("/public/images/logo.jpg");
+    background-size: contain;
+}
+
+.logo {
+    width: 100px;
+    display: inline-block;
+}
+
+.welcome {
+    display: inline-block;
+}
+
+footer{
+    display:inline-block
+}
