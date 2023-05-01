@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
     font-family: 'Titillium Web', sans-serif;
@@ -69,10 +69,6 @@ body {
     display: inline-block;
 }
 
-.asistencia {
-    display: inline-block;
-    text-align: center;
-    margin-top: 0%;
-    border: salmon 3px solid;
-
+footer{
+    display:inline-block
 }
