@@ -2,22 +2,77 @@
 
 body {
     font-family: 'Titillium Web', sans-serif;
-display: inline-block;
-    padding: 0px;
-    margin: 0px;
-    background-image: url("/public/images/logo.jpg");
-    background-size: contain;
-}
-
-.logo {
-    width: 100px;
-    display: inline-block;
+    background-color: #fcc256;
 }
 
 .welcome {
+    font-style: oblique;
+    font-size: 50px;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    width: 100px;
+
+}
+
+.formulario-completo {
+    width: auto;
+    height: 500px;
+    background-image: url(/public/images/ropalogin.webp);
+}
+
+.formulario {
+    background-color: #fcc256;
+
+    text-align: center;
+    max-width: 440px;
+    height: 410px;
+    border-radius: 15px;
+    margin-left: 800px;
+    padding-top: 90px;
+}
+
+.welcome {
+
+    font-weight: 800px;
+    text-align: center;
+}
+
+.listas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.footer-bottom {
+    background-color: #5a8e72;
+    display: inline-block;
+    width: 100%;
+    height: 600px;
+
+}
+
+.myheader-welcome {
+
+    background-color: #5a8e72;
+
+}
+
+.listas a {
+    text-decoration: none;
+}
+
+.producto {
     display: inline-block;
 }
 
-footer{
-    display:inline-block
+.asistencia {
+    display: inline-block;
+    text-align: center;
+    margin-top: 0%;
+    border: salmon 3px solid;
+
 }
