@@ -6,7 +6,7 @@ const publicPath = path.resolve(__dirname,'./public')
 app.use(express.static('public'));
 
 app.get('/',(req, res) => {
-    let homeHTMLPath = path.join(__dirname,'./views/signin.html')
+    let homeHTMLPath = path.join(__dirname,'./views/login.html')
     res.sendFile(homeHTMLPath);
 });
 
