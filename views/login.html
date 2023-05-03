@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/public/css/login.css">
+    <link rel="stylesheet" href="/grupo_8_RevivalClothes/public/css/login.css">
     <title>Login-RevivalClothes</title>
 </head>
 
 <body>
     <header class="myheader">
-        <div class="myheader-welcome"> <img src="/public/images/logo.jpg" class="logo">
+        <div class="myheader-welcome"> <img src="/grupo_8_RevivalClothes/public/images/logo.jpg" class="logo">
             <h1 class="welcome">Bienvenido a Revival Clothing</h1>
         </div>
     </header>
@@ -22,20 +22,23 @@
         <div class="formulario">
             <form action="/views/home.html" method="post">
                 <h2 class="sesion">Inicia Sesión</h2>
-                <label for="usuario">Usuario:</label>
-                <input type="text" placeholder="Correo electronico*" name="Usuario">
-
-                <br>
-
-                <label for="password">Ingresá tu clave :</label>
-                <input type="password" placeholder="Contraseña" name="password">
-
-                <br>
+                <div class="formulario-box">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" placeholder="Correo electronico*" name="Usuario">
+                </div>
+                <div class="formulario-box">
+                    <label for="password">Ingresá tu clave :</label>
+                    <input type="password" placeholder="Contraseña" name="password">
+                </div>
+                <a href="#" class="forget">¿No recordás tu clave?</a>
+                <div class="formulario-button"></div>
                 <button type="submit">Enviar</button>
                 <button type="reset">Borrar</button>
-                <br>
-                <h3 class="forget">¿No recordás tu clave?</h3>
         </div>
+
+
+        </div>
+
     </section>
 
 
@@ -43,7 +46,7 @@
         <nav class="footer-bottom">
             <ul class="listas">
 
-                <div class="producto">
+                <div class="listas-atributo">
                     <h5>PRODUCTOS</h5>
                     <li><a href="#">Remeras / Chombas</a></li>
                     <li><a href="#">Buzos / Camperas</a></li>
@@ -53,14 +56,14 @@
                     <li><a href="#">Accesorios</a></li>
                 </div>
 
-                <div class="asistencia">
+                <div class="listas-atributo">
                     <h5>ASISTENCIA</h5>
                     <li><a href="#">Pagos</a></li>
                     <li><a href="#">Envios</a></li>
                     <li><a href="#">Devoluciones</a></li>
                     <li><a href="#">Dudas Frecuentes</a></li>
                 </div>
-                <div class="lista-centro">
+                <div class="listas-atributo">
                     <h5>NOSOTROS</h5>
                     <li><a href="#">Acerca de Revival Clothing</a></li>
                     <li><a href="#">Nuestra Tienda</a></li>
@@ -68,14 +71,13 @@
 
                 <div class="lista-end">
                     <h5>SEGUINOS</h5>
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-square-twitter"></i>
-                    <li><a href="#"></a></li>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
                 </div>
             </ul>
 
-            <h6>Copyright © 2023 Revival Clothing S.R.L.</h6>
+            <h6 class="copyrigth">Copyright © 2023 Revival Clothing S.R.L.</h6>
 
 
         </nav>

@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
 
 body {
+    margin: 0%;
+    max-width: 1500;
+    max-height: 1040px;
     font-family: 'Titillium Web', sans-serif;
     background-color: #fcc256;
 }
 
 .welcome {
+    margin: 0%;
     font-style: oblique;
     font-size: 50px;
 }
@@ -14,18 +18,18 @@ body {
     display: block;
     margin: auto;
     width: 100px;
-
 }
 
 .formulario-completo {
-    width: auto;
+    width: 100%;
+    max-width: 1500px;
     height: 500px;
-    background-image: url(/public/images/ropalogin.webp);
+    background-image: url(/grupo_8_RevivalClothes/public/images/ropalogin.jpeg);
+
 }
 
 .formulario {
     background-color: #fcc256;
-
     text-align: center;
     max-width: 440px;
     height: 410px;
@@ -34,8 +38,21 @@ body {
     padding-top: 90px;
 }
 
-.welcome {
+.formulario-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20vw;
+    margin-left: 70px;
+    padding-bottom: 5px;
 
+}
+
+.formulario-button {
+    padding-top: 20px;
+}
+
+.welcome {
     font-weight: 800px;
     text-align: center;
 }
@@ -44,31 +61,77 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-
 }
 
 .footer-bottom {
+    padding-left: 10px;
     background-color: #5a8e72;
     display: inline-block;
     width: 100%;
     height: 600px;
-
 }
 
 .myheader-welcome {
-
     background-color: #5a8e72;
+}
 
+.forget {
+    text-decoration: none;
+    color: black;
+    transition: all 300ms ease;
+}
+
+.forget:hover {
+    color: #ffffff;
+}
+
+.listas {
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 80px;
+    padding: 10px 0px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .listas a {
     text-decoration: none;
+    color: #fcc256;
+    font-weight: bold;
+    font-size: 15px;
 }
 
-.producto {
+.copyrigth {
+    text-align: center;
+    font-size: 12px;
+}
+
+.lista-end i {
     display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    margin-right: 10px;
+    background-color: #6e9b83;
+    text-align: center;
+    transition: all 300ms ease;
 }
 
-footer{
-    display:inline-block
+.lista-end i:hover {
+    color: #ffffff;
+}
+
+.listas-atributo {
+    transition: all 300ms ease;
+}
+
+.listas-atributo a:hover {
+    color: #ffffff;
 }
