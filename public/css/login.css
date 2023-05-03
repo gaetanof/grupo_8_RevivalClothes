@@ -15,9 +15,10 @@ body {
 }
 
 .logo {
+    width:180px;
     display: block;
     margin: auto;
-    width: 100px;
+   
 }
 
 .formulario-completo {
