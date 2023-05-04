@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/signin.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>signin</title>
 </head>
 <body>
-	<header>
+	<header class="main-header">
 		<h1>Registro</h1>
+		<!-- logo
+		cartel de back to home -->
 	</header>
 
-	<main class="user-inputs">
-		<form>
+	<main>
+		<form class="main-form">
 			<label for="nombre">Nombre:</label>
 			<input type="text" id="nombre" class="campo-formulario">
 
@@ -26,12 +27,15 @@ rel="stylesheet" />
 			<input type="email" id="mail" class="campo-formulario">
 
 			<label for="contraseña">Contraseña:</label>
-			<input type="contraseña" id="mail" class="campo-formulario">
+			<input type="password" id="contraseña" class="campo-formulario">
+
+			<label for="confirmar_contraseña">Confirmar Contraseña:</label>
+			<input type="password" id="confirmar_contraseña" class="campo-formulario">
 
 			<label for="telefono">Teléfono:</label>
 			<input type="tel" id="telefono" class="campo-formulario">
 
-			<button type="submit">Enviar</button>
+			<button class="signin-button" type="submit">Registrarse</button>
 		</form>
 	</main>
 

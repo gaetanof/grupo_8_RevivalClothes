@@ -1,78 +1,87 @@
-/* Estilos para dispositivos móviles */
-* { box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* { 
+	box-sizing: border-box;
 }
 
 body {
 	background-color: #FFF9C4;
 	color: #964B00;
-	font-family: Arial, sans-serif;
-	font-size: 1rem;
-	padding: 5px;
+	font-family: 'roboto','sans-serif';
+	padding: 0px;
+	margin: 0px;
 }
 
-header {
+.main-header {
 	background-color: #006633;
 	color: #FFF9C4;
-	font-size: 1.5rem;
+	font-size: 18px;
 	padding: 2px;
 	text-align: center;
 }
 
-.user-inputs {
-margin: 20px;
-display: flex;
-justify-content: space-between;
+.signin-button{
+	border-radius: 5%;
+	display: block;
+	background-color: #006633;
+	color:#FFF9C4;
+	padding: 15px 0px;
+	margin: 20px auto;
+	font-size: 18px;
+	max-width: 100px;
+	text-align: center;
 }
 
-form label {
+.main-form {
 	display: flex;
-	margin-bottom: 3px;
-	font-size: 1rem;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-top: 20px ;
 }
 
 form input {
-	display: flex;
-	margin-bottom: 5px;
 	padding: 3px;
-	border: 1px solid #B3E5FC;
-	border-radius: 3px;
-	font-size: 1rem;
-	width: 100%;
+	border: 1px solid #006633;
+	border-radius: 10px;
+	margin-top: 10px;
+	font-weight: 200;
 }
 
+@media (max-width: 768px) {
+
 .campo-formulario {
-	background-color: #B3E5FC;
-	color: #006633;
+	background-color: #FFFFFF;
 	font-weight: bold;
-	font-size: 1rem;
-	max-width: 60%;
+	font-size: 16px;
+	max-width: 75%;
+	margin: 10px 0px;
+}
+
 }
 
 /* Estilos para dispositivos de escritorio */
-@media screen and (min-width: 768px) {
-	body {
-		font-size: 1.2rem;
-		padding: 20px;
-	}
-
-	header {
-		font-size: 2rem;
-		padding: 10px;
-	}
-
-	form label {
-		font-size: 1.2rem;
-		margin-bottom: 5px;
-	}
+@media screen and (min-width: 1200px) {
 
 	form input {
-		font-size: 1.2rem;
 		margin-bottom: 10px;
 		padding: 5px;
 		border-radius: 5px;
 	}
 
-	.campo-formulario {
-		font-size: 1.2rem;
+	/* .campo-formulario {
+		background-color: #FFFFFF;
+		font-weight: bold;
+		font-size: 16px;
+		max-width: 300px;
+		margin: 10px 0px;
+	} */
+
+	.main-form .campo-formulario{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-top: 20px;
+		max-width: 300px;
 	}
+
 }
