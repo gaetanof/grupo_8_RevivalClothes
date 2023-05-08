@@ -1,46 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/signin.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>signin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/signin.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>signin</title>
 </head>
+
 <body>
 	<header class="main-header">
 		<h1>Registro</h1>
-		<!-- logo
-		cartel de back to home -->
+		<img src="images/logo2.png" class="logo">
+		<!-- cartel de back to home -->
 	</header>
 
 	<main>
-		<form class="main-form">
-			<label for="nombre">Nombre:</label>
-			<input type="text" id="nombre" class="campo-formulario">
+		<div class="fondo-formulario">
+			<form class="formulario">
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" class="campo-formulario">
 
-			<label for="apellido">Apellido:</label>
-			<input type="text" id="apellido" class="campo-formulario">
+				<label for="apellido">Apellido:</label>
+				<input type="text" id="apellido" class="campo-formulario">
 
-			<label for="mail">Correo Electrónico:</label>
-			<input type="email" id="mail" class="campo-formulario">
+				<label for="mail">Correo Electrónico:</label>
+				<input type="email" id="mail" class="campo-formulario">
 
-			<label for="contraseña">Contraseña:</label>
-			<input type="password" id="contraseña" class="campo-formulario">
+				<label for="contraseña">Contraseña:</label>
+				<input type="password" id="contraseña" class="campo-formulario">
 
-			<label for="confirmar_contraseña">Confirmar Contraseña:</label>
-			<input type="password" id="confirmar_contraseña" class="campo-formulario">
+				<label for="confirmar_contraseña">Confirmar Contraseña:</label>
+				<input type="password" id="confirmar_contraseña" class="campo-formulario">
 
-			<label for="telefono">Teléfono:</label>
-			<input type="tel" id="telefono" class="campo-formulario">
+				<label for="telefono">Teléfono:</label>
+				<input type="tel" id="telefono" class="campo-formulario">
 
-			<button class="signin-button" type="submit">Registrarse</button>
-		</form>
+				<button class="signin-button" type="submit">Registrarse</button>
+			</form>
+		</div>
 	</main>
-
 	<footer>
-		<p>Tienda de Ropa - Todos los derechos reservados</p>
+		<nav class="footer-bottom">
+			<ul class="listas">
+
+				<div class="listas-atributo">
+					<h5>PRODUCTOS</h5>
+					<li><a href="#">Remeras / Chombas</a></li>
+					<li><a href="#">Buzos / Camperas</a></li>
+					<li><a href="#">Pantalones</a></li>
+					<li><a href="#">Short</a></li>
+					<li><a href="#">Vestidos</a></li>
+					<li><a href="#">Accesorios</a></li>
+				</div>
+
+				<div class="listas-atributo">
+					<h5>ASISTENCIA</h5>
+					<li><a href="#">Pagos</a></li>
+					<li><a href="#">Envios</a></li>
+					<li><a href="#">Devoluciones</a></li>
+					<li><a href="#">Dudas Frecuentes</a></li>
+				</div>
+				<div class="listas-atributo">
+					<h5>NOSOTROS</h5>
+					<li><a href="#">Acerca de Revival Clothing</a></li>
+					<li><a href="#">Nuestra Tienda</a></li>
+				</div>
+
+				<div class="lista-end">
+					<h5>SEGUINOS</h5>
+					<a href="#"><i class="fa-brands fa-facebook"></i></a>
+					<a href="#"><i class="fa-brands fa-instagram"></i></a>
+					<a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+				</div>
+			</ul>
+
+			<h6 class="copyrigth">Copyright © 2023 Revival Clothing S.R.L.</h6>
+
+
+		</nav>
+
 	</footer>
 </body>
+
 </html>
