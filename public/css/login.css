@@ -83,8 +83,8 @@ body {
 
     .formulario-completo {
         display: flex;
-        margin: 0;
-        padding: 0;
+        margin: -8px;
+        padding: 0px;
         width: 1480px;
         height: 487px;
         background-image: url('../images/ropalogin.jpeg');

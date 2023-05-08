@@ -13,6 +13,10 @@ app.get('/login',(req, res) => {
     let loginHTMLPath = path.join(__dirname,'./views/login.html')
     res.sendFile(loginHTMLPath);
 });
+app.get('/signin',(req, res) => {
+    let loginHTMLPath = path.join(__dirname,'./views/signin.html')
+    res.sendFile(loginHTMLPath);
+});
 
 
 app.listen(3000,() => {console.log("Servidor escuchando puerto 3000")});
