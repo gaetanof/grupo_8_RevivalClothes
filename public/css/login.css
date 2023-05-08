@@ -1,79 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
 
 body {
-    margin: 0%;
-    max-width: 1500;
-    max-height: 1040px;
+    background-color: #6e9b83;
     font-family: 'Titillium Web', sans-serif;
-    background-color: #fcc256;
 }
 
-.welcome {
-    margin: 0%;
-    font-style: oblique;
-    font-size: 50px;
+.enlace {
+
+    text-align: center;
+
+    background-color: #6e9b83;
+
 }
 
 .logo {
-    width:180px;
-    display: block;
-    margin: auto;
-   
-}
+    width: 150px;
 
-.formulario-completo {
-    width: 100%;
-    max-width: 1500px;
-    height: 500px;
-    background-image: url(/images/ropalogin.jpeg);
+    cursor: default;
 
 }
 
 .formulario {
+    display: flex;
     background-color: #fcc256;
     text-align: center;
-    max-width: 440px;
-    height: 410px;
     border-radius: 15px;
-    margin-left: 800px;
-    padding-top: 90px;
+    width: 80vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    margin-left: 23px;
+    padding-top: 24px;
+
+
 }
 
 .formulario-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 20vw;
-    margin-left: 70px;
     padding-bottom: 5px;
 
-}
-
-.formulario-button {
-    padding-top: 20px;
-}
-
-.welcome {
-    font-weight: 800px;
-    text-align: center;
-}
-
-.listas {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer-bottom {
-    padding-left: 10px;
-    background-color: #5a8e72;
-    display: inline-block;
-    width: 100%;
-    height: 600px;
-}
-
-.myheader-welcome {
-    background-color: #5a8e72;
 }
 
 .forget {
@@ -86,53 +53,106 @@ body {
     color: #ffffff;
 }
 
-.listas {
-    width: 100%;
-    max-width: 1400px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 80px;
-    padding: 10px 0px;
+.formulario-button {
+    padding-top: 5px;
 }
 
-h5 {
-    font-size: 18px;
-    font-weight: bold;
+.footer-bottom {
+    display: none;
 }
 
-.listas a {
-    text-decoration: none;
-    color: #fcc256;
-    font-weight: bold;
+.copyright{
+   
+    text-align: center;
     font-size: 15px;
 }
 
-.copyrigth {
-    text-align: center;
-    font-size: 12px;
-}
+@media (min-width:769px) {
+    body{width: 1480px;}
+    .enlace {
+        width: 1480px;
+        text-align: center;
+    }
 
-.lista-end i {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 15px;
-    width: 40px;
-    height: 40px;
-    line-height: 45px;
-    margin-right: 10px;
-    background-color: #6e9b83;
-    text-align: center;
-    transition: all 300ms ease;
-}
+    .logo {
+        width: 140px;
 
-.lista-end i:hover {
-    color: #ffffff;
-}
+        cursor: default;
 
-.listas-atributo {
-    transition: all 300ms ease;
-}
+    }
 
-.listas-atributo a:hover {
-    color: #ffffff;
+    .formulario-completo {
+        display: flex;
+        margin: -8px;
+        padding: 0px;
+        width: 1480px;
+        height: 487px;
+        background-image: url('../images/ropalogin.jpeg');
+    }
+
+    .formulario {
+        padding-top: 170px;
+        width: 445px;
+        margin-left: 800px;
+        height: 316px;
+    }
+
+
+    .footer-bottom {
+        text-decoration: none;
+        background-color: #5a8e72;
+        display: inline;
+        width: 1480px;
+        height: 600px;
+    }
+
+    .listas {
+        list-style: none;
+
+        width: 100%;
+        max-width: 1400px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 80px;
+        padding: 10px 0px;
+    }
+
+    .listas-atributo li a {
+        text-decoration: none;
+        color: #082f1b;
+        transition: all 300ms ease;
+    }
+
+    .listas-atributo li a:hover {
+        color: #ffffff;
+
+    }
+    .lista-end a i {
+        color: #082f1b;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 15px;
+        width: 40px;
+        height: 40px;
+        line-height: 45px;
+        margin-right: 10px;
+        background-color: #5a8e72;
+        text-align: center;
+        transition: all 300ms ease;
+    }
+    
+    .lista-end i:hover {
+        color: #ffffff;
+    }
+    h5 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .copyright {
+        width: 1480px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+
 }
