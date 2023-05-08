@@ -1,7 +1,7 @@
 const express = require('express');
-const app = express();
 const path = require('path');
-const publicPath = path.resolve(__dirname,'./public')
+const app = express();
+const publicPath = path.join(__dirname,'./public')
 
 app.use(express.static('public'));
 
@@ -13,9 +13,6 @@ app.get('/login',(req, res) => {
     let loginHTMLPath = path.join(__dirname,'./views/login.html')
     res.sendFile(loginHTMLPath);
 });
-app.get('/signin',(req, res) => {
-    let signinHTMLPath = path.join(__dirname,'./signin/login.html')
-    res.sendFile(signinHTMLPath);
-});
+
 
 app.listen(3000,() => {console.log("Servidor escuchando puerto 3000")});
