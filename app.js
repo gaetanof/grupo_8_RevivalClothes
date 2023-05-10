@@ -18,5 +18,9 @@ app.get('/signin',(req, res) => {
     res.sendFile(loginHTMLPath);
 });
 
+app.get('/detalleProducto', (req, res) => {
+    let detalleProductoHTMLPath = (path.join(__dirname, './views/detalleProducto.html'))
+    res.sendFile(detalleProductoHTMLPath);
+  });
 
 app.listen(3000,() => {console.log("Servidor escuchando puerto 3000")});
