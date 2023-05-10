@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #fcc256;
+    text-align: center;
+
+}
+
+.logo {
+    width: 500px;
+    animation: 3s infinite;
+    animation-name: movimiento;
+    
+}
+
+@keyframes movimiento {
+  0%{opacity: 90%;}
+  25%{transform: translateY(-50px);opacity: 90%;}
+  100%{opacity: 90%;}
+}

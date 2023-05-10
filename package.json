@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Revival Clothing se posiciona en el mercado de plataformas ecommerce como una de las opciones mas amigables, seguras y diversas para la compra y venta de todo tipo de prendas de indumentaria. Se piensa al sitio con una interfaz sencilla en la que cada usuario puede publicar sus productos incluyendo fotos, descripciones y hashtag de acuerdo a temporadas, estilos, marcas. Se basa en la logica de moda circular, tendencia a nivel mundial que permite darle una nueva oportunidad a las prendas, construyendo un estilo de vida mas ecologico y de construccion comunitaria.",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts":{
+  "start": "npx nodemon app"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gaetanof/grupo_8_RevivalClothes.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
