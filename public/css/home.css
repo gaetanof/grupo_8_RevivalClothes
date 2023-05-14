@@ -29,7 +29,7 @@ p {
 h2 {
     text-align: center;
     font-size: 24px;
-    color: #666;
+    color: #222222;
     padding: 15px;
 }
 
@@ -151,7 +151,7 @@ h2 {
 }
 
 .contenedor-article:hover {
-    box-shadow: 0 3px 3px 0 #0000008e,0 3px 3px 0 #0000008e;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
     transform: translate(0px,5px);
     -webkit-transform: translate(0px,5px);
     -moz-transform: translate(0px,5px);
@@ -194,3 +194,72 @@ h2 {
 .contenedor-article:hover h4 {
     opacity: 1;
 }
+
+/* Contenido flex del footer */
+footer {
+    background-color: #D6D2C4;
+}
+
+footer i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #5D534A;
+}
+
+/* .footer-bottom {
+    padding-left: 15px;
+} */
+
+.contenedor-footer {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.copyright {
+    text-align: left;
+    font-weight: 900;
+    color: #5D534A;
+    margin-left: 20px;
+}
+
+    /* Contenido de listas para el footer */
+.listas {
+    list-style: none;
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 80px;
+    padding: 10px 0px;
+}
+
+.listas-atributo li a {
+    text-decoration: none;
+    color: #5D534A;
+    font-weight: 900;
+    transition: all 300ms ease;
+}
+
+.listas-atributo li a:hover {
+    color: #222222;
+}
+
+.lista-end a i {
+    color: #5D534A;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    margin-right: 10px;
+    background-color: #F7DAD9;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.lista-end i:hover {
+    color: #222222;
+}
+    /* listas hasta acá */
+/* Footer hasta acá */
