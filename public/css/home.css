@@ -16,15 +16,38 @@ header {
     background-color: #D6D2C4;
 }
 
+main {
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: white; */
+}
+
+p {
+    font-size: 12px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #666;
+    padding: 15px;
+}
+
 /* Contenido flex del header */
 
 .main-header {
-    padding: 20px;
     position: sticky;
     width: 100%;
     z-index: 1;
     top: 0;
     left: 0;
+}
+
+.main-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 8px;
 }
 
 .logo {
@@ -42,4 +65,66 @@ header {
     align-self: center;
 }
 
+.searchbar input {
+    max-width: 150px;
+    border: none; /* Elimina el borde */
+    outline: none; /* Elimina el contorno al hacer foco */
+    background: none; /* Elimina el fondo */
+}
+
+.button-bars {
+    background-color: #5D534A;
+    color: #F7DAD9;
+    max-width: 50px;
+    max-height: 45px;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.main-navbar {
+    display: none;
+}
+
+.main-navbar ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.main-navbar a {
+    text-decoration: none;
+    color: #222222;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 17px;
+}
+
+.imagen-header {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 230px;
+}
+
 /* Header hasta acá */
+/* ------------------------------------------------------------------- */
+/* Contenido flex del main */
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 9px 5px;
+    padding-left: 5px;
+}
+
+.descripcion {
+    font-size: 16px;
+    color: #222222;
+    margin: 9px 5px;
+    padding-left: 5px;
+}
+/* main hasta acá*/
+
+
