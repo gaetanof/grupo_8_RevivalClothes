@@ -125,6 +125,72 @@ h2 {
     margin: 9px 5px;
     padding-left: 5px;
 }
+
+.imagen-producto {
+    width: 100%;
+}
 /* main hasta acá*/
 
+.contenedor-descripcion {
+    text-align: left;
+    border-top: solid 1px #F7DAD9;
+    background-color: white;
+    /* display: none; */
+    position: relative;
+}
 
+.contenedor-article {
+    background-color: white;
+    padding: 0px;
+    margin: 15px auto;
+    position: relative;
+    max-width: 450px;
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+
+.contenedor-article:hover {
+    box-shadow: 0 3px 3px 0 #0000008e,0 3px 3px 0 #0000008e;
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    -moz-transform: translate(0px,5px);
+}
+
+.logo-eco {
+    margin: 15px;
+    padding: 7px;
+    font-size: 20px;
+    color: #5D534A;
+    border: solid 1px #5D534A;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -35px;
+    background-color: white;
+    transform: rotateZ(0deg);
+    transition: transform 0.5s;
+}
+
+.contenedor-article:hover .logo-eco {
+    transform: rotateZ(-90deg);
+}
+
+.contenedor-article h4 {
+    background-color: rgba(0,0,0,0.5);
+    color: #ebebeb;
+    margin: 0 auto;
+    padding: 10px;
+    position: absolute;
+    left: 0px;
+    bottom: 40px;
+    opacity: 0;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.contenedor-article:hover h4 {
+    opacity: 1;
+}
