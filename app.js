@@ -5,23 +5,15 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 const mainRouter = require('./routes/mainRoutes.js')
+const userRouter = require('./routes/userRoutes.js')
 
 app.use(express.static('public'));
 
-app.get('/', );
-
 app.use(mainRouter)
+app.use(userRouter)
 
 
-app.get('/login', (req, res) => {
-    let loginHTMLPath = path.join(__dirname,'./views/login.html')
-    res.sendFile(loginHTMLPath);
-});
-
-app.get('/signin', (req, res) => {
-    let loginHTMLPath = path.join(__dirname,'./views/signin.html')
-    res.sendFile(loginHTMLPath);
-});
+app.get('/signin', );
 
 app.get('/detalleProducto', (req, res) => {
     let detalleProductoHTMLPath = (path.join(__dirname, './views/detalleProducto.html'))
