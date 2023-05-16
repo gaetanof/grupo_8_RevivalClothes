@@ -6,18 +6,14 @@ const app = express();
 
 const mainRouter = require('./routes/mainRoutes.js')
 const userRouter = require('./routes/userRoutes.js')
+const productRouter = require('./routes/productRoutes.js')
 
 app.use(express.static('public'));
 
 app.use(mainRouter)
 app.use(userRouter)
+app.use(productRouter)
 
 
-app.get('/signin', );
-
-app.get('/detalleProducto', (req, res) => {
-    let detalleProductoHTMLPath = (path.join(__dirname, './views/detalleProducto.html'))
-    res.sendFile(detalleProductoHTMLPath);
-});
 
 app.listen(PORT, () => {console.log(`Servidor escuchando puerto ${PORT} 🚀`)});
