@@ -7,12 +7,14 @@ const app = express();
 const mainRouter = require('./routes/mainRoutes.js')
 const userRouter = require('./routes/userRoutes.js')
 const productRouter = require('./routes/productRoutes.js')
+const carritoRouter = require('./routes/carritoRoutes.js')
 
 app.use(express.static('public'));
 
 app.use(mainRouter)
 app.use(userRouter)
 app.use(productRouter)
+app.use(carritoRouter)
 
 
 

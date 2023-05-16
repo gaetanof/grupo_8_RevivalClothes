@@ -141,6 +141,7 @@ h2 {
 
 .contenedor-article {
     background-color: white;
+    width: 90%;
     padding: 0px;
     margin: 15px auto;
     position: relative;
@@ -267,3 +268,21 @@ footer i {
 .contenedor-producto {
     width: 100%;
 }
+
+.checkbox {
+    margin: 3%;
+}
+
+.main-title-and-counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+}
+
+/* corregir un poco esta parte */
+
+
+
+
+
+
