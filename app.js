@@ -4,14 +4,14 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+const mainRouter = require('./routes/mainRoutes.js')
+
 app.use(express.static('public'));
 
-app.listen(PORT, () => {console.log(`Servidor escuchando puerto ${PORT} 🚀`)});
+app.get('/', );
 
-app.get('/', (req, res) => {
-    let homeHTMLPath = path.join(__dirname,'./views/home.html')
-    res.sendFile(homeHTMLPath);
-});
+app.use(mainRouter)
+
 
 app.get('/login', (req, res) => {
     let loginHTMLPath = path.join(__dirname,'./views/login.html')
@@ -26,5 +26,6 @@ app.get('/signin', (req, res) => {
 app.get('/detalleProducto', (req, res) => {
     let detalleProductoHTMLPath = (path.join(__dirname, './views/detalleProducto.html'))
     res.sendFile(detalleProductoHTMLPath);
-  });
+});
 
+app.listen(PORT, () => {console.log(`Servidor escuchando puerto ${PORT} 🚀`)});
