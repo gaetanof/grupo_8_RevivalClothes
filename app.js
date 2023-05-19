@@ -22,4 +22,4 @@ app.use(mainRouter)
 app.use(userRouter)
 app.use(productRouter)
 
-app.listen(PORT, () => {console.log(`Servidor escuchando puerto https//:localhost:${PORT}`)});
+app.listen(PORT, () => {console.log(`Servidor escuchando puerto http://localhost:${PORT} 🚀`)});
