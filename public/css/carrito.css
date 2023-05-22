@@ -267,6 +267,7 @@ footer i {
 
 .contenedor-producto {
     width: 100%;
+    text-align: right;
 }
 
 .checkbox {
@@ -275,8 +276,8 @@ footer i {
 
 .main-title-and-counter {
     display: flex;
-    flex-direction: row;
-    align-items: center;   
+    flex-direction: row;   
+    justify-content: space-between;
 }
 
 /* corregir un poco esta parte */
