@@ -186,5 +186,12 @@ footer i {
 }
 
 /* Footer */
-
+@media (min-width: 768px){
+    .container-signin {
+        width: 50%;
+        padding: 20px;
+        background-color: #FFF5DA;
+        margin: auto;
+    }
+}
 
