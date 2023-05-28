@@ -1,88 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/signin.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>signin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SIGN IN</title>
+    <link rel="stylesheet" href="./css/signin.css">
 </head>
 
+
 <body>
+
 	<header class="main-header">
-		<h1>Registro</h1>
-		<img src="images/logo2.png" class="logo">
-		<!-- cartel de back to home -->
-	</header>
+        <%- include('../partials/header-users') %>
+    </header>
 
 	<main>
-		<div class="fondo-formulario">
-			<form class="formulario">
-				<label for="nombre">Nombre:</label>
-				<input type="text" id="nombre" class="campo-formulario">
+	<div class="container-signin">
+		<form action="/create-account" method="post" class="form-signin">
+			<div class="fullname-signin">
+				<label>Nombre Completo:</label>
+  				<input type="text" name="fullname-signin" class="control-signin">
+			</div>
+			<div class="email-signin">
+				<label>Email:</label>
+  				<input type="mail" name="email-signin" class="control-signin">
+			</div>
+			<div class="username-signin">
+				<label>Username:</label>
+  				<input type="text" name="username-signin" class="control-signin">
+			</div>
+			<div class="password-signin">
+				<label>Contraseña:</label>
+  				<input type="password" name="password-signin" class="control-signin">
+			</div>
+			<div class="account-signin">
+				<p> Ya tienes una cuenta? <a href="/login">Entra aqui!</a> </p>	
+				<input type="button" value="Registrarse" class="button-signin">
+			</div>
 
-				<label for="apellido">Apellido:</label>
-				<input type="text" id="apellido" class="campo-formulario">
-
-				<label for="mail">Correo Electrónico:</label>
-				<input type="email" id="mail" class="campo-formulario">
-
-				<label for="contraseña">Contraseña:</label>
-				<input type="password" id="contraseña" class="campo-formulario">
-
-				<label for="confirmar_contraseña">Confirmar Contraseña:</label>
-				<input type="password" id="confirmar_contraseña" class="campo-formulario">
-
-				<label for="telefono">Teléfono:</label>
-				<input type="tel" id="telefono" class="campo-formulario">
-
-				<button class="signin-button" type="submit">Registrarse</button>
-			</form>
-		</div>
+		</form>
+	</div>
 	</main>
-	<footer>
-		<nav class="footer-bottom">
-			<ul class="listas">
 
-				<div class="listas-atributo">
-					<h5>PRODUCTOS</h5>
-					<li><a href="#">Remeras / Chombas</a></li>
-					<li><a href="#">Buzos / Camperas</a></li>
-					<li><a href="#">Pantalones</a></li>
-					<li><a href="#">Short</a></li>
-					<li><a href="#">Vestidos</a></li>
-					<li><a href="#">Accesorios</a></li>
-				</div>
+	<footer class="contenedor-footer-users">
+        <nav class="footer-bottom-users">
+            <ul class="listas-users">
 
-				<div class="listas-atributo">
-					<h5>ASISTENCIA</h5>
-					<li><a href="#">Pagos</a></li>
-					<li><a href="#">Envios</a></li>
-					<li><a href="#">Devoluciones</a></li>
-					<li><a href="#">Dudas Frecuentes</a></li>
-				</div>
-				<div class="listas-atributo">
-					<h5>NOSOTROS</h5>
-					<li><a href="#">Acerca de Revival Clothing</a></li>
-					<li><a href="#">Nuestra Tienda</a></li>
-				</div>
+                <div class="listas-atributo-users">
+                    <i class="fa-solid fa-users"></i>
+                    <h5 class="footer-titles-users">NOSOTROS</h5>
+                    <li><a href="#">Contactanos</a></li>
+                    <li><a href="#">Tienda</a></li>
+                    <li><a href="#">Metodos de pago</a></li>
+                    <li><a href="#">Terminos y condiciones</a></li>
+                </div>
 
-				<div class="lista-end">
-					<h5>SEGUINOS</h5>
-					<a href="#"><i class="fa-brands fa-facebook"></i></a>
-					<a href="#"><i class="fa-brands fa-instagram"></i></a>
-					<a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-				</div>
-			</ul>
+                <div class="lista-end-users">
+                    <i class="fa-solid fa-hashtag"></i>
+                    <h5 class="footer-titles-users">SEGUINOS</h5>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                </div>
 
-			<h6 class="copyrigth">Copyright © 2023 Revival Clothing S.R.L.</h6>
-
-
-		</nav>
-
-	</footer>
+            </ul>
+        </nav>
+        <article>
+            <p class="copyright-users">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+        </article>
+    </footer>
 </body>
-
 </html>
