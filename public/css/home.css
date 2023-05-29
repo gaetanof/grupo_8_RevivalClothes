@@ -9,7 +9,7 @@
 body {
     font-family: 'Titillium Web', sans-serif;
     background-color: #FFF5DA;
-    border: solid 5px #F7DAD9;
+    width: 100%;
 }
 
 header {
@@ -17,7 +17,6 @@ header {
 }
 
 main {
-    width: 100%;
     margin: 0 auto;
     /* background-color: white; */
 }
@@ -26,14 +25,24 @@ p {
     font-size: 12px;
 }
 
-h2 {
+.subtitulos-home {
     text-align: center;
     font-size: 24px;
     color: #222222;
     padding: 15px;
+    background-color: #f7dad952;
 }
 
 /* Contenido flex del header */
+.left-navbar {
+    display: flex;
+    justify-content:start;
+}
+
+.rigth-navbar {
+    display: flex;
+    justify-content: space-around;
+}
 
 .main-header {
     position: sticky;
@@ -54,15 +63,20 @@ h2 {
     width: 25%;
 }
 
-
 .searchbar {
     display: flex;
     align-items: center;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
     border-radius: 5px;
     padding: 10px;
     height: 2em;
     align-self: center;
+    transition: all .3;
+}
+
+.searchbar a {
+    text-decoration: none;
+    color: #222222;
 }
 
 .searchbar input {
@@ -70,25 +84,40 @@ h2 {
     border: none; /* Elimina el borde */
     outline: none; /* Elimina el contorno al hacer foco */
     background: none; /* Elimina el fondo */
+    display: none;
+    transition: all .3;
+}
+
+.searchbar:hover input{
+    display: block;
+}
+
+.searchbar:hover {
+    background-color: #f2f2f2;
 }
 
 .button-bars {
+    display: flex;
+    align-items: center;
     background-color: #5D534A;
     color: #F7DAD9;
-    max-width: 50px;
-    max-height: 45px;
     padding: 8px;
     border-radius: 8px;
-    text-align: center;
     font-weight: 600;
     font-size: 20px;
+    max-width: 35px;
+    max-height: 45px;
+    text-decoration: none;
+    margin-right: 10px;
 }
 
-.main-navbar {
-    display: none;
+.main-navbar li {
+    margin: 0 5px;
 }
 
 .main-navbar ul {
+    display: flex;
+    justify-content: end;
     list-style: none;
     padding: 0px;
     margin: 0px;
@@ -106,7 +135,7 @@ h2 {
     padding: 0;
     margin: 0;
     width: 100%;
-    max-height: 230px;
+    height: 40%;
 }
 
 /* Header hasta acá */
@@ -266,4 +295,8 @@ footer i {
 
 .contenedor-producto {
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    
 }
