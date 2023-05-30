@@ -13,6 +13,7 @@
         <%- include('../partials/header-users') %>
     </header>
     <main>
+        <h1>Mi Carrito</h1>
         <div class="shopping-bag-list-carrito">
             <div class="contenedor-articulo-carrito">
                     <div class="contenedor-articulo-carrito-top">
@@ -84,8 +85,39 @@
                 </div>
             </div>
         </div>
+        <div class="boton-comprar">
+            <button class="btn-comprar">Comprar</button>
+        </div>
+        <div class="div-separador-texto-atrapador">
+            <hr class="separador-texto-atrapador">
+        </div>
         <div class="counter-dinero-carrito">
-
+            <h3 class="total-carrito">
+                Total
+            </h3>
+            <h3 class="precio-total-carrito">
+                $110.000
+            </h3>
+        </div>
+        <div class="texto-atrapador">
+            <h4 class="no-te-lo-pierdas">
+                <i class="fa-thin fa-clock"></i>
+                No dejes pasar esta oportunidad!
+            </h4>
+            <p class="no-te-lo-pierdas-text">
+                Los items en tu carrito pueden dejar de estar disponibles! 
+            </p>
+        </div>
+        <div class="div-separador-texto-atrapador">
+            <hr class="separador-texto-atrapador">
+        </div>
+        <div class="codigo-promocion">
+            <input type="text" name="codigo-promocion" id="codigo-promocion" placeholder="Codigo de promocion">
+            <input type="button" value="Aplicar" class="btn-codigo-promocion">
+        </div>
+        <div class="info-envio">
+            <i class="fa-thin fa-truck-fast"></i>
+            <a href="" class="link-info-envio">Informacion importante para el envio</a>
         </div>
     </main>
     <%- include('../partials/footer.ejs') %>
