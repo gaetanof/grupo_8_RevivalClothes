@@ -70,6 +70,16 @@ h1{
 
 /* main */ 
 
+.secciones-carrito{
+    display: flex;
+    flex-direction: column;
+}
+.shopping-bag-list-carrito{
+    width: 100%;
+}
+.seccion-comprar{
+    width: 100%;
+}
 .contenedor-articulo-carrito{
     width: 100%;
     margin-top: 40px;
@@ -84,23 +94,26 @@ h1{
 }
 .contenedor-articulo-carrito-bottom{
     display: flex;
-    
+    width: auto;
 }
 .descripcion-producto-carrito{
     margin-left: 5%;
 }
+.botones-carrito{
+    width: 100%;
+}
 .btn-edit{
     background-color: #D6D2C4;
-    border: 10px;
+    border: 1px outset #D6D2C4;
     padding:15px 32px;
-    width: 50vw;
+    width: 100%;
     color: #5D534A;
 }
 .btn-remove{
     background-color: #D7865F;
-    border: 12px;
+    border: 1px outset #a56647;
     padding:15px 32px;
-    width: 50vw;
+    width: 100%;
     color: #FFF5DA;
 }
 .boton-comprar{
@@ -110,9 +123,10 @@ h1{
 }
 .btn-comprar{
     background-color: #365350;
-    border: 12px;
+    
+    border: 1px outset #2b4240;
     padding:15px 32px;
-    width: 100vw;
+    width: 100%;
     color: #FFF5DA;
 }
 .counter-dinero-carrito{
@@ -148,13 +162,13 @@ h1{
     display: flex;
 }
 #codigo-promocion{
-    border: 2px solid #D6D2C4;
+    border: 1px outset #2b4240;
     width: 70%;
 }
 .btn-codigo-promocion{
     width: 30%;
     background-color: #365350;
-    border: 12px;
+    border: 1px outset #2b4240;
     padding:15px 32px;
     color: #FFF5DA;
 }
@@ -210,7 +224,7 @@ footer div{
 
 /* media queries */
 
-@media(min-width:360px){
+@media(min-width:360px) and (max-width:767px){
     .listas{
         flex-direction: row;
         justify-content: space-evenly;
@@ -220,6 +234,8 @@ footer div{
     }
 };
 
-@media(min-width: 768px){
-    /* Laptop */
-};
+@media(min-width:768px){
+    .secciones-carrito{
+        flex-direction: row;
+    };
+}
