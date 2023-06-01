@@ -224,7 +224,7 @@ footer div{
 
 /* media queries */
 
-@media(min-width:360px) and (max-width:767px){
+@media(min-width:360px){
     .listas{
         flex-direction: row;
         justify-content: space-evenly;
