@@ -226,18 +226,9 @@ footer div{
 
 .listas{
     display: flex;
-    flex-direction: column;
-}
-.listas-device1{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.listas-device2{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
+    flex-wrap: wrap;
+};
+
 
 
 /* media queries */
@@ -263,6 +254,7 @@ footer div{
 
 @media screen and (min-width:360px){
     .listas{
+        flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-evenly;
     }
