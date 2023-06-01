@@ -24,7 +24,7 @@ p {
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     color: #222222;
     padding: 15px;
@@ -63,8 +63,8 @@ h1{
     background-color: #5D534A;
     color: #F7DAD9;
     padding: 8px;
-    border-radius: 5px;
-    font-weight: 600;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 
@@ -76,7 +76,11 @@ h1{
 }
 .shopping-bag-list-carrito{
     width: 100%;
+}.shopping-bag-list-carrito h1{
+    padding-left: 5%;
+    padding-top: 5%;
 }
+
 .seccion-comprar{
     width: 100%;
 }
@@ -104,14 +108,16 @@ h1{
 }
 .btn-edit{
     background-color: #D6D2C4;
-    border: 1px outset #D6D2C4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
     padding:15px 32px;
     width: 100%;
     color: #5D534A;
 }
 .btn-remove{
     background-color: #D7865F;
-    border: 1px outset #a56647;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
     padding:15px 32px;
     width: 100%;
     color: #FFF5DA;
@@ -123,8 +129,8 @@ h1{
 }
 .btn-comprar{
     background-color: #365350;
-    
-    border: 1px outset #2b4240;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
     padding:15px 32px;
     width: 100%;
     color: #FFF5DA;
@@ -162,18 +168,30 @@ h1{
     display: flex;
 }
 #codigo-promocion{
-    border: 1px outset #2b4240;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
     width: 70%;
+    padding: 5%;
 }
 .btn-codigo-promocion{
     width: 30%;
     background-color: #365350;
-    border: 1px outset #2b4240;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
     padding:15px 32px;
     color: #FFF5DA;
 }
 .info-envio{
     padding: 5%;
+}
+.info-envio-texto-ayuda{
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 0;
+}
+.info-envio-telefonos{
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 /* footer */
 
@@ -224,18 +242,32 @@ footer div{
 
 /* media queries */
 
-@media(min-width:360px){
+@media screen and (min-width:768px) {
+    .boton-comprar{
+        padding-top: 40px;
+    }
+    .seccion-comprar{
+        padding-top: 60px;
+        max-width: 550px;
+    }
+    .shopping-bag-list-carrito{
+        margin-bottom: 40px;
+        max-width: 550px;
+
+    }
+    .secciones-carrito{
+        flex-direction: row;
+        justify-content: space-evenly;
+    };  
+}
+
+@media screen and (min-width:360px){
     .listas{
         flex-direction: row;
         justify-content: space-evenly;
     }
     .listas-device1, .listas-device2{
         justify-content: space-evenly;
-    }
+    };
 };
 
-@media(min-width:768px){
-    .secciones-carrito{
-        flex-direction: row;
-    };
-}
