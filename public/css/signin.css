@@ -84,11 +84,12 @@ h2 {
     background: #FFF5DA;
     width: 100%;
     margin-bottom: 10px;
+    outline: none;
 }
 
-.control-signin:focus{
+/* .control-signin:focus{
     outline: solid #5D534A 2px;
-}
+} */
 
 .account-signin{
     display: flex;

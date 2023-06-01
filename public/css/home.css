@@ -9,7 +9,6 @@
 body {
     font-family: 'Titillium Web', sans-serif;
     background-color: #FFF5DA;
-    width: 100%;
 }
 
 header {
@@ -17,6 +16,7 @@ header {
 }
 
 main {
+    width: 100%;
     margin: 0 auto;
     /* background-color: white; */
 }
@@ -42,6 +42,10 @@ p {
 .rigth-navbar {
     display: flex;
     justify-content: space-around;
+}
+
+.center-navbar {
+    display: none;
 }
 
 .main-header {
@@ -109,6 +113,10 @@ p {
     max-height: 45px;
     text-decoration: none;
     margin-right: 10px;
+}
+
+.main-navbar-desktop {
+    display: none;
 }
 
 .main-navbar li {
@@ -298,5 +306,55 @@ footer i {
 }
 
 @media (min-width: 768px) {
-    
+    .button-bars {
+        display: none;
+    }
+    .searchbar {
+        margin-top: 15px;
+        background-color: #f2f2f2;
+        transition: none;
+    }
+    .main-header-bar {
+        justify-content:space-evenly;
+    }
+    .logo {
+        width: 50%;
+    }
+    .searchbar input {
+        display: block;
+    }
+    .left-navbar {
+        max-width: 33%;
+    }
+    .center-navbar {
+        max-width: 33%;
+        display: block;
+    }
+    .rigth-navbar {
+        max-width: 33%;
+        flex-wrap: wrap;
+    }
+    .main-navbar{
+        display: none;
+    }
+    .main-navbar-desktop {
+        display: flex;
+    }
+    .main-navbar-desktop li {
+        margin: 0 5px;
+    }
+    .main-navbar-desktop ul {
+        display: flex;
+        justify-content: end;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    .main-navbar-desktop a {
+        text-decoration: none;
+        color: #222222;
+        display: inline-block;
+        padding: 5px 0;
+        font-size: 17px;
+    }
 }
