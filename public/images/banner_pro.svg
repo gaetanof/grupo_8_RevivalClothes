@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="200" viewBox="0 0 800 200">
   <rect width="100%" height="100%" fill="#D6D2C4" />
   <rect x="10" y="10" width="780" height="180" fill="#FFF5DA" />
   <circle cx="150" cy="100" r="70" fill="#e9a9a7" />
+  <image x="80" y="30" width="140" height="140" xlink:href="/images/logo_negro.png" />
   <rect x="250" y="40" width="400" height="120" fill="#5D534A" />
-  <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="48" fill="#FFF5DA">Ropa Usada</text>
+  <text x="55%" y="50%" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="48" fill="#FFF5DA">Revival Clothing</text>
 </svg>
