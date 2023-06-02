@@ -45,7 +45,7 @@ h2 {
 
 .main-header-bar-users {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     padding: 20px;
 }   
@@ -61,6 +61,7 @@ h2 {
     padding: 8px;
     border-radius: 5px;
     font-weight: 600;
+    margin-left: 20px;
 
 }
 
