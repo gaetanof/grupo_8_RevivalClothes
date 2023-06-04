@@ -6,10 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Sign In</title>
-    <link rel="stylesheet" href="./css/signin.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-
-
 <body>
 
 	<header class="main-header">
@@ -44,32 +42,8 @@
 	</div>
 	</main>
 
-	<footer class="contenedor-footer-users">
-        <nav class="footer-bottom-users">
-            <ul class="listas-users">
-
-                <div class="listas-atributo-users">
-                    <i class="fa-solid fa-users"></i>
-                    <h5 class="footer-titles-users">NOSOTROS</h5>
-                    <li><a href="#">Contactanos</a></li>
-                    <li><a href="#">Tienda</a></li>
-                    <li><a href="#">Metodos de pago</a></li>
-                    <li><a href="#">Terminos y condiciones</a></li>
-                </div>
-
-                <div class="lista-end-users">
-                    <i class="fa-solid fa-hashtag"></i>
-                    <h5 class="footer-titles-users">SEGUINOS</h5>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-                </div>
-
-            </ul>
-        </nav>
-        <article>
-            <p class="copyright-users">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
-        </article>
+	<footer>
+	<%- include('../partials/footer.ejs') %>
     </footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@0,900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -12,23 +12,23 @@ body {
 }
 header {
     background-color: #D6D2C4;
-} */
+}
 
-/* main {
+main {
     width: 100%;
     margin: 0 auto;
     /* background-color: white; */
-/* }
+}
 p {
     font-size: 12px;
-} */
+}
 
-/* h2 {
+h2 {
     text-align: left;
     font-size: 24px;
     color: #222222;
     padding: 15px;
-} */
+}
 
 
 /* header */
