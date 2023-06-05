@@ -1,8 +1,8 @@
 const path = require('path')
 
 const controllers = {
-    getDetalleProducto: (req, res) => {
-        res.render('detalleProducto');
+    getDetalle: (req, res) => {
+        res.render('detalle');
     },
     getCarrito: (req, res) => {
         res.render('carrito');
