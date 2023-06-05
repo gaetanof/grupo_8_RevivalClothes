@@ -16,23 +16,23 @@
     <header class="main-header">
         <%- include('../partials/header-users') %>
     </header>
-    <section class="formulario-completo">
-        <div class="formulario">
+    <section class="formulario-completo-login">
+        <div class="formulario-login">
             <form action="/views/home.html" method="post">
                 <h2 class="sesion">Inicia Sesión</h2>
-                <div class="formulario-box">
+                <div class="formulario-box-login">
                     <label for="usuario">Usuario:</label>
                     <input type="text" placeholder="Correo electronico*" name="Usuario">
                 </div>
-                <div class="formulario-box">
+                <div class="formulario-box-login">
                     <label for="password">Ingresá tu clave :</label>
                     <input type="password" placeholder="Contraseña" name="password">
                 </div>
 
                 <div><label for="">Mantener la sesión abierta</label> <input type="checkbox"></div>
 
-                <a href="#" class="forget">¿No recordás tu clave?</a>
-                <div class="formulario-button"></div>
+                <a href="#" class="forget-login">¿No recordás tu clave?</a>
+                <div class="formulario-button-login"></div>
                 <button type="submit">Enviar</button>
                 <button type="reset">Borrar</button>
         </div>
