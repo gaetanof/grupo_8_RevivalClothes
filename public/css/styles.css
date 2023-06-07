@@ -453,6 +453,94 @@ footer i {
 
 /* HASTA ACA SIGNIN SIN MEDIA */
 
+/* Inicio Main detalle */
+
+.contenedor-producto-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    margin: 0px 10px 10px 10px;
+    text-align: center;
+}
+
+.contenedor-producto-detalle img{
+    margin: auto;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    max-width: 450px;
+}
+
+.contenedor-producto-detalle h2{
+    font-size: 24px;
+    color: #222222;
+}
+
+.contenedor-producto-detalle h3{
+    margin-bottom: 10px;
+}
+
+.contenedor-producto-detalle p{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.anadir-producto-detalle{
+    font-size: 20px;
+    position: absolute;
+    left: 90%;
+    top: 4%;
+}
+
+.article-botones-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.article-botones-detalle button {
+    padding: 15px;
+    width: 80%;
+    color: white;
+    background: #355351;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contenedor-section-parati-detalle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitulos-detalle {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.slider-detalle {
+    aspect-ratio: 10 / 16;
+    max-width: 450px;
+    position: relative;
+    display: flex;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.slider-detalle img {
+    width: 100%;
+    max-height: 600px;
+    left: 0;
+    position: sticky;
+    object-fit: cover;
+    border-radius: 5px;
+    scroll-snap-align: center;
+}
+
+/* Fin Main detalle */
 
 @media (min-width: 768px) {
     /* inicio header */
@@ -543,6 +631,24 @@ footer i {
         margin: auto;
     }
     /* Fin header */
+
+    /* Inicio Main detalle producto */
+    .article-botones-detalle button {
+        font-size: 20px;
+    }
+    .contenedor-producto-detalle h2 {
+        font-size: 35px;
+    }
+    .contenedor-producto-detalle h3 {
+        font-size: 22px;
+    }
+    .contenedor-producto-detalle p {
+        font-size: 18px;
+    }
+    .subtitulos-detalle {
+        font-size: 35px;
+    }
+    /* Fin Main detalle producto */
 }
 
 @media (min-width: 1200px) {
@@ -576,6 +682,7 @@ footer i {
         width: 100%;
         height: 100%;
     }
+    
     /* Fin main home */
 }
 

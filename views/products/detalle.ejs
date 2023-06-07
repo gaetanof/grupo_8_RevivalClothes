@@ -6,36 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>DETALLE</title>
-    <link rel="stylesheet" href="./css/detalle.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <header class="main-header">
-        <%- include('../partials/header-users') %>
+        <%- include('../partials/header') %>
     </header>
     <main>
-        <div class="secciones-detalle">
-            <div class="shopping-bag-list-detalle">
-                <h1>Detalle publicacion</h1>
-                <div class="contenedor-articulo-detalle">
-                    <div class="contenedor-articulo-detalle-top">
-                        <div class="imagen-detalle">
-                            <img src="/images/clothe1.jpg" alt="" class="imagen-detalle">
-                        </div>
-                        <div class="descripcion-detalle">
-                            <p class="precio-detalle-carrito">Precio:</p>
-                            <p class="talle-detalle">Talle:</p>
-                            <p class="cantidad-detalle">Cantidad:</p>
-                            <p class="descrip-detalle">Descripcion general:</p>
-                        </div>
-                    </div>
+        <section class="section-descripcion-detalle">
+            <article class="contenedor-producto-detalle">
+                <h2>Tugancho</h2>
+                <h3>Buso gigante afelpado</h3>
+                <a class="anadir-producto-detalle"><i class="fa-regular fa-heart"></i></a>
+                <img src="images/clothe2.jpg" alt="">
+                <!-- logo -->
+                <p>Genero</p>
+                <p>Talla</p>
+                <p>Precio</p>
+            </article>
 
-                    <div class="detalle-agregar">
-                        <div class="botones-detalle">
-                            <button class="btn-add-detalle">Agregar al carrito</button>
-                        </div>
-                    </div>
+            <article class="article-botones-detalle">
+                <form action="#" method="">
+                    <button type="submit">Comprar Ahora</button>
+                  </form>
+
+                  <form action="#" method="">
+                    <button type="submit">Agregar al Carrito</button>
+                  </form>
+            </article>
+        </section>   
+
+        <h2 class="subtitulos-detalle">Productos para ti</h2>
+        <section class="contenedor-section-parati-detalle">
+            <div class="slider-detalle">
+                <img src="images/clothe6.jpg" alt="">
+                <img src="images/clothe7.jpg" alt="">
+                <img src="images/clothe8.jpg" alt="">
+                <img src="images/clothe9.jpg" alt="">
             </div>
-        </div>    
+        </section>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
