@@ -590,6 +590,16 @@ footer i {
 }
 /* Fin log in */
 
+/* Incio create product */
+.main-create {
+    height: 62vh;
+}
+.section-create {
+    text-align: center;
+}
+
+/* Fin create product */
+
 @media (min-width: 768px) {
     /* inicio header */
     .button-bars {

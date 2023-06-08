@@ -8,7 +8,7 @@ const controllers = {
         res.render('carrito');
     },
     getCreateProduct: (req, res) => {
-        res.render('createProducts');
+        res.render('createProduct');
     },
     
     create: function(req,res){
