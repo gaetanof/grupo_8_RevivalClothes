@@ -9,6 +9,7 @@
 body {
     font-family: 'Titillium Web', sans-serif;
     background-color: #FFF5DA;
+    /* width: 100vw; */
 }
 
 header {
@@ -16,7 +17,7 @@ header {
 }
 
 main {
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto;
     /* background-color: white; */
 }
@@ -354,10 +355,6 @@ footer div{
     outline: none;
 }
 
-/* .control-signin:focus{
-    outline: solid #5D534A 2px;
-} */
-
 .account-signin{
     display: flex;
     justify-content: space-between;
@@ -376,6 +373,14 @@ footer div{
 
 .form-signin {
     margin:30px;
+}
+
+.form-signin label {
+    font-weight: 700;
+}
+
+.form-signin p {
+    font-weight: 700;
 }
 
 /* Main */
@@ -546,6 +551,42 @@ footer i {
 
 /* Fin Main detalle */
 
+/* Inicio log in */
+.container-login {
+    width: 100%;
+    padding: 20px;
+    background-color: #FFF5DA;
+    margin: auto;
+}
+
+.control-login {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border:none;
+    border-bottom: 0.5px solid #000;
+    background: #FFF5DA;
+    width: 100%;
+    margin-bottom: 10px;
+    outline: none;
+}
+.form-login {
+    margin:30px;
+}
+
+.form-login label{
+    font-weight: 700;
+}
+
+.form-login p{
+    font-weight: 700;
+}
+
+.main-login {
+    height: 62vh;
+}
+/* Fin log in */
+
 @media (min-width: 768px) {
     /* inicio header */
     .button-bars {
@@ -653,6 +694,14 @@ footer i {
         font-size: 35px;
     }
     /* Fin Main detalle producto */
+    /* Inicio log in */
+    .container-login {
+        width: 50%;
+        padding: 20px;
+        background-color: #FFF5DA;
+        margin: auto;
+    }
+    /* Final log in */
 }
 
 @media (min-width: 1200px) {
@@ -736,6 +785,7 @@ footer i {
         top: 10%;
     }
     /* Fin Main detalle producto */
+    
 }
 
 @media (min-width: 1400px){

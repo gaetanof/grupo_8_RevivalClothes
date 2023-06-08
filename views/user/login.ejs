@@ -1,91 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/login.css">
-    <title>LOGIN-REVIVALCLOTHES</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ingresa</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-
 <body>
-    <header class="main-header">
+
+	<header class="main-header">
         <%- include('../partials/header-users') %>
     </header>
-    <section class="formulario-completo-login">
-        <div class="formulario-login">
-            <form action="/views/home.html" method="post">
-                <h2 class="sesion">Inicia Sesión</h2>
-                <div class="formulario-box-login">
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" placeholder="Correo electronico*" name="Usuario">
-                </div>
-                <div class="formulario-box-login">
-                    <label for="password">Ingresá tu clave :</label>
-                    <input type="password" placeholder="Contraseña" name="password">
-                </div>
 
-                <div><label for="">Mantener la sesión abierta</label> <input type="checkbox"></div>
-
-                <a href="#" class="forget-login">¿No recordás tu clave?</a>
-                <div class="formulario-button-login"></div>
-                <button type="submit">Enviar</button>
-                <button type="reset">Borrar</button>
-        </div>
-       
-    </section>
-    <footer>
-        <footer class="contenedor-footer">
-            <nav class="footer-bottom">
-                <ul class="listas">
+    <main class="main-login">
+        <div class="container-login">
+            <form action="/#" method="post" class="form-login">
+                <div class="email-login">
+                    <label>Email:</label>
+                    <input type="mail" name="email-login" class="control-login">
+                </div>
+                <div class="password-login">
+                    <label>Contraseña:</label>
+                    <input type="password" name="password-login" class="control-login">
+                </div>
+                <br>
+                <br>
+                <div class="account-login">
+                    <input type="checkbox" value="Ingresar" class="button-login">
+                    <label for="">Recuerdame</label>
+                </div>
+                <br>
+                <div class="account-login">
+                    <p> ¿No tienes una cuenta aún? <a href="/signin">Entra aqui!</a> </p>
+                    <br>
+                    <input type="button" value="Ingresar" class="button-login">
+                </div>
                 
-                        <div class="listas-atributo">
-                            <i class="fa-solid fa-shirt"></i>
-                            <h5>PRODUCTOS</h5>
-                            <li><a href="#">Remeras / Chombas</a></li>
-                            <li><a href="#">Buzos / Camperas</a></li>
-                            <li><a href="#">Pantalones</a></li>
-                            <li><a href="#">Short</a></li>
-                            <li><a href="#">Vestidos</a></li>
-                            <li><a href="#">Accesorios</a></li>
-                        </div>
-        
-                        <div class="listas-atributo">
-                            <i class="fa-solid fa-credit-card"></i>
-                            <h5>ASISTENCIA</h5>
-                            <li><a href="#">Pagos</a></li>
-                            <li><a href="#">Envios</a></li>
-                            <li><a href="#">Devoluciones</a></li>
-                            <li><a href="#">Dudas Frecuentes</a></li>
-                        </div>
-                    
-                    
-                        <div class="listas-atributo">
-                            <i class="fa-solid fa-users"></i>
-                            <h5>NOSOTROS</h5>
-                            <li><a href="#">Acerca de Revival Clothing</a></li>
-                            <li><a href="#">Nuestra Tienda</a></li>
-                        </div>
-        
-                        <div class="listas-atributo">
-                            <i class="fa-solid fa-hashtag"></i>
-                            <h5>SEGUINOS</h5>
-                            <div class="lista-end">
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-                        </div></div>
-                    
-                </ul>
-            </nav>
-            <article>
-                <p class="copyright">Copyright © 2021 - 2023 Revival Clothes R.C.S.A</p>
-            </article>
-        </footer>
-</body>
+    
+            </form>
+        </div>
+    </main>
 
+	<footer>
+	<%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
 </html>
