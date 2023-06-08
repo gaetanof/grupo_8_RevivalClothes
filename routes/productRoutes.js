@@ -4,7 +4,6 @@ const productController = require('../controllers/productController')
 
 const router = express.Router();
 
-// router.get('/detalleProducto', DProductocontroller.getDetalleProducto) // Se evita poner products
 router.get('/detalle', productController.getDetalle) // Se evita poner products
 router.get('/carrito-de-compras', productController.getCarrito);
 
