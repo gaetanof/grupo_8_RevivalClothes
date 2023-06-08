@@ -117,10 +117,12 @@ p {
 }
 
 .main-navbar-desktop {
+    font-weight: 700;
     display: none;
 }
 
 .main-navbar-desktop-left {
+    font-weight: 700;
     display: none;
 }
 
@@ -482,7 +484,7 @@ footer i {
 }
 
 .contenedor-producto-detalle p{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -506,14 +508,16 @@ footer i {
     color: white;
     background: #355351;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
 }
 
 .contenedor-section-parati-detalle {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin: 50px 0px 20px 0px;
 }
 
 .subtitulos-detalle {
@@ -522,7 +526,7 @@ footer i {
 }
 
 .slider-detalle {
-    aspect-ratio: 10 / 16;
+    aspect-ratio: 10 / 13;
     max-width: 450px;
     position: relative;
     display: flex;
@@ -659,6 +663,12 @@ footer i {
     .main-navbar-desktop-left {
         display: flex;
     }
+    /* .main-navbar-desktop a {
+        font-weight: 700;
+    } 
+    .main-navbar-desktop-left a {
+        font-weight: 700;
+    }  */
     /* Fin Header */
     /* Inicio main home */
     .contenedor-section {
@@ -682,8 +692,56 @@ footer i {
         width: 100%;
         height: 100%;
     }
-    
     /* Fin main home */
+    /* Inicio Main detalle producto */
+    .section-descripcion-detalle {
+        display: flex;
+        flex-flow: nowrap column;
+        justify-content: space-between;
+        position: relative;
+    }
+    .contenedor-producto-detalle {
+        width: 50%;
+        position: relative;
+    }
+    .contenedor-producto-detalle img{
+        margin-top: 30px;
+    }
+    .article-botones-detalle {
+        width: 40%;
+        position: absolute;
+        left: 55%;
+        bottom: 10%;
+    }
+    .descripcion-producto-detalle {
+        width: 40%;
+        position: absolute;
+        left: 130%;
+        bottom: 40%;
+        text-align: center;
+    }
+    .descripcion-producto-detalle p{
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+    .titulo-producto-detalle {
+        position: absolute;
+        left: 100%;
+        top: 10%;
+        width: 100%;
+    }
+    .titulo-producto-detalle a{
+        position: absolute;
+        left: 130%;
+    }
+    .titulo-producto-detalle h2{
+        margin-bottom: 20px;
+    }
+    .titulo-producto-detalle a {
+        left: 75%;
+        top: 10%;
+    }
+    /* Fin Main detalle producto */
 }
 
 @media (min-width: 1400px){
