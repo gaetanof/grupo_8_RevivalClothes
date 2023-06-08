@@ -42,3 +42,5 @@ Esta página web es reconocida a nivel mundial y se destaca por su diseño limpi
 Esta marca de ropa se enfoca en la transparencia y la sostenibilidad en su proceso de producción. Me pareció interesante cómo utilizan su sitio web para educar a los clientes sobre sus prácticas éticas mediante el relato de historias. Además, su diseño es sencillo y atractivo, con un enfoque en la funcionalidad.
 ## [thrift+](https://thrift.plus/) :
 Thrift+ vende ropa de calidad a precios bajos, fomentando la economía circular y la sostenibilidad. Los usuarios pueden vender su ropa usada y obtener créditos para comprar en el sitio.
+
+## tablero de trabajo (https://trello.com/b/kBJBswEY/tablero-proyecto-integrador)

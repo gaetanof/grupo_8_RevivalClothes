@@ -6,7 +6,21 @@ const controllers = {
     },
     getCarrito: (req, res) => {
         res.render('carrito');
+    },
+    getCreateProduct: (req, res) => {
+        res.render('createProducts');
+    },
+    
+    create: function(req,res){
+        let producto = {
+          titulo: req.body.titulo,
+          precio: req.body.precio,
+          foto: req.body.foto,
+        }
+        res.redirect("/product/publicado")
     }
+
+    
 }
 
 module.exports = controllers;
