@@ -22,106 +22,52 @@
     <main>
         <h2 class="subtitulos-home">Marcas</h2>
         <section class="contenedor-section">
+            <% productos.forEach((producto) => { %>
             <article class="contenedor-article">
-                <img src="images/clothe2.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="logo-eco"><img src="images/hanger-line.png"></p> <!-- animacion con logo de envio -->
-                    <p class="precio">$230.500</p>
-                    <h4 class="descripcion">Ropifly</h4>
-                </div>
+                <a href="/detalle/<%= producto.id %>"> <!-- Agrega el enlace al detalle del producto -->
+                    <img src="<%= producto.imagen %>" class="imagen-producto">
+                    <div class="contenedor-descripcion">
+                        <p class="logo-eco"><img src="images/hanger-line.png"></p> <!-- animacion con logo de envio -->
+                        <p class="precio">$<%= producto.precio %></p>
+                        <h4 class="descripcion"><%= producto.titulo %></h4>
+                    </div>
+                </a>
             </article>
-
-            <article class="contenedor-article">
-                <img src="images/clothe1.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="logo-eco"><img src="images/hanger-line.png"></p> <!-- animacion con logo de envio -->
-                    <p class="precio">$320.000</p>
-                    <h4 class="descripcion">Tugancho</h4>
-                </div>
-            </article>
-
-            <article class="contenedor-article">
-                <img src="images/clothe3.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="logo-eco"><img src="images/hanger-line.png"></p> <!-- animacion con logo de envio -->
-                    <p class="precio">220.000</p>
-                    <h4 class="descripcion">Pantaloneta</h4>
-                </div>
-            </article>
-
-            <article class="contenedor-article">
-                <img src="images/clothe6.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="logo-eco"><img src="images/hanger-line.png"></p> <!-- animacion con logo de envio -->
-                    <p class="precio">420.000</p>
-                    <h4 class="descripcion">Chaquetica</h4>
-                </div>
-            </article>
+            <% }) %>
         </section>
 
         <h2 class="subtitulos-home">Destacados</h2>
         <section class="contenedor-section">
+            <% productos.forEach((producto) => { %>
             <article class="contenedor-article">
-                <img src="images/clothe3.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="logo-eco"><img src="images/hanger-line.png"></p>
-                    <p class="precio">$230.500</p>
-                    <h4 class="descripcion">Ropifly</h4>
-                </div>
+                <a href="/detalle/<%= producto.id %>"> <!-- Agrega el enlace al detalle del producto -->
+                    <img src="<%= producto.imagen %>" class="imagen-producto">
+                    <div class="contenedor-descripcion">
+                        <p class="logo-eco"><img src="images/hanger-line.png"></p>
+                        <p class="precio">$<%= producto.precio %></p>
+                        <h4 class="descripcion"><%= producto.titulo %></h4>
+                    </div>
+                </a>
             </article>
-
-            <article class="contenedor-article">
-                <img src="images/clothe4.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="logo-eco"><img src="images/hanger-line.png"></p>
-                    <p class="precio">$320.000</p>
-                    <h4 class="descripcion">Tugancho</h4>
-                </div>
-            </article>
-
-            <article class="contenedor-article">
-                <img src="images/clothe6.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="logo-eco"><img src="images/hanger-line.png"></p>
-                    <p class="precio">$520.000</p>
-                    <h4 class="descripcion">Pantalon</h4>
-                </div>
-            </article>
-
-            <article class="contenedor-article">
-                <img src="images/clothe8.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="logo-eco"><img src="images/hanger-line.png"></p>
-                    <p class="precio">$620.000</p>
-                    <h4 class="descripcion">Chaqueta</h4>
-                </div>
-            </article>
+            <% }) %>
         </section>
 
         <h2 class="subtitulos-home">Nuevos lanzamientos</h2>
         <section class="contenedor-section">
+            <% productos.forEach((producto) => { %>
             <article class="contenedor-article">
-                <img src="images/conjunto1.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="simbolo-ropa-home"><i class="fa-solid fa-shirt"></i></p>
-                    <p class="simbolo-ropa-home"><i class="fa-solid fa-vest"></i></p>
-                    <h3>Conjunto mujer</h3>
-                    <h3>Nueva coleccion de invierno</h3>
-                </div>
+                <a href="/detalle/<%= producto.id %>"> <!-- Agrega el enlace al detalle del producto -->
+                    <img src="<%= producto.imagen %>" class="imagen-producto">
+                    <div class="contenedor-descripcion">
+                        <p class="simbolo-ropa-home"><i class="fa-solid fa-shirt"></i></p>
+                        <p class="simbolo-ropa-home"><i class="fa-solid fa-vest"></i></p>
+                        <h3><%= producto.titulo %></h3>
+                        <h3><%= producto.descripcion %></h3>
+                    </div>
+                </a>
             </article>
-
-            <article class="contenedor-article">
-                <img src="images/conjunto2.jpg" class="imagen-producto">
-                <div class="contenedor-descripcion">
-                    <p class="simbolo-ropa-home"><i class="fa-solid fa-shirt"></i></p>
-                    <p class="simbolo-ropa-home"><i class="fa-solid fa-vest"></i></p>
-                    <h3>Conjunto mujer</h3>
-                    <h3>Nueva coleccion de otoño</h3>
-                </div>
-            </article>
+            <% }) %>
         </section>
-
-
     </main>
     <footer>
         <%- include('../partials/footer.ejs') %>

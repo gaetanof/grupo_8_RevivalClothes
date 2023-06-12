@@ -1,18 +1,16 @@
 const path = require('path')
+const uuid = require('uuid')
+const fs = require('fs');
 
 const controllers = {
     getLogin: (req, res) => {
-        res.render('login');
+        res.render('user/login');
     },
     getSigin: (req, res) => {
-        res.render('signin');
+        res.render('user/signin');
     },
     getUserList: (req, res) => {
-        let users = [
-            { id: 1, name: 'Juan Román Riquelme' },
-            { id: 2, name: 'Martín Palermo' },
-            { id: 3, name: 'Carlos Tevez' },
-        ];
+
         
         let usersResults = [];
         for (let i = 0; i < users.length; i++) {

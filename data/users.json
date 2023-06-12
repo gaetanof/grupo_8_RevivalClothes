@@ -1,0 +1,75 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nombre": "Homer Simpson",
+        "mail": "homer@example.com",
+        "username": "homersimpson",
+        "contraseña": "d'oh123"
+      },
+      {
+        "id": 2,
+        "nombre": "Marge Simpson",
+        "mail": "marge@example.com",
+        "username": "margesimpson",
+        "contraseña": "ilovemaggie"
+      },
+      {
+        "id": 3,
+        "nombre": "Bart Simpson",
+        "mail": "bart@example.com",
+        "username": "bartsimpson",
+        "contraseña": "eatmyshorts"
+      },
+      {
+        "id": 4,
+        "nombre": "Lisa Simpson",
+        "mail": "lisa@example.com",
+        "username": "lisasimpson",
+        "contraseña": "saxophone123"
+      },
+      {
+        "id": 5,
+        "nombre": "Maggie Simpson",
+        "mail": "maggie@example.com",
+        "username": "maggiesimpson",
+        "contraseña": "pacifier456"
+      },
+      {
+        "id": 6,
+        "nombre": "Ned Flanders",
+        "mail": "ned@example.com",
+        "username": "nedflanders",
+        "contraseña": "godisgood"
+      },
+      {
+        "id": 7,
+        "nombre": "Moe Szyslak",
+        "mail": "moe@example.com",
+        "username": "moeszyslak",
+        "contraseña": "flamingmoe"
+      },
+      {
+        "id": 8,
+        "nombre": "Apu Nahasapeemapetilon",
+        "mail": "apu@example.com",
+        "username": "apu",
+        "contraseña": "kwikemart"
+      },
+      {
+        "id": 9,
+        "nombre": "Mr. Burns",
+        "mail": "burns@example.com",
+        "username": "mrburns",
+        "contraseña": "excellent"
+      },
+      {
+        "id": 10,
+        "nombre": "Krusty the Clown",
+        "mail": "krusty@example.com",
+        "username": "krusty",
+        "contraseña": "ha-ha123"
+      }
+    ]
+  }
+  

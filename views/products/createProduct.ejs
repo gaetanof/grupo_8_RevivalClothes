@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Create Product</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <header>
@@ -16,12 +16,44 @@
     <main class="main-create">
         <section class="section-create">
             <h1>Crear un producto</h1>
-            <form action="/" method="POST" enctype="multipart/form-data">
+            <form action="/create" method="post" enctype="multipart/form-data">
     
                 <div class="field">
-                    <label for="name">Nombre</label>
+                    <label for="titulo">Titulo</label>
                     <div class="control">
-                        <input type="text" name="name" id="name">
+                        <input type="text" name="titulo" id="titulo">
+                    </div>
+                    <p class="feedback"></p>
+                </div>
+    
+                <div class="field">
+                    <label for="genero">Genero</label>
+                    <div class="control">
+                        <input type="text" name="genero" id="genero">
+                    </div>
+                    <p class="feedback"></p>
+                </div>
+    
+                <div class="field">
+                    <label for="talle">Talle</label>
+                    <div class="control">
+                        <input type="text" name="talle" id="talle">
+                    </div>
+                    <p class="feedback"></p>
+                </div>
+    
+                <div class="field">
+                    <label for="precio">Precio</label>
+                    <div class="control">
+                        <input type="text" name="precio" id="precio">
+                    </div>
+                    <p class="feedback"></p>
+                </div>
+
+                <div class="field">
+                    <label for="descripcion">Descripción</label>
+                    <div class="control">
+                        <textarea name="descripcion" id="descripcion"></textarea>
                     </div>
                     <p class="feedback"></p>
                 </div>
@@ -30,38 +62,6 @@
                     <label for="imgFile">Imagen del producto</label>
                     <div class="control">
                         <input type="file" name="imgFile" id="imgFile">
-                    </div>
-                    <p class="feedback"></p>
-                </div>
-    
-                <div class="field">
-                    <label for="description">Descripción</label>
-                    <div class="control">
-                        <textarea name="description" id="description"></textarea>
-                    </div>
-                    <p class="feedback"></p>
-                </div>
-    
-                <div class="field">
-                    <label for="repository">Genero</label>
-                    <div class="control">
-                        <input type="text" name="repository" id="repository">
-                    </div>
-                    <p class="feedback"></p>
-                </div>
-    
-                <div class="field">
-                    <label for="repository">Talla</label>
-                    <div class="control">
-                        <input type="text" name="repository" id="repository">
-                    </div>
-                    <p class="feedback"></p>
-                </div>
-    
-                <div class="field">
-                    <label for="repository">Precio</label>
-                    <div class="control">
-                        <input type="text" name="repository" id="repository">
                     </div>
                     <p class="feedback"></p>
                 </div>

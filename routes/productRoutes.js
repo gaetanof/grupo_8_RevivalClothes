@@ -1,24 +1,30 @@
 const express = require('express')
+const router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const productController = require('../controllers/productController')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        let carpeta = path.join(__dirname, '/public/images/fotosProduto')
-        cb(null, carpeta);
+        cb(null, 'public/images/fotosProducto');
     },
     filename: function (req, file, cb) {
-        let nombreDeArchivo = date.now() + path.extname(file.originalname)
-        cb(null, Date.now() + '-' + file.originalname);
+        console.log(file)
+        const nombreDeArchivo = "clothe" + Date.now() + path.extname(file.originalname)
+        cb(null,nombreDeArchivo);
     }
+
+    
 })
 
-const productController = require('../controllers/productController')
-const router = express.Router();
+const cargarImg = multer ({ storage })
 
 
-router.get('/detalle', productController.getDetalle) // Se evita poner products
 router.get('/carrito-de-compras', productController.getCarrito)
 router.get('/create',productController.getCreateProduct)
-router.post('/create', productController.create)
+router.post('/create', cargarImg.single('imgFile') , productController.create)
+router.get('/publicado', productController.showPublished)
+router.get('/detalle/:productoId', productController.getDetalle);
+
+
 module.exports = router
