@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>DETALLE</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <%- include('../partials/header') %>
+    </header>
+    <main>
+        <section class="section-descripcion-detalle">
+            <article class="contenedor-producto-detalle">
+                <div class="titulo-producto-detalle">
+                    <h2><%= producto.titulo %></h2>
+                    <h3><%= producto.descripcion %></h3>
+                    <a class="anadir-producto-detalle"><i class="fa-regular fa-heart"></i></a>
+                </div>
+                <img src="<%= producto.imagen %>" alt="">
+                <!-- logo -->
+                <div class="descripcion-producto-detalle">
+                    <p>Genero: <%= producto.genero %></p>
+                    <p>Talla: <%= producto.talla %></p>
+                    <p>Precio: <%= producto.precio %></p>
+                </div>
+            </article>
+
+            <article class="article-botones-detalle">
+                <form action="#" method="">
+                    <button type="submit">Comprar Ahora</button>
+                  </form>
+
+                  <form action="#" method="">
+                    <button type="submit">Agregar al Carrito</button>
+                  </form>
+            </article>
+        </section>   
+
+        <section class="contenedor-section-parati-detalle">
+            <h2 class="subtitulos-detalle">Productos para ti</h2>
+            <div class="slider-detalle">
+                <img src="images/clothe6.jpg" alt="">
+                <img src="images/clothe7.jpg" alt="">
+                <img src="images/clothe8.jpg" alt="">
+                <img src="images/clothe9.jpg" alt="">
+            </div>
+        </section>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

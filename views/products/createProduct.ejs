@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Create Product</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header><%- include('../partials/header.ejs') %></header>
+
+    <main class="main-create">
+      <section class="section-create">
+        <h1>Crear un producto</h1>
+        <% if (locals.errors){ 
+            errors.forEach(error => {%>
+        <p class="feedback-create"><%= error.msg %></p>
+        <%  })  
+          }  
+        %>
+        <form action="/create" method="post" enctype="multipart/form-data">
+          <div class="field">
+            <label for="titulo">Titulo</label>
+            <div class="control">
+              <input type="text" name="titulo" id="titulo" value="<%= locals.old && old.titulo ? old.titulo : '' %>" />
+            </div>
+            <p class="feedback"></p>
+          </div>
+
+          <div class="field">
+            <label for="genero">Genero</label>
+            <div class="control">
+              <input type="text" name="genero" id="genero" />
+            </div>
+            <p class="feedback"></p>
+          </div>
+
+          <div class="field">
+            <label for="talle">Talle</label>
+            <div class="control">
+              <input type="text" name="talle" id="talle" />
+            </div>
+            <p class="feedback"></p>
+          </div>
+
+          <div class="field">
+            <label for="precio">Precio</label>
+            <div class="control">
+              <input type="number" name="precio" id="precio" />
+            </div>
+            <p class="feedback"></p>
+          </div>
+
+          <div class="field">
+            <label for="descripcion">Descripción</label>
+            <div class="control">
+              <textarea name="descripcion" id="descripcion"></textarea>
+            </div>
+            <p class="feedback"></p>
+          </div>
+
+          <div class="field">
+            <label for="imgFile">Imagen del producto</label>
+            <div class="control">
+              <input type="file" name="imgFile" id="imgFile" />
+            </div>
+            <p class="feedback"></p>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <button type="submit">Crear producto</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer><%- include('../partials/footer.ejs') %></footer>
+  </body>
+</html>
