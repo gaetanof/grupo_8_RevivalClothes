@@ -3,7 +3,7 @@
     "id": "1",
     "titulo": "Pantalón Cargo Negro",
     "descripcion": "Pantalón cargo negro de estilo urbano",
-    "imagen": "/images/clothe1.jpg",
+    "imagen": "/images/fotosProducto/clothe1.jpg",
     "genero": "Masculino",
     "talla": "M",
     "precio": 29.99
@@ -12,7 +12,7 @@
     "id": "2",
     "titulo": "Cazadora Verde Militar",
     "descripcion": "Cazadora verde militar con múltiples bolsillos",
-    "imagen": "/images/clothe2.jpg",
+    "imagen": "/images/fotosProducto/clothe2.jpg",
     "genero": "Femenino",
     "talla": "S",
     "precio": 19.99
@@ -21,7 +21,7 @@
     "id": "3",
     "titulo": "Cazadora Negra de Jean",
     "descripcion": "Cazadora negra de jean con cierre de botones",
-    "imagen": "/images/clothe3.jpg",
+    "imagen": "/images/fotosProducto/clothe3.jpg",
     "genero": "Unisex",
     "talla": "L",
     "precio": 39.99
@@ -30,7 +30,7 @@
     "id": "4",
     "titulo": "Pantalón Cargo Marrón",
     "descripcion": "Pantalón cargo marrón con bolsillos amplios",
-    "imagen": "/images/clothe4.jpg",
+    "imagen": "/images/fotosProducto/clothe4.jpg",
     "genero": "Femenino",
     "talla": "XL",
     "precio": 79.99
@@ -39,7 +39,7 @@
     "id": "5",
     "titulo": "Camisa",
     "descripcion": "Camisa clásica de algodón",
-    "imagen": "/images/clothe5.jpg",
+    "imagen": "/images/fotosProducto/clothe5.jpg",
     "genero": "Masculino",
     "talla": "M",
     "precio": 69.99
@@ -48,7 +48,7 @@
     "id": "6",
     "titulo": "Pantalón Blanco",
     "descripcion": "Pantalón blanco de tela ligera",
-    "imagen": "/images/clothe6.jpg",
+    "imagen": "/images/fotosProducto/clothe6.jpg",
     "genero": "Femenino",
     "talla": "L",
     "precio": 24.99
@@ -57,7 +57,7 @@
     "id": "7",
     "titulo": "Cazadora Blanca",
     "descripcion": "Cazadora blanca con cierre de cremallera",
-    "imagen": "/images/clothe7.jpg",
+    "imagen": "/images/fotosProducto/clothe7.jpg",
     "genero": "Unisex",
     "talla": "S",
     "precio": 34.99
@@ -66,7 +66,7 @@
     "id": "8",
     "titulo": "Cazadora Negra",
     "descripcion": "Cazadora negra de tela resistente al agua",
-    "imagen": "/images/clothe8.jpg",
+    "imagen": "/images/fotosProducto/clothe8.jpg",
     "genero": "Femenino",
     "talla": "M",
     "precio": 89.99
@@ -75,7 +75,7 @@
     "id": "9",
     "titulo": "Pantalón Cargo",
     "descripcion": "Pantalón cargo de estilo casual",
-    "imagen": "/images/clothe9.jpg",
+    "imagen": "/images/fotosProducto/clothe9.jpg",
     "genero": "Masculino",
     "talla": "XL",
     "precio": 49.99
@@ -84,136 +84,138 @@
     "id": "10",
     "titulo": "Pantalón Cargo Negro",
     "descripcion": "Pantalón cargo negro con múltiples bolsillos",
-    "imagen": "/images/clothe10.jpg",
+    "imagen": "/images/fotosProducto/clothe10.jpg",
     "genero": "Femenino",
     "talla": "S",
     "precio": 19.99
   },
   {
     "titulo": "as",
-    "talle": "as",
-    "precio": "as",
+    "talla": "as",
+    "precio": 123,
     "descripcion": "as",
-    "imagen": "clothe1686464831514.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686464831514.jpeg"
   },
   {
     "id": "78c6d6bf-c78c-4626-9735-17c36d11ff9f",
     "titulo": "werewrw",
-    "talle": "werwer",
-    "precio": "10",
+    "talla": "werwer",
+    "precio": 123,
     "descripcion": "efsdfds",
-    "imagen": "clothe1686513920831.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686513920831.jpeg"
   },
   {
     "id": "38281fd6-6d29-420c-85c1-dab694a84cc4",
     "titulo": "werewrw",
-    "talle": "werwer",
-    "precio": "10",
     "descripcion": "efsdfds",
-    "imagen": "clothe1686514006082.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686514006082.jpeg",
+    "talla": "werwer",
+    "precio": 123
   },
   {
     "id": "95d54bf3-16b0-43d1-bce1-402b05839576",
-    "titulo": "werewrw",
-    "talle": "werwer",
-    "precio": "10",
-    "descripcion": "efsdfds",
-    "imagen": "clothe1686514466089.jpeg"
+    "titulo": "Pantalón Cargo Marrón",
+    "descripcion": "Pantalón cargo marrón con bolsillos amplios",
+    "imagen": "/images/fotosProducto/clothe4.jpg",
+    "genero": "Femenino",
+    "talla": "XL",
+    "precio": 79.99
   },
   {
     "id": "26041c2a-1681-4e9d-8478-c8e9a1afccbc",
-    "titulo": "werewrw",
-    "talle": "werwer",
-    "precio": "10",
-    "descripcion": "efsdfds",
-    "imagen": "clothe1686514469770.jpeg"
+    "titulo": "Pantalón Cargo",
+    "descripcion": "Pantalón cargo de estilo casual",
+    "imagen": "/images/fotosProducto/clothe9.jpg",
+    "genero": "Masculino",
+    "talla": "XL",
+    "precio": 49.99
   },
   {
     "id": "d2fc694b-7479-41ef-9610-b10acad8a692",
     "titulo": "werewrw",
-    "talle": "werwer",
-    "precio": "10",
+    "talla": "werwer",
+    "precio": 123,
     "descripcion": "efsdfds",
-    "imagen": "clothe1686515866652.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686515866652.jpeg"
   },
   {
     "id": "c7d2f5af-e541-42d9-b24e-7e6f777f3b9c",
     "titulo": "werewrw",
-    "talle": "werwer",
-    "precio": "10",
+    "talla": "werwer",
+    "precio": 123,
     "descripcion": "efsdfds",
-    "imagen": "clothe1686515926557.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686515926557.jpeg"
   },
   {
     "id": "a75039fd-4b10-4b87-9114-94dd4ef8512a",
     "titulo": "qwewqe",
-    "talle": "weqweq",
-    "precio": "weqwe",
+    "talla": "weqweq",
+    "precio": 123,
     "descripcion": "qweqwe",
-    "imagen": "clothe1686516556834.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686516556834.jpeg"
   },
   {
     "id": "22eb670e-1a2f-4e20-91d9-76cf3c1342c4",
     "titulo": "qeweq",
-    "talle": "qweqwe",
-    "precio": "qweqew",
+    "talla": "qweqwe",
+    "precio": 123,
     "descripcion": "qweqwe",
-    "imagen": "clothe1686579898125.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686579898125.jpeg"
   },
   {
     "id": "1fb9c85c-a6c2-45c2-9707-08f806633d9f",
     "titulo": "bcbc",
-    "talle": "fghfgh",
-    "precio": "fghgfhf",
+    "talla": "fghfgh",
+    "precio": 123,
     "descripcion": "ghfghf",
-    "imagen": "clothe1686580323606.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686580323606.jpeg"
   },
   {
     "id": "b93b47d7-01f4-4786-ae31-2b292c78e41b",
     "titulo": "wewe",
-    "talle": "weew",
-    "precio": "wewe",
+    "talla": "weew",
+    "precio": 123,
     "descripcion": "",
-    "imagen": "clothe1686599669197.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686599669197.jpeg"
   },
   {
     "id": "b8296cd2-688f-4d57-a2bd-a474f025efc4",
     "titulo": "wewe",
-    "talle": "weew",
-    "precio": "wewe",
+    "talla": "weew",
+    "precio": 123,
     "descripcion": "",
-    "imagen": "clothe1686599684540.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686599684540.jpeg"
   },
   {
     "id": "43c1f182-dbbd-4146-85be-f8a758c1924a",
     "titulo": "wewe",
-    "talle": "weew",
-    "precio": "",
+    "talla": "weew",
+    "precio": 123,
     "descripcion": "",
-    "imagen": "clothe1686600434282.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686600434282.jpeg"
   },
   {
     "id": "fb8d3760-4773-40ff-b5bf-ada1fa13c228",
     "titulo": "wewe",
-    "talle": "weew",
-    "precio": "",
+    "talla": "weew",
+    "precio": 123,
     "descripcion": "",
-    "imagen": "clothe1686600668232.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686600668232.jpeg"
   },
   {
     "id": "fd8a4200-26cb-4145-9380-13d9330e1927",
     "titulo": "wewe",
-    "talle": "weew",
-    "precio": "",
+    "talla": "weew",
+    "precio": 123,
     "descripcion": "",
-    "imagen": "clothe1686600688613.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686600688613.jpeg"
   },
   {
     "id": "b205408b-cdec-468f-b8d5-8afeb38b1b12",
     "titulo": "",
-    "talle": "weew",
-    "precio": "",
+    "talla": "weew",
+    "precio": 123,
     "descripcion": "",
-    "imagen": "clothe1686600741988.jpeg"
+    "imagen": "/images/fotosProducto/clothe1686600741988.jpeg"
   }
 ]

@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         console.log(file)
-        const nombreDeArchivo = "clothe" + Date.now() + path.extname(file.originalname)
+        const nombreDeArchivo = "/images/clothe" + Date.now() + path.extname(file.originalname)
         cb(null,nombreDeArchivo);
     }
 

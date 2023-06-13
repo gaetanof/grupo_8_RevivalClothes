@@ -46,7 +46,7 @@ const controllers = {
       let producto = {
         id: uuid.v4(),
         titulo: req.body.titulo,
-        talle: req.body.talle,
+        talla: req.body.talle,
         precio: req.body.precio,
         descripcion: req.body.descripcion,
         imagen: req.file.filename,
