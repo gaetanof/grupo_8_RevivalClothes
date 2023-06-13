@@ -151,5 +151,69 @@
     "precio": "weqwe",
     "descripcion": "qweqwe",
     "imagen": "clothe1686516556834.jpeg"
+  },
+  {
+    "id": "22eb670e-1a2f-4e20-91d9-76cf3c1342c4",
+    "titulo": "qeweq",
+    "talle": "qweqwe",
+    "precio": "qweqew",
+    "descripcion": "qweqwe",
+    "imagen": "clothe1686579898125.jpeg"
+  },
+  {
+    "id": "1fb9c85c-a6c2-45c2-9707-08f806633d9f",
+    "titulo": "bcbc",
+    "talle": "fghfgh",
+    "precio": "fghgfhf",
+    "descripcion": "ghfghf",
+    "imagen": "clothe1686580323606.jpeg"
+  },
+  {
+    "id": "b93b47d7-01f4-4786-ae31-2b292c78e41b",
+    "titulo": "wewe",
+    "talle": "weew",
+    "precio": "wewe",
+    "descripcion": "",
+    "imagen": "clothe1686599669197.jpeg"
+  },
+  {
+    "id": "b8296cd2-688f-4d57-a2bd-a474f025efc4",
+    "titulo": "wewe",
+    "talle": "weew",
+    "precio": "wewe",
+    "descripcion": "",
+    "imagen": "clothe1686599684540.jpeg"
+  },
+  {
+    "id": "43c1f182-dbbd-4146-85be-f8a758c1924a",
+    "titulo": "wewe",
+    "talle": "weew",
+    "precio": "",
+    "descripcion": "",
+    "imagen": "clothe1686600434282.jpeg"
+  },
+  {
+    "id": "fb8d3760-4773-40ff-b5bf-ada1fa13c228",
+    "titulo": "wewe",
+    "talle": "weew",
+    "precio": "",
+    "descripcion": "",
+    "imagen": "clothe1686600668232.jpeg"
+  },
+  {
+    "id": "fd8a4200-26cb-4145-9380-13d9330e1927",
+    "titulo": "wewe",
+    "talle": "weew",
+    "precio": "",
+    "descripcion": "",
+    "imagen": "clothe1686600688613.jpeg"
+  },
+  {
+    "id": "b205408b-cdec-468f-b8d5-8afeb38b1b12",
+    "titulo": "",
+    "talle": "weew",
+    "precio": "",
+    "descripcion": "",
+    "imagen": "clothe1686600741988.jpeg"
   }
 ]

@@ -1,34 +1,34 @@
 const path = require('path');
 const uuid = require('uuid');
 const fs = require('fs-extra');
+const { validationResult } = require('express-validator');
 
 const controllers = {
     getDetalle: (req, res) => {
-        const productoDetalladoId = req.params.productoId;
-        console.log(productoDetalladoId)
+        const productoDetalladoId = req.params.id;
 
-      
-        fs.readFile(path.join(__dirname, '../data/productos.json'), 'utf8', (err, data) => {
-          if (err) {
+      const productosJSON = fs.readFileSync(path.join(__dirname, '../data/productos.json'), 'utf8')
+          if (!productosJSON) {
             console.error('Error al leer el archivo de productos', err);
             // Manejar el error apropiadamente
             return;
           }
       
-          const productos = JSON.parse(data);
+          const productos = JSON.parse(productosJSON);
       
           // Buscar el producto correspondiente según el ID
           const producto = productos.find((p) => p.id === productoDetalladoId);
+        console.log(producto)
+        //   if (!producto) {
+        //     console.error('No se encontró el producto con el ID especificado');
+        //     console.log(req.params)
 
-          if (!producto) {
-            console.error('No se encontró el producto con el ID especificado');
-            // Manejar el escenario donde no se encuentra el producto
-            return;
-          }
+        //     // Manejar el escenario donde no se encuentra el producto
+        //     return;
+        //   }
       
           res.render('products/detalle', { producto: producto });
-        });
-      },
+    },
       
 
   getCarrito: (req, res) => {
@@ -40,6 +40,8 @@ const controllers = {
   },
 
   create: function (req, res) {
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
     if (req.file) {
       let producto = {
         id: uuid.v4(),
@@ -71,10 +73,13 @@ const controllers = {
           res.render('products/publishedProduct', { productoId: producto.id });
         });
       });
-    } else {
-      res.render('create');
     }
-
+    } else {
+      res.render('products/createProduct' , { 
+        errors: errors.array(),
+        old: req.body,
+     }) 
+    }
   },
   showPublished: (req, res) => {
     res.render('products/publishedProduct');
