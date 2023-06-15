@@ -164,6 +164,10 @@ p {
 /* Header hasta acá */
 /* ------------------------------------------------------------------- */
 /* Contenido flex del main vista home */
+.contenedor-article a {
+    text-decoration: none;
+}
+
 .precio {
     font-size: 18px;
     font-weight: bold;

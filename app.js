@@ -29,7 +29,7 @@ app.use(productRouter)
 app.use(logMiddleware)
 
 app.use((req, res, next) => {
-    res.status(404).render("not-found")
+    res.status(404).render("./main/not-found")
 })
 
 app.listen(PORT, () => {console.log(`Servidor escuchando puerto http://localhost:${PORT} 🚀`)});
