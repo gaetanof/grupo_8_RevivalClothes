@@ -21,6 +21,19 @@ const controllers = {
 
         res.render('userResults', { 'users': users });
     },
+    edit: function (req, res) {
+        let idUser = req.params.idUser;
+
+        let users = [
+            { id: 1, name: 'Juan Román Riquelme' },
+            { id: 2, name: 'Martín Palermo' },
+            { id: 3, name: 'Carlos Tevez' },
+        ];
+        let userToEdit = users[idUser];
+
+
+        res.render("idUser", {userToEdit:userToEdit});
+    },
 
 }
 
