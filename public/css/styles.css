@@ -166,6 +166,7 @@ p {
 /* Contenido flex del main vista home */
 .contenedor-article a {
     text-decoration: none;
+    color: #222222;
 }
 
 .precio {
@@ -748,6 +749,7 @@ footer i {
         gap: 10px;
     }
     .imagen-producto {
+        aspect-ratio: 10 / 12;
         width: 100%;
         height: 100%;
     }
