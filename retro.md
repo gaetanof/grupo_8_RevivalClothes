@@ -47,3 +47,17 @@ Dejar de hacer:
 
 Dejar de postergar las decisiones importantes o los problemas no resueltos, abordándolos de manera proactiva y buscando soluciones colaborativas.
 Eliminar la falta de claridad en las expectativas y roles dentro del equipo, definiendo y comunicando claramente las responsabilidades y la autoridad de cada miembro.
+
+Sprint4
+
+-Comenzar a hacer: 
+Realizar reuniones mas frecuentes entre los integrantes del grupo para aportar y discutir ideas del proyecto.
+-Hacer más: 
+Utilizar más  la herramienta de Trello para llevar un control de tareas y division de las mismas.
+-Continuar haciendo:
+Mantener una actitud positiva y motivada hacia el trabajo en equipo, reconociendo los logros y celebrando los avances, incluso si son pequeños.
+-Hacer menos:
+Reducir las distracciones durante las horas de trabajo, estableciendo períodos de enfoque y disminuir las interrupciones para mejorar la productividad individual y colectiva.
+-Dejar de hacer: 
+Minimizar las demoras en las tareas y enfocarse en el objetivo asignado a cada miembro del equipo dentro del plazo establecido.
+
