@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Sign In</title>
+    <title>Edit user</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -16,26 +16,25 @@
 
 	<main class="main-signin">
 	<div class="container-signin">
-		<form action="/signin" method="POST" class="form-signin">
+		<form action="/<%= userToEdit.id %>/edit?_method=PUT" method="POST" class="form-signin">
 			<div class="fullname-signin">
 				<label>Nombre Completo:</label>
-  				<input type="text" name="fullname" class="control-signin">
+  				<input type="text" name="fullname" class="control-signin" value="<%= userToEdit.nombre %>">
 			</div>
 			<div class="email-signin">
 				<label>Email:</label>
-  				<input type="mail" name="email" class="control-signin">
+  				<input type="mail" name="email" class="control-signin" value="<%= userToEdit.mail %>">
 			</div>
 			<div class="username-signin">
 				<label>Username:</label>
-  				<input type="text" name="username" class="control-signin">
+  				<input type="text" name="username" class="control-signin" value="<%= userToEdit.username %>">
 			</div>
 			<div class="password-signin">
 				<label>Contraseña:</label>
-  				<input type="password" name="password" class="control-signin">
+  				<input type="password" name="password" class="control-signin" value="<%= userToEdit.contrasena %>">
 			</div>
 			<div class="account-signin">
-				<p> Ya tienes una cuenta? <a href="/login">Entra aqui!</a> </p>	
-				<input type="submit" value="Registrarse" class="button-signin">
+				<input type="submit" value="Editar" class="button-signin">
 			</div>
 
 		</form>

@@ -607,7 +607,45 @@ footer i {
 }
 
 /* Fin create product */
+/* Inicio userList */
+.main-userlist {
+    
+    width: 100%;
+}
+.lista-usuarios-userlist {
+    display: flex;
+    flex-flow: wrap row;
+    max-width: 500px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: solid 1px #5D534A;
+    margin: auto;
+    list-style: none;
+}
 
+.lista-usuarios-userlist li {
+    width: 200px;
+    margin: 20px 0 20px 0;
+}
+
+.lista-usuarios-userlist a {
+    text-decoration: none;
+    color: #222222;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.lista-usuarios-userlist button {
+    padding: 15px;
+    width: 100px;
+    color: white;
+    background: #355351;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    align-items: center;
+}
+/* Final userList */
 @media (min-width: 768px) {
     /* inicio header */
     .button-bars {
@@ -723,6 +761,7 @@ footer i {
         margin: auto;
     }
     /* Final log in */
+    
 }
 
 @media (min-width: 1200px) {
