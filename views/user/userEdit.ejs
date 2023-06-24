@@ -16,7 +16,7 @@
 
 	<main class="main-signin">
 	<div class="container-signin">
-		<form action="/<%= userToEdit.id %>/edit?_method=PUT" method="POST" class="form-signin">
+		<form action="/user/<%= userToEdit.id %>/edit?_method=PUT" method="POST" class="form-signin">
 			<div class="fullname-signin">
 				<label>Nombre Completo:</label>
   				<input type="text" name="fullname" class="control-signin" value="<%= userToEdit.fullname %>">

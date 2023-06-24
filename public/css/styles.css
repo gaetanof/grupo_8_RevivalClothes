@@ -625,8 +625,15 @@ footer i {
 }
 
 .lista-usuarios-userlist li {
+    display: flex;
     width: 200px;
     margin: 20px 0 20px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista-usuarios-userlist img {
+    width: 50px;
 }
 
 .lista-usuarios-userlist a {

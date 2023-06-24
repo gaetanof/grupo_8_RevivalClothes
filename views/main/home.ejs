@@ -24,7 +24,7 @@
         <section class="contenedor-section">
             <% productos.forEach((producto) => { %>
             <article class="contenedor-article">
-                <a href="/detalle/<%= producto.id %>"> <!-- Agrega el enlace al detalle del producto -->
+                <a href="/products/<%= producto.id %>/detalle"> <!-- Agrega el enlace al detalle del producto -->
                     <img src="<%= producto.imagen %>" class="imagen-producto">
                     <div class="contenedor-descripcion">
                         <p class="logo-eco"><img src="images/hanger-line.png"></p> <!-- animacion con logo de envio -->
@@ -40,7 +40,7 @@
         <section class="contenedor-section">
             <% productos.forEach((producto) => { %>
             <article class="contenedor-article">
-                <a href="/detalle/<%= producto.id %>"> <!-- Agrega el enlace al detalle del producto -->
+                <a href="/products/<%= producto.id %>/detalle"> <!-- Agrega el enlace al detalle del producto -->
                     <img src="<%= producto.imagen %>" class="imagen-producto">
                     <div class="contenedor-descripcion">
                         <p class="logo-eco"><img src="images/hanger-line.png"></p>
@@ -56,7 +56,7 @@
         <section class="contenedor-section">
             <% productos.forEach((producto) => { %>
             <article class="contenedor-article">
-                <a href="/detalle/<%= producto.id %>"> <!-- Agrega el enlace al detalle del producto -->
+                <a href="/products/<%= producto.id %>/detalle"/> <!-- Agrega el enlace al detalle del producto -->
                     <img src="<%= producto.imagen %>" class="imagen-producto">
                     <div class="contenedor-descripcion">
                         <p class="simbolo-ropa-home"><i class="fa-solid fa-shirt"></i></p>

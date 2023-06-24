@@ -16,7 +16,7 @@
 
 	<main class="main-signin">
 	<div class="container-signin">
-		<form action="/user/signin" method="POST" class="form-signin">
+		<form action="/user/signin" method="POST" class="form-signin" enctype="multipart/form-data">
 			<div class="fullname-signin">
 				<label>Nombre Completo:</label>
   				<input type="text" name="fullname" class="control-signin">
@@ -28,6 +28,10 @@
 			<div class="username-signin">
 				<label>Username:</label>
   				<input type="text" name="username" class="control-signin">
+			</div>
+			<div class="username-signin">
+				<label>Imagen de perfil:</label>
+  				<input type="file" name="userImg" class="control-signin">
 			</div>
 			<div class="password-signin">
 				<label>Contraseña:</label>

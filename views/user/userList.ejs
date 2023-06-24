@@ -9,16 +9,16 @@
 </head>
 <body>
     <header>
-        <%- include('../partials/header.ejs') %>
+        <%- include('../partials/header-users.ejs') %>
     </header>
 
     <main class="main-userlist">
         <% users.forEach(el => { %>
             <% if (el.delete === 0) { %>
                 <ul class="lista-usuarios-userlist">
-                   <li><a href=""><%= el.username %></a></li>
-                   <a href="/<%= el.id %>/edit"><button>Editar</button></a>
-                   <form action="/<%= el.id %>/delete?_method=DELETE" method="POST">
+                   <li><img src="/images/fotosUsuario/<%= el.imagen ? el.imagen : 'img_default.png' %>" alt=""><a href=""><%= el.username %></a></li>
+                   <a href="/user/<%= el.id %>/edit"><button>Editar</button></a>
+                   <form action="/user/<%= el.id %>/delete?_method=DELETE" method="POST">
                        <button type="submit">Eliminar</button>
                    </form>
                    <br>
