@@ -10,7 +10,7 @@ const controllers = {
         return;
       }
       const productos = JSON.parse(data);
-      res.render('main/home', { productos });
+      res.render('home', { productos });
     });
   }
 };

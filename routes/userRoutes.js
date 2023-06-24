@@ -6,21 +6,21 @@ const controllers = require('../controllers/mainController');
 const router = express.Router();
 
 
-router.get('/login', usercontroller.getLogin) 
+router.get('/user/login', usercontroller.getLogin) 
 
-router.get('/signin', usercontroller.getSigin) 
+router.get('/user/signin', usercontroller.getSigin) 
 
-router.post('/signin', usercontroller.createUser) 
+router.post('/user/signin', usercontroller.createUser) 
 
-router.get('/:idUser/edit', usercontroller.editUser)
+router.get('/user/:idUser/edit', usercontroller.editUser)
 
-router.put('/:idUser/edit', usercontroller.editedUser)
+router.put('/user/:idUser/edit', usercontroller.editedUser)
 
-router.get('/userlist', usercontroller.getUserList) 
+router.get('/user/userlist', usercontroller.getUserList) 
 
-router.delete('/:idUser/delete', usercontroller.deleteUser)
+router.delete('/user/:idUser/delete', usercontroller.deleteUser)
 
-router.get('/search', usercontroller.getUserList) 
+router.get('/user/search', usercontroller.getUserList) 
 
 
 module.exports = router

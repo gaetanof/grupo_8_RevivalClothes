@@ -4,17 +4,17 @@ const fs = require('fs');
 
 const controllers = {
     getLogin: (req, res) => {
-        res.render('user/login');
+        res.render('login');
     },
     getSigin: (req, res) => {
-        res.render('user/signin');
+        res.render('signin');
     },
     getUserList: (req, res) => {
         const usersJSON = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8');
         const users = JSON.parse(usersJSON);
 
 
-        res.render('user/userList', { users });
+        res.render('userList', { users });
     },
     createUser: (req, res) => {
         let usersJSON = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8');
@@ -51,7 +51,7 @@ const controllers = {
         
         let userToEdit = users[idUser - 1];
 
-        res.render('user/userEdit', {userToEdit});
+        res.render('userEdit', {userToEdit});
     },
     editedUser: (req, res) => {
         let idUser = Number(req.params.idUser);
@@ -77,7 +77,7 @@ const controllers = {
         // Guardamos este nuevo array de JSON en el archivo correspondiente
         fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJSON);
 
-        res.render('user/userList', {users})
+        res.render('userList', {users})
     },
     deleteUser: (req, res) => {
         let idUser = Number(req.params.idUser);
@@ -97,7 +97,7 @@ const controllers = {
 
         fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJSON);
 
-        res.render('user/userList', {users})
+        res.render('userList', {users})
     }
 }
 

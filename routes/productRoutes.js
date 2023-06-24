@@ -1,9 +1,8 @@
+const { body } = require('express-validator')
 const express = require('express')
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const { body } = require('express-validator')
-const { validationResult } = require('express-validator')
 const productController = require('../controllers/productController')
 let logDBMiddleware = require('../middlewares/logDBMiddleware')
 
@@ -11,11 +10,11 @@ let logDBMiddleware = require('../middlewares/logDBMiddleware')
 //VALIDACIONES
 
 const validateCreateProduct = [
-    body('titulo').notEmpty().withMessage('Campo de titulo obligatorio'),
-    body('genero').notEmpty().withMessage('Campo de genero obligatorio'),
-    body('talle').notEmpty().withMessage('Campo de talle obligatorio'),
-    body('precio').notEmpty().withMessage('Campo de precio obligatorio'),
-    body('descripcion').notEmpty().withMessage('Campo de descripcion obligatorio'),
+    body('titulo').isLength({min:1}).withMessage('Campo de titulo obligatorio'),
+    body('genero').isLength({min:1}).withMessage('Campo de genero obligatorio'),
+    body('talle').isLength({min:1}).withMessage('Campo de talle obligatorio'),
+    body('precio').isLength({min:1}).withMessage('Campo de precio obligatorio'),
+    body('descripcion').isLength({min:1}).withMessage('Campo de descripcion obligatorio'),
 ]
 
 const storage = multer.diskStorage({
@@ -24,21 +23,19 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         console.log(file)
-        const nombreDeArchivo = "/images/clothe" + Date.now() + path.extname(file.originalname)
+        const nombreDeArchivo = "/clothe" + Date.now() + path.extname(file.originalname)
         cb(null,nombreDeArchivo);
     }
-
-    
 })
 
 const cargarImg = multer ({ storage })
 
 
-router.get('/carrito-de-compras', productController.getCarrito)
-router.get('/create',productController.getCreateProduct)
-router.post('/create',[validateCreateProduct, logDBMiddleware ,cargarImg.single('imgFile') ], productController.create)
-router.get('/publicado', productController.showPublished)
-router.get('/detalle/:id', productController.getDetalle);
+router.get('/products/carrito-de-compras', productController.getCarrito)
+router.get('/products/create',productController.getCreateProduct)
+router.post('/products/create',[validateCreateProduct, logDBMiddleware ,cargarImg.single('imgFile') ], productController.create)
+router.get('/products/publicado', productController.showPublished)
+router.get('/products/:id/detalle', productController.getDetalle);
 
 
 module.exports = router

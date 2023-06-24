@@ -12,11 +12,11 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs')
 
 // ASI ESTABA SETEADO EL VIEWS
-// app.set('views', [
-//     path.join(__dirname, './views/main'),
-//     path.join(__dirname, './views/products'),
-//     path.join(__dirname, './views/user')
-// ])
+app.set('views', [
+    path.join(__dirname, './views/main'),
+    path.join(__dirname, './views/products'),
+    path.join(__dirname, './views/user')
+]);
 
 const mainRouter = require('./routes/mainRoutes.js')
 const userRouter = require('./routes/userRoutes.js')
@@ -28,8 +28,8 @@ app.use(userRouter)
 app.use(productRouter)
 app.use(logMiddleware)
 
-// app.use((req, res, next) => {
-//     res.status(404).render("./main/not-found")
-// })
+app.use((req, res, next) => {
+    res.status(404).render("./main/not-found")
+})
 
 app.listen(PORT, () => {console.log(`Servidor escuchando puerto http://localhost:${PORT} 🚀`)});

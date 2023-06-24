@@ -19,11 +19,11 @@
 		<form action="/<%= userToEdit.id %>/edit?_method=PUT" method="POST" class="form-signin">
 			<div class="fullname-signin">
 				<label>Nombre Completo:</label>
-  				<input type="text" name="fullname" class="control-signin" value="<%= userToEdit.nombre %>">
+  				<input type="text" name="fullname" class="control-signin" value="<%= userToEdit.fullname %>">
 			</div>
 			<div class="email-signin">
 				<label>Email:</label>
-  				<input type="mail" name="email" class="control-signin" value="<%= userToEdit.mail %>">
+  				<input type="mail" name="email" class="control-signin" value="<%= userToEdit.email %>">
 			</div>
 			<div class="username-signin">
 				<label>Username:</label>
@@ -31,7 +31,7 @@
 			</div>
 			<div class="password-signin">
 				<label>Contraseña:</label>
-  				<input type="password" name="password" class="control-signin" value="<%= userToEdit.contrasena %>">
+  				<input type="password" name="password" class="control-signin" value="<%= userToEdit.password %>">
 			</div>
 			<div class="account-signin">
 				<input type="submit" value="Editar" class="button-signin">
