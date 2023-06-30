@@ -33,7 +33,7 @@ const cargarImg = multer ({ storage })
 
 router.get('/products/carrito-de-compras', productController.getCarrito)
 router.get('/products/create',productController.getCreateProduct)
-router.post('/products/create',[validateCreateProduct, logDBMiddleware ,cargarImg.single('imgFile') ], productController.create)
+router.post('/products/create',[cargarImg.single('imgFile'), validateCreateProduct, logDBMiddleware ], productController.create)
 router.get('/products/publicado', productController.showPublished)
 router.get('/products/:id/detalle', productController.getDetalle);
 

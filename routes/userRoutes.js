@@ -1,7 +1,7 @@
 const express = require('express')
 const usercontroller = require('../controllers/userController');
-const controllers = require('../controllers/mainController');
 const multer = require('multer');
+const validations = require('../middlewares/userValidations');
 
 const router = express.Router();
 
@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const cargarImg = multer ({ storage })
+const upload = multer ({ storage })
 
 // @GET /user/login 
 router.get('/user/login', usercontroller.getLogin) 
@@ -24,13 +24,16 @@ router.get('/user/login', usercontroller.getLogin)
 router.get('/user/signin', usercontroller.getSigin) 
 
 // @POST /user/signin
-router.post('/user/signin', cargarImg.single('userImg'), usercontroller.createUser) 
+router.post('/user/signin', [upload.single('userImg'), validations.validateCreateUser], usercontroller.createUser) 
+
+// @GET /user/:idUser/detalle
+router.get('/user/:idUser/detalle', usercontroller.getUserDetail) 
 
 // @GET /user/:idUser/edit
 router.get('/user/:idUser/edit', usercontroller.editUser)
 
 // @PUT /user/:idUser/edit
-router.put('/user/:idUser/edit', usercontroller.editedUser)
+router.put('/user/:idUser/edit', upload.single('userImg'),usercontroller.editedUser)
 
 // @GET /user/userList
 router.get('/user/userlist', usercontroller.getUserList) 

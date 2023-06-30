@@ -16,7 +16,7 @@
         <% users.forEach(el => { %>
             <% if (el.delete === 0) { %>
                 <ul class="lista-usuarios-userlist">
-                   <li><img src="/images/fotosUsuario/<%= el.imagen ? el.imagen : 'img_default.png' %>" alt=""><a href=""><%= el.username %></a></li>
+                   <li><img src="/images/fotosUsuario/<%= el.imagen ? el.imagen : 'img_default.png' %>" alt=""><a href="/user/<%= el.id %>/detalle"><%= el.username %></a></li>
                    <a href="/user/<%= el.id %>/edit"><button>Editar</button></a>
                    <form action="/user/<%= el.id %>/delete?_method=DELETE" method="POST">
                        <button type="submit">Eliminar</button>

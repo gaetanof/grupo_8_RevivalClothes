@@ -34,6 +34,7 @@ const controllers = {
 
 	create: function (req, res) {
 		let errors = validationResult(req);
+		console.log(req.body);
 		console.log(errors);
 		if (errors.isEmpty()) {
 			if (req.file) {

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+	<header class="main-header">
+        <%- include('../partials/header') %>
+    </header>
+
+	<main>
+        <div class="main-userdetail">
+            <section class="info-user-userdetail">
+                <img src="/images/fotosUsuario/<%= userDetail.imagen %>" alt="">
+                <p><%= userDetail.fullname %></p>
+            </section>
+    
+            <section class="info2-user-userdetail">
+                <h3>Email de inicio de sesión:</h3>
+                <p><%= userDetail.email %></p>
+                <br>
+
+                <h3>Nombre completo:</h3>
+                <p><%= userDetail.fullname %></p>
+                <br>
+                
+                <h3>Apodo:</h3>
+                <p><%= userDetail.username %></p>
+            </section>
+
+        </div>
+
+
+        <div class="boton-userdetail">
+            <a href="/user/<%= userDetail.id %>/edit"><button>Editar</button></a>
+        </div>
+    
+	</main>
+
+	<footer>
+	<%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

@@ -15,27 +15,51 @@
     </header>
 
 	<main class="main-signin">
+
 	<div class="container-signin">
 		<form action="/user/signin" method="POST" class="form-signin" enctype="multipart/form-data">
 			<div class="fullname-signin">
 				<label>Nombre Completo:</label>
-  				<input type="text" name="fullname" class="control-signin">
+  				<input type="text" name="fullname" class="control-signin" value="<%= locals.old && old.fullname ? old.fullname : '' %>">
+				  <% if (locals.errors) { %>
+					<% errors.forEach(el => { %>
+						<p class="msg-error-signin"><%= el.path == 'fullname' ? el.msg : '' %></p>
+						<% }) %>
+				<% } %>
 			</div>
 			<div class="email-signin">
 				<label>Email:</label>
-  				<input type="mail" name="email" class="control-signin">
+  				<input type="mail" name="email" class="control-signin" value="<%= locals.old && old.email ? old.email : '' %>">
+				  <% if (locals.errors) { %>
+					<% errors.forEach(el => { %>
+						<p class="msg-error-signin"><%= el.path == 'email' ? el.msg : '' %></p>
+						<% }) %>
+				<% } %>
 			</div>
 			<div class="username-signin">
-				<label>Username:</label>
-  				<input type="text" name="username" class="control-signin">
+				<label>Apodo:</label>
+  				<input type="text" name="username" class="control-signin" value="<%= locals.old && old.username ? old.username : '' %>">
+				  <% if (locals.errors) { %>
+					<% errors.forEach(el => { %>
+						<p class="msg-error-signin"><%= el.path == 'username' ? el.msg : '' %></p>
+						<% }) %>
+				<% } %>
 			</div>
 			<div class="username-signin">
 				<label>Imagen de perfil:</label>
   				<input type="file" name="userImg" class="control-signin">
+				  <% if (locals.img === '') { %>
+						<p class="msg-error-signin">Ingresa una imagen válida</p>
+				<% } %>
 			</div>
 			<div class="password-signin">
 				<label>Contraseña:</label>
   				<input type="password" name="password" class="control-signin">
+				  <% if (locals.errors) { %>
+					<% errors.forEach(el => { %>
+						<p class="msg-error-signin"><%= el.path == 'password' ? el.msg : '' %></p>
+						<% }) %>
+				<% } %>
 			</div>
 			<div class="account-signin">
 				<p> Ya tienes una cuenta? <a href="/login">Entra aqui!</a> </p>	

@@ -14,7 +14,7 @@
 
 <body>
     <header class="main-header">
-        <%- include('../partials/header') %>
+        <%- include('../partials/header', {user: locals.user ? user : {}}) %>
     </header>
     <!-- <img src="images/conjunto5.jpg" alt="home-baner" class="imagen-header"> -->
     <img src="images/banner_pro.svg" alt="home-baner" class="imagen-header">
