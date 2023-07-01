@@ -1,1 +1,22 @@
-[{"id":"51823656-9d23-4f7f-8894-bbaa7a368a24","fullname":"Camilo","email":"camilo@gmail.com","username":"Camilo","password":"12345678","imagen":"1687911329959-foto_camilo.jpg","delete":0},{"id":"72dde600-7976-4520-97d2-f4fd51302048","fullname":"Luisa Toro","email":"luisa@gmail.com","username":"Lusita","password":"12345678","imagen":"1687911392631-niÃ±axd.jpg","delete":0},{"id":"bf1895ae-10c0-4aa8-aea0-236b7f0de9e1","fullname":"Fran","email":"fran@gmail.com","username":"Fran123","password":"12345678","delete":0,"imagen":"1688156794413-perfil_git.JPG"},{"id":"d888e4da-314d-4ab5-a967-8d94984227fd","fullname":"Lucas","email":"lucas@gmail.com","username":"Lucas","password":"123456789","imagen":"1688156919301-1687631125234-img_defaul.png","delete":0},{"id":"f0e07305-aa9d-431b-8fea-c68b3093b1ea","fullname":"Jose","email":"jose@gmail.com","username":"Jose","password":"123456798","imagen":"1688003334722-img_default.png","delete":0},{"id":"1000dbc2-04b4-492b-bcbb-ec05bb3510fa","fullname":"Agustin","email":"agustin@gmail.com","username":"Agustin123","password":"123456798","imagen":"1688162924973-img_default.png","delete":1},{"id":"d8b7c465-92dc-43c0-9f9f-4b4b2afdc9f5","fullname":"test","email":"test@gmail.com","username":"test","password":"$2b$12$dZObxN7E.PJR06nMx9mViusYvaZRd6krXl9/BGGywGSz3IlK0XMKq","imagen":"1688164628592-img_default.png","delete":0}]
+[
+    {
+        "id": "52990182-0e63-434c-9846-d831dafcc2b2",
+        "fullname": "juan camilo zapata velez",
+        "email": "camilo@gmail.com",
+        "username": "Juanca",
+        "password": "$2b$12$iad84Nr1lVUzG5Z8BM/sSuwwgr8TFK56ASk33ky1pBwVCAMF8aq4i",
+        "type": "Admin",
+        "imagen": "1688249856590-foto_camilo.jpg",
+        "delete": 0
+    },
+    {
+        "id": "bac0a656-7db9-445d-8480-e0d3886748f8",
+        "fullname": "Luisa Carolina Toro Moreno",
+        "email": "luisa@gmail.com",
+        "username": "Luisita",
+        "password": "$2b$12$MyZbdDM6qU.e2svACEXAw.XTzmq0RKQ/PtN/v9AbZjBlX9JNKJCxO",
+        "type": "User",
+        "imagen": "1688249898350-niÃ±axd.jpg",
+        "delete": 0
+    }
+]

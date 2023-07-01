@@ -16,6 +16,11 @@
 
     <main class="main-login">
         <div class="container-login">
+            <% if (locals.errors) { %>
+                <% errors.forEach(el => { %>
+                    <p class="msg-error-login"><%= el.path === 'credenciales' ? el.msg : '' %></p>
+                    <% }) %>
+            <% } %>
             <form action="/user/login" method="POST" class="form-login">
                 <div class="email-login">
                     <label>Email:</label>
@@ -29,16 +34,11 @@
                 <div class="password-login">
                     <label>Contraseña:</label>
                     <input type="password" name="password" class="control-login">
-                    <% if (locals.errors) { %>
-                        <% errors.forEach(el => { %>
-                            <p class="msg-error-signin"><%= el.path === 'password' ? el.msg : '' %></p>
-                            <% }) %>
-                    <% } %>
                 </div>
                 <br>
                 <br>
                 <div class="account-login">
-                    <input type="checkbox" value="Ingresar" class="button-login">
+                    <input type="checkbox" value="Ingresar" class="button-login" name="recuerdame">
                     <label for="">Recuerdame</label>
                 </div>
                 <br>

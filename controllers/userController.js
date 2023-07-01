@@ -6,6 +6,13 @@ const { validationResult } = require('express-validator');
 const userModel = require('../models/user');
 
 const controllers = {
+    logOut: (req, res) => {
+        res.clearCookie('email');
+
+        delete req.session.user;
+
+        res.redirect('/user/login');
+    },
     getLogin: (req, res) => {
         res.render('login');
     },
@@ -14,9 +21,9 @@ const controllers = {
     },
     getUserDetail: (req, res) => {
         const idUser = req.params.idUser
-        const userDetail = userModel.findById(idUser)
+        const user = userModel.findById(idUser)
 
-        res.render('userDetail', { userDetail })
+        res.render('userDetail', { user })
     },
     getUserList: (req, res) => {
         const users = userModel.findAll();
@@ -25,19 +32,28 @@ const controllers = {
     },
     processLogin: (req, res) => {
         const user = userModel.findByEmail(req.body.email);
+        const errors = validationResult(req);
 
         if(!user){
-            return res.redirect('login', {errors: {msg: 'Email o contraseña incorrectas', path: 'email'}});
+            return res.render('login', {errors: [{msg: 'Email o contraseña incorrecta', path: 'credenciales'}]});
         }
 
         const {password: hashedPw} = user;
         const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
         
         if (isCorrect) {
+            if (!!req.body.recuerdame) {
+                res.cookie('emai', user.email, { maxAge: 1000 * 60 * 60 * 24 * 360 * 9999 })
+            }
+
+            delete user.password;
+
             req.session.user = user;
-            
+            res.redirect('/')
+
+        } else {
+            return res.render('login', {errors: [{msg: 'Email o contraseña incorrecta', path: 'credenciales'}]});
         }
-        
     },
     createUser: (req, res) => {
         const users = userModel.findAll();
@@ -51,6 +67,7 @@ const controllers = {
                     email: req.body.email,
                     username: req.body.username,
                     password: req.body.password,
+                    type: "User",
                     imagen: req.file.filename,
                     delete: 0
                 };
@@ -89,14 +106,17 @@ const controllers = {
         let idUser = req.params.idUser;
         
         // Con el findIndex, buscamos en qué indice del array de productos, está guardado el elemento buscado
-        const userToEdit = userModel.findById(idUser)
+        const user = userModel.findById(idUser)
 
-        res.render('userEdit', {userToEdit});
+        res.render('userEdit', {user});
     },
     editedUser: (req, res) => {
         let idUser = req.params.idUser;
         const newData = req.body;
         
+        const newPassword = bcrypt.hashSync(newData.password, 12);
+        newData.password = newPassword;
+
         delete newData.old_userImg;
         newData.imagen = req.file ? req.file.filename : req.body.old_userImg;
 

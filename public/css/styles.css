@@ -363,6 +363,12 @@ footer div{
     color: red;
 }
 
+.msg-error-login {
+    font-size: 16px;
+    font-weight: 600;
+    color: red;
+}
+
 .control-signin {
     display: flex;
     flex-direction: column;
@@ -706,9 +712,12 @@ footer i {
 }
 
 .boton-userdetail {
+    display: flex;
+    justify-content: end;
     text-align: right;
-    margin-right: 9%;
+    margin-right: 8%;
     margin-bottom: 40px;
+    gap: 10px;
 }
 .boton-userdetail button{
     padding: 15px;
@@ -762,10 +771,13 @@ footer i {
     }
     .main-navbar-desktop li {
         margin: 0 12px;
+        max-width: 100px;
+        max-height: 77px;
     }
     .main-navbar-desktop ul {
         display: flex;
         justify-content: end;
+        align-items: center;
         list-style: none;
         padding: 0px;
         margin: 0px;
@@ -776,6 +788,11 @@ footer i {
         display: inline-block;
         padding: 5px 0;
         font-size: 17px;
+    }
+    .main-navbar-desktop img {
+        width: 100%;
+        max-height: 50px;
+        border-radius: 50px;
     }
     .navbar-desktop {
         display: flex;

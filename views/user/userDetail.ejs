@@ -17,28 +17,31 @@
 	<main>
         <div class="main-userdetail">
             <section class="info-user-userdetail">
-                <img src="/images/fotosUsuario/<%= userDetail.imagen %>" alt="">
-                <p><%= userDetail.fullname %></p>
+                <img src="/images/fotosUsuario/<%= user.imagen %>" alt="">
+                <p><%= user.fullname %></p>
             </section>
     
             <section class="info2-user-userdetail">
                 <h3>Email de inicio de sesión:</h3>
-                <p><%= userDetail.email %></p>
+                <p><%= user.email %></p>
                 <br>
 
                 <h3>Nombre completo:</h3>
-                <p><%= userDetail.fullname %></p>
+                <p><%= user.fullname %></p>
                 <br>
                 
                 <h3>Apodo:</h3>
-                <p><%= userDetail.username %></p>
+                <p><%= user.username %></p>
             </section>
 
         </div>
 
 
         <div class="boton-userdetail">
-            <a href="/user/<%= userDetail.id %>/edit"><button>Editar</button></a>
+            <form action="/user/<%= user.id %>/detalle" method="POST">
+                <button type="submit">Salir</button>
+            </form>
+            <a href="/user/<%= user.id %>/edit"><button>Editar</button></a>
         </div>
     
 	</main>

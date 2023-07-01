@@ -9,8 +9,9 @@ const controllers = {
         // Manejar el error apropiadamente
         return;
       }
+      const user = req.session.user;
       const productos = JSON.parse(data);
-      res.render('home', { productos });
+      res.render('home', { productos, user });
     });
   }
 };

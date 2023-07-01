@@ -2,6 +2,7 @@ const express = require('express')
 const usercontroller = require('../controllers/userController');
 const multer = require('multer');
 const validations = require('../middlewares/userValidations');
+const authMiddleware = require('../middlewares/authMiddleware')
 
 const router = express.Router();
 
@@ -18,19 +19,22 @@ const storage = multer.diskStorage({
 const upload = multer ({ storage })
 
 // @GET /user/login 
-router.get('/user/login', usercontroller.getLogin) 
+router.get('/user/login', authMiddleware.allowUnsignedIn,usercontroller.getLogin) 
 
 // @POST /user/login 
 router.post('/user/login', validations.validateLogin, usercontroller.processLogin) 
 
 // @GET /user/signin
-router.get('/user/signin', usercontroller.getSigin) 
+router.get('/user/signin', authMiddleware.allowUnsignedIn, usercontroller.getSigin) 
 
 // @POST /user/signin
 router.post('/user/signin', [upload.single('userImg'), validations.validateCreateUser], usercontroller.createUser) 
 
 // @GET /user/:idUser/detalle
 router.get('/user/:idUser/detalle', usercontroller.getUserDetail) 
+
+// @POST /user/:idUser/detalle
+router.post('/user/:idUser/detalle', usercontroller.logOut) 
 
 // @GET /user/:idUser/edit
 router.get('/user/:idUser/edit', usercontroller.editUser)
