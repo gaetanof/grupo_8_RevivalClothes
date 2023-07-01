@@ -35,6 +35,7 @@ const controllers = {
         
         if (isCorrect) {
             req.session.user = user;
+            
         }
         
     },
