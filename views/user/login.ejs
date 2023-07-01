@@ -16,14 +16,24 @@
 
     <main class="main-login">
         <div class="container-login">
-            <form action="/#" method="post" class="form-login">
+            <form action="/user/login" method="POST" class="form-login">
                 <div class="email-login">
                     <label>Email:</label>
-                    <input type="mail" name="email-login" class="control-login">
+                    <input type="mail" name="email" class="control-login" value="<%= locals.old ? old.email : '' %>">
+                    <% if (locals.errors) { %>
+                        <% errors.forEach(el => { %>
+                            <p class="msg-error-signin"><%= el.path === 'email' ? el.msg : '' %></p>
+                            <% }) %>
+                    <% } %>
                 </div>
                 <div class="password-login">
                     <label>Contraseña:</label>
-                    <input type="password" name="password-login" class="control-login">
+                    <input type="password" name="password" class="control-login">
+                    <% if (locals.errors) { %>
+                        <% errors.forEach(el => { %>
+                            <p class="msg-error-signin"><%= el.path === 'password' ? el.msg : '' %></p>
+                            <% }) %>
+                    <% } %>
                 </div>
                 <br>
                 <br>
@@ -35,7 +45,7 @@
                 <div class="account-login">
                     <p> ¿No tienes una cuenta aún? <a href="/signin">Entra aqui!</a> </p>
                     <br>
-                    <input type="button" value="Ingresar" class="button-login">
+                    <input type="submit" value="Ingresar" class="button-signin">
                 </div>
                 
     

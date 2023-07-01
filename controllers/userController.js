@@ -1,7 +1,8 @@
 const path = require('path')
 const uuid = require('uuid')
 const fs = require('fs');
-const { validationResult } = require('express-validator')
+const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 const userModel = require('../models/user');
 
 const controllers = {
@@ -22,6 +23,21 @@ const controllers = {
 
         res.render('userList', { users });
     },
+    processLogin: (req, res) => {
+        const user = userModel.findByEmail(req.body.email);
+
+        if(!user){
+            return res.redirect('login', {errors: {msg: 'Email o contraseña incorrectas', path: 'email'}});
+        }
+
+        const {password: hashedPw} = user;
+        const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
+        
+        if (isCorrect) {
+            req.session.user = user;
+        }
+        
+    },
     createUser: (req, res) => {
         const users = userModel.findAll();
         let errors = validationResult(req)
@@ -37,6 +53,9 @@ const controllers = {
                     imagen: req.file.filename,
                     delete: 0
                 };
+
+                const newPassword = bcrypt.hashSync(newUser.password, 12);
+                newUser.password = newPassword;
         
                 // Agregamos el producto nuevo al array original
                 users.push(newUser);

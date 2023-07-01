@@ -28,6 +28,20 @@ const model = {
 
         return userToEdit;
     },
+    findByEmail: function (email) {
+        const users = this.findAll();
+
+        // let searched = users.find(user => user.id === id);
+        const indice = users.findIndex(el => el.email === email);
+
+        let userToEdit = users[indice];
+
+        if (!userToEdit) {
+            userToEdit = null;
+        }
+
+        return userToEdit;
+    },
     editUserById: function(id, newData) {
         let users = this.findAll()
 

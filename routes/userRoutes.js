@@ -20,6 +20,9 @@ const upload = multer ({ storage })
 // @GET /user/login 
 router.get('/user/login', usercontroller.getLogin) 
 
+// @POST /user/login 
+router.post('/user/login', validations.validateLogin, usercontroller.processLogin) 
+
 // @GET /user/signin
 router.get('/user/signin', usercontroller.getSigin) 
 

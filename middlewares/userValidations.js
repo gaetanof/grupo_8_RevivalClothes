@@ -14,6 +14,15 @@ const validations = {
     body('password')
     .isLength({min: 8})
     .withMessage('La contraseña debe contener por lo menos 8 digitos')
-]}
+],
+    validateLogin: [
+        body('email')
+        .isEmail()
+        .withMessage('Ingrese un email válido'),
+        body('password')
+        .isLength({min: 8})
+        .withMessage('La contraseña debe contener por lo menos 8 digitos')
+    ]
+}
 
 module.exports = validations;
