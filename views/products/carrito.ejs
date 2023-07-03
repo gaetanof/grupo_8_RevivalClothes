@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="main-header">
-        <%- include('../partials/header-users') %>
+        <%- include('../partials/header-users', {user: locals.user ? user : {}}) %>
     </header>
     <main>
         <div class="secciones-carrito">

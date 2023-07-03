@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <header><%- include('../partials/header.ejs') %></header>
+    <header><%- include('../partials/header.ejs', {user: locals.user ? user : {}}) %></header>
 
     <main class="main-create">
       <section class="section-create">

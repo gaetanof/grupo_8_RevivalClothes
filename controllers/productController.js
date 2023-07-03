@@ -2,6 +2,7 @@ const { validationResult } = require('express-validator');
 const path = require('path');
 const uuid = require('uuid');
 const fs = require('fs-extra');
+const userModel = require('../models/user');
 
 const controllers = {
 	getDetalle: (req, res) => {
@@ -19,17 +20,19 @@ const controllers = {
 		// Buscar el producto correspondiente según el ID
 		const producto = productos.find((p) => p.id === productoDetalladoId);
 
-
-		res.render('detalle', { producto: producto });
+		const user = req.session.user;
+		res.render('detalle', { producto, user });
 	},
 
 
 	getCarrito: (req, res) => {
-		res.render('carrito');
+		const user = req.session.user;
+		res.render('carrito', user);
 	},
 
 	getCreateProduct: (req, res) => {
-		res.render('createProduct');
+		const user = req.session.user;
+		res.render('createProduct', user);
 	},
 
 	create: function (req, res) {
@@ -76,7 +79,8 @@ const controllers = {
 		}
 	},
 	showPublished: (req, res) => {
-		res.render('publishedProduct');
+		const user = req.session.user;
+		res.render('publishedProduct', user);
 	},
 };
 

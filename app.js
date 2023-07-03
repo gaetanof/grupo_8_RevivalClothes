@@ -34,7 +34,7 @@ const logMiddleware = require('./middlewares/logMiddleware.js');
 const recuerdameMiddleware = require('./middlewares/recuerdameMiddleware.js')
 
 app.use(mainRouter);
-app.use(userRouter);
+app.use(userRouter); // app.use('/user', userRouter);
 app.use(productRouter);
 app.use(logMiddleware);
 app.use(recuerdameMiddleware);

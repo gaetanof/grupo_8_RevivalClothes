@@ -52,7 +52,6 @@ const model = {
         users[indice].fullname = newData.fullname;
         users[indice].email = newData.email;
         users[indice].username = newData.username;
-        users[indice].password = newData.password;
         users[indice].imagen = newData.imagen ? newData.imagen : users[indice].imagen;
         users[indice].delete = 0;
 

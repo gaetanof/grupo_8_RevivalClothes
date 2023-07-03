@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="main-header">
-        <%- include('../partials/header') %>
+        <%- include('../partials/header', {user: locals.user ? user : {}}) %>
     </header>
     <main>
         <section class="section-descripcion-detalle">

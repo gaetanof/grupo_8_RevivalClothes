@@ -19,6 +19,38 @@ const controllers = {
     getSigin: (req, res) => {
         res.render('signin');
     },
+    getChangePassword: (req, res) => {
+        const idUser = req.params.idUser;
+        let user = userModel.findById(idUser);
+
+        res.render('changePassword', { user });
+    },
+    changePassword: (req, res) => {
+        const idUser = req.params.idUser;
+        let users = userModel.findAll();
+        const user = userModel.findById(idUser);
+        const errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+            const indice = users.findIndex(el => el.id === idUser);
+            // Actualizamos los datos del producto que corresponda, con los datos que nos pasaron por parámetros
+            users[indice].password = bcrypt.hashSync(req.body.password, 12);
+            
+            console.log(users[indice]);
+             // Convertimos nuestro array de JS a un array de JSON
+             usersJSON = JSON.stringify(users);
+    
+             // Guardamos este nuevo array de JSON en el archivo correspondiente
+             fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJSON);
+    
+            res.redirect('/');
+        } else {
+            res.render('changePassword', {
+                errors: errors.array(),
+                user
+			});
+        }
+    },
     getUserDetail: (req, res) => {
         const idUser = req.params.idUser
         const user = userModel.findById(idUser)
@@ -58,15 +90,12 @@ const controllers = {
     createUser: (req, res) => {
         const users = userModel.findAll();
         let errors = validationResult(req)
-
+            
         if(errors.isEmpty()) {
             if(req.file) {
                 let newUser = {
                     id: uuid.v4(),
-                    fullname: req.body.fullname,
-                    email: req.body.email,
-                    username: req.body.username,
-                    password: req.body.password,
+                    ...req.body,
                     type: "User",
                     imagen: req.file.filename,
                     delete: 0

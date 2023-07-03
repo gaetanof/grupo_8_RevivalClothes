@@ -1,3 +1,5 @@
+const userModel = require('../models/user');
+
 const middleware = {
     allowUnsignedIn: (req, res, next) => {
         if(!req.session.user){

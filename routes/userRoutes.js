@@ -42,6 +42,12 @@ router.get('/user/:idUser/edit', usercontroller.editUser)
 // @PUT /user/:idUser/edit
 router.put('/user/:idUser/edit', upload.single('userImg'),usercontroller.editedUser)
 
+// @GET /user/:idUser/changepassword
+router.get('/user/:idUser/changepassword',usercontroller.getChangePassword)
+
+// @PUT /user/:idUser/changepassword
+router.put('/user/:idUser/changepassword', validations.validateChangePassword, usercontroller.changePassword)
+
 // @GET /user/userList
 router.get('/user/userlist', usercontroller.getUserList) 
 
