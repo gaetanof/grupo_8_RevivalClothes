@@ -79,6 +79,7 @@ const controllers = {
             }
 
             delete user.password;
+            // delete user.id;
 
             req.session.user = user;
             res.redirect('/')

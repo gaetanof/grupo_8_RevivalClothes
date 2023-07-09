@@ -49,7 +49,7 @@ router.get('/user/:idUser/changepassword',usercontroller.getChangePassword)
 router.put('/user/:idUser/changepassword', validations.validateChangePassword, usercontroller.changePassword)
 
 // @GET /user/userList
-router.get('/user/userlist', usercontroller.getUserList) 
+router.get('/user/userlist', authMiddleware.allowAdmin, usercontroller.getUserList) 
 
 // @DELETE /user/:idUser/delete
 router.delete('/user/:idUser/delete', usercontroller.deleteUser)
