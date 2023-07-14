@@ -2,76 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>REVIVAL CLOTHING</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <%- include('../partials/head') %>
+        <title>REVIVAL CLOTHING</title>
+        <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
     <header class="main-header">
         <%- include('../partials/header', {user: locals.user ? user : {}}) %>
     </header>
-    <!-- <img src="images/conjunto5.jpg" alt="home-baner" class="imagen-header"> -->
-    <img src="images/banner_pro.svg" alt="home-baner" class="imagen-header">
 
     <main>
-        <h2 class="subtitulos-home">Marcas</h2>
-        <section class="contenedor-section">
-            <% productos.forEach((producto) => { %>
-            <article class="contenedor-article">
-                <a href="/products/<%= producto.id %>/detalle"> <!-- Agrega el enlace al detalle del producto -->
-                    <img src="<%= producto.imagen %>" class="imagen-producto">
-                    <div class="contenedor-descripcion">
-                        <p class="logo-eco"><img src="images/hanger-line.png"></p> <!-- animacion con logo de envio -->
-                        <p class="precio">$<%= producto.precio %></p>
-                        <h4 class="descripcion"><%= producto.titulo %></h4>
-                    </div>
-                </a>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/newBanner2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/newBanner3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <div class="texto-home">
+            <h2>The <span id="italic-home">future </span>is in your <br><span>closet</span> you just <span>have <br></span>to look twice</h2>
+            <br><br>
+
+            <h3>vende tu ropa con nosotros y se parte del cambio</h3>
+        </div>
+
+        <section class="contenedor-interaccion-home">
+            <article class="article-interaccion-home">
+                <img src="images/modelo.jpg" alt="">
+                <a href="/products/create">VENDER</a>
             </article>
-            <% }) %>
+
+            <article class="article-interaccion-home">
+                <img src="images/modelo2.jpg" alt="">
+                <a href="">COMPRAR</a>
+            </article>
         </section>
 
-        <h2 class="subtitulos-home">Destacados</h2>
-        <section class="contenedor-section">
-            <% productos.forEach((producto) => { %>
-            <article class="contenedor-article">
-                <a href="/products/<%= producto.id %>/detalle"> <!-- Agrega el enlace al detalle del producto -->
-                    <img src="<%= producto.imagen %>" class="imagen-producto">
-                    <div class="contenedor-descripcion">
-                        <p class="logo-eco"><img src="images/hanger-line.png"></p>
-                        <p class="precio">$<%= producto.precio %></p>
-                        <h4 class="descripcion"><%= producto.titulo %></h4>
-                    </div>
-                </a>
+        <section class="contenedor-servicios-home">
+            <article class="article-servicios-home">
+                <i class="fa-solid fa-tags fa-rotate-270"></i>
+                <h3>NOVEDADES DIARIAS</h3>
+                <p>¡Todas las mañanas publicamos más de 100 prendas ÚNICAS! Ropa barata, zapatos, bolsos, accesorios con descuentos hasta el 85%.</p>
             </article>
-            <% }) %>
+
+            <article class="article-servicios-home">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>ENTREGA RÁPIDA</h3>
+                <p>¡En 1-2 días tendrás tu pedido en casa o en el punto que solicites. ¡No te haremos esperar para estrenarlo!</p>
+            </article>
+
+            <article class="article-servicios-home">
+                <i class="fa-solid fa-piggy-bank"></i>
+                <h3>DEVOLUCIONES GRATUITAS</h3>
+                <p>Si no te convence tu compra tendrás un plazo de 15 días para devolverlo de forma sencilla y GRATIS. ¡Queremos que te guste y que lo uses mucho!</p>
+            </article>
         </section>
 
-        <h2 class="subtitulos-home">Nuevos lanzamientos</h2>
-        <section class="contenedor-section">
-            <% productos.forEach((producto) => { %>
-            <article class="contenedor-article">
-                <a href="/products/<%= producto.id %>/detalle"/> <!-- Agrega el enlace al detalle del producto -->
-                    <img src="<%= producto.imagen %>" class="imagen-producto">
-                    <div class="contenedor-descripcion">
-                        <p class="simbolo-ropa-home"><i class="fa-solid fa-shirt"></i></p>
-                        <p class="simbolo-ropa-home"><i class="fa-solid fa-vest"></i></p>
-                        <h3><%= producto.titulo %></h3>
-                        <h3><%= producto.descripcion %></h3>
-                    </div>
-                </a>
-            </article>
-            <% }) %>
-        </section>
+        <div class="contenedor-baner-ropa">
+            <span class="texto-imagen">VENDE TU ROPA</span>
+            <img src="images/newBanner.jpg" alt="home-baner" class="imagen-header">
+        </div>
+
+       
     </main>
-    <footer>
-        <%- include('../partials/footer.ejs') %>
-    </footer>
+
+    <%- include('../partials/footer.ejs') %>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
