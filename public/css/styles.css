@@ -164,6 +164,7 @@ p {
 
 .contenedor-baner-ropa {
     position: relative;
+    padding: 100px 0px;
 }
 
 .imagen-header {
@@ -293,6 +294,54 @@ p {
     border: none;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.titulo-home {
+    text-align: center;
+    font-weight: 800;
+    padding-bottom: 80px;
+}
+.contenedor-recomendados-home {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenedor-recomendados-home img {
+    aspect-ratio: 10/13;
+    width: 100%;
+}
+
+.article-recomendados-home {
+    position: relative;
+    max-width: 300px;
+}
+
+.article-recomendados-home p {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFF;
+    background-color: #0000006b;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+}
+
+.article-recomendados-home p:hover{
+    opacity: 1;
 }
 
 /* Header hasta acá */
@@ -444,7 +493,7 @@ p {
 .container-signin {
     width: 100%;
     padding: 20px;
-    background-color: #FFF5DA;
+    background-color: #FFF;
     margin: auto;
 }
 
@@ -464,7 +513,7 @@ p {
     padding: 5px;
     border: none;
     border-bottom: 0.5px solid #000;
-    background: #FFF5DA;
+    background: #FFF;
     width: 100%;
     margin-bottom: 10px;
     outline: none;
@@ -639,7 +688,7 @@ footer {
 .container-login {
     width: 100%;
     padding: 20px;
-    background-color: #FFF5DA;
+    background-color: #FFF;
     margin: auto;
 }
 
@@ -649,7 +698,7 @@ footer {
     padding: 5px;
     border: none;
     border-bottom: 0.5px solid #000;
-    background: #FFF5DA;
+    background: #FFF;
     width: 100%;
     margin-bottom: 10px;
     outline: none;
@@ -904,7 +953,7 @@ footer {
     .container-signin {
         width: 50%;
         padding: 20px;
-        background-color: #FFF5DA;
+        background-color: #FFF;
         margin: auto;
     }
 
@@ -966,7 +1015,7 @@ footer {
     .container-login {
         width: 50%;
         padding: 20px;
-        background-color: #FFF5DA;
+        background-color: #FFF;
         margin: auto;
     }
 
@@ -983,6 +1032,9 @@ footer {
         margin: 50px 50px 5px 50px;
     }
     /* fin Footer */
+    .contenedor-recomendados-home {
+        flex-flow: row wrap;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -1094,7 +1146,10 @@ footer {
     .listas {
         margin: 50px 100px 10px 100px;
     }
-
+    .contenedor-recomendados-home {
+        padding: 100px 0px;
+        gap: 80px;
+    }
     /* Fin Main detalle producto */
 
 }
