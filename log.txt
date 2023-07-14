@@ -1822,3 +1822,5 @@ se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
+se ingreso en la pagina /images/fotosUsuario/
+se ingreso en la pagina /images/fotosUsuario/
