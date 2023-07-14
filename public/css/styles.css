@@ -164,7 +164,7 @@ p {
 
 .contenedor-baner-ropa {
     position: relative;
-    padding: 100px 0px;
+    padding: 0px 0px 40px 0px;
 }
 
 .imagen-header {
@@ -261,7 +261,7 @@ p {
     display: flex;
     flex-flow: row;
     justify-content: center;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
 }
 
 .article-interaccion-home {
@@ -273,7 +273,8 @@ p {
 .article-interaccion-home img {
     width: 100%;
     max-width: 570px;
-    aspect-ratio: 10/15;
+    max-height: 700px;
+    aspect-ratio: 13/16;
 }
 
 .article-interaccion-home a {
@@ -299,7 +300,6 @@ p {
 .titulo-home {
     text-align: center;
     font-weight: 800;
-    padding-bottom: 80px;
 }
 .contenedor-recomendados-home {
     display: flex;
@@ -984,7 +984,7 @@ footer {
     }
 
     .texto-home {
-        padding: 200px 0px 200px 0px;
+        padding: 150px 0px 150px 0px;
     }
 
     /* fin Home */

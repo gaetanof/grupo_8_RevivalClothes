@@ -104,7 +104,7 @@ const controllers = {
 
                 const newPassword = bcrypt.hashSync(newUser.password, 12);
                 newUser.password = newPassword;
-        
+
                 // Agregamos el producto nuevo al array original
                 users.push(newUser);
         
