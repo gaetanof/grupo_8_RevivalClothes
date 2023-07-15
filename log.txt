@@ -1825,6 +1825,7 @@ se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
+<<<<<<< HEAD
 se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
@@ -1909,4 +1910,11 @@ se ingreso en la pagina /user/bac0a656-7db9-445d-8480-e0d3886748f8/userList
 se ingreso en la pagina /user/bac0a656-7db9-445d-8480-e0d3886748f8/userList
 se ingreso en la pagina /userList
 se ingreso en la pagina /userList
+=======
+se ingreso en la pagina /favicon.ico
+se ingreso en la pagina /products/2/images/clothe6.jpg
+se ingreso en la pagina /products/2/images/clothe7.jpg
+se ingreso en la pagina /products/2/images/clothe8.jpg
+se ingreso en la pagina /products/2/images/clothe9.jpg
+>>>>>>> ee972537a3d5781dd2e9e5e84b6299dbafe4e172
 se ingreso en la pagina /images/fotosUsuario/

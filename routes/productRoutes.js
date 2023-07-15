@@ -36,6 +36,7 @@ router.get('/products/create',productController.getCreateProduct)
 router.post('/products/create',[cargarImg.single('imgFile'), validateCreateProduct, logDBMiddleware ], productController.create)
 router.get('/products/publicado', productController.showPublished)
 router.get('/products/:id/detalle', productController.getDetalle);
+router.get('/products/productList', productController.getProductList);
 
 
 module.exports = router
