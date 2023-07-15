@@ -1824,3 +1824,10 @@ se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
 se ingreso en la pagina /images/fotosUsuario/
+se ingreso en la pagina /images/fotosUsuario/
+se ingreso en la pagina /favicon.ico
+se ingreso en la pagina /products/2/images/clothe6.jpg
+se ingreso en la pagina /products/2/images/clothe7.jpg
+se ingreso en la pagina /products/2/images/clothe8.jpg
+se ingreso en la pagina /products/2/images/clothe9.jpg
+se ingreso en la pagina /images/fotosUsuario/

@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator');
 const path = require('path');
 const uuid = require('uuid');
 const fs = require('fs-extra');
-const userModel = require('../models/user');
+const { Product } = require('../database/models');
 
 const controllers = {
 	getDetalle: (req, res) => {
@@ -81,6 +81,17 @@ const controllers = {
 		const user = req.session.user;
 		res.render('publishedProduct', user);
 	},
+	getProductList: async (req, res) => {
+		try {
+			const user = req.session.user;
+			const productos = await Product.findAll({
+				raw: true
+			});
+			res.render('productList', {productos,user})
+		}
+		catch (error) { console.log(error) }
+	}
+
 };
 
 module.exports = controllers;
