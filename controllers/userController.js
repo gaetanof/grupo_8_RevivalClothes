@@ -1,9 +1,10 @@
 const path = require('path')
 const uuid = require('uuid')
 const fs = require('fs');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const userModel = require('../models/user');
+const { User } = require('../database/models');
 
 const controllers = {
     logOut: (req, res) => {
@@ -19,81 +20,94 @@ const controllers = {
     getSigin: (req, res) => {
         res.render('signin');
     },
-    getChangePassword: (req, res) => {
+    getChangePassword: async (req, res) => {
         const idUser = req.params.idUser;
-        let user = userModel.findById(idUser);
-
-        res.render('changePassword', { user });
+        try {
+            const user = await User.findByPk(idUser);
+            res.render('changePassword', { user });
+        } catch (error) {
+            console.log(error);
+            res.redirect('/')
+        }
     },
-    changePassword: (req, res) => {
+    changePassword: async (req, res) => {
         const idUser = req.params.idUser;
-        let users = userModel.findAll();
-        const user = userModel.findById(idUser);
         const errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            const indice = users.findIndex(el => el.id === idUser);
-            // Actualizamos los datos del producto que corresponda, con los datos que nos pasaron por parámetros
-            users[indice].password = bcrypt.hashSync(req.body.password, 12);
-            
-            console.log(users[indice]);
-             // Convertimos nuestro array de JS a un array de JSON
-             usersJSON = JSON.stringify(users);
-    
-             // Guardamos este nuevo array de JSON en el archivo correspondiente
-             fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJSON);
-    
-            res.redirect('/');
+            const hashedPw = bcrypt.hashSync(req.body.password, 12);
+            try {
+                await User.update({
+                    password: hashedPw
+                }, {
+                    where: { id: idUser },
+                    raw: true
+                });
+                res.redirect('/')
+            } catch (error) {
+                console.log(error);
+                res.redirect('/')
+            }
         } else {
             res.render('changePassword', {
                 errors: errors.array(),
-                user
-			});
+                user: await User.findByPk(idUser)
+            })
         }
     },
-    getUserDetail: (req, res) => {
+    getUserDetail: async (req, res) => {
         const idUser = req.params.idUser
-        const user = userModel.findById(idUser)
-
-        res.render('userDetail', { user })
+        try {
+            const user = await User.findByPk(idUser)
+            res.render('userDetail', { user })
+        } catch (error) {
+            console.log(error);
+            res.redirect('/')
+        }
     },
-    getUserList: (req, res) => {
-        const users = userModel.findAll();
-
-        res.render('userList', { users });
-    },
-    processLogin: (req, res) => {
-        const user = userModel.findByEmail(req.body.email);
-        const errors = validationResult(req);
-
-        if(!user){
-            return res.render('login', {errors: [{msg: 'Email o contraseña incorrecta', path: 'credenciales'}]});
+    getUserList: async (req, res) => {
+        try {
+            const users = await User.findAll({ raw: true })
+            res.render('userList', { users: users });
+        } catch (error) {
+            console.log(error);
+            res.redirect('/')
         }
 
-        const {password: hashedPw} = user;
+    },
+    processLogin: async (req, res) => {
+        const user = await User.findOne({
+            where: { email: req.body.email },
+            raw: true
+        });
+
+        if (!user) {
+            return res.render('login', { errors: [{ msg: 'Email o contraseña incorrecta', path: 'credenciales' }] });
+        }
+
+        const { password: hashedPw } = user;
         const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
-        
+
         if (isCorrect) {
             if (!!req.body.recuerdame) {
                 res.cookie('emai', user.email, { maxAge: 1000 * 60 * 60 * 24 * 360 * 9999 })
             }
 
             delete user.password;
-            // delete user.id;
 
             req.session.user = user;
             res.redirect('/')
 
         } else {
-            return res.render('login', {errors: [{msg: 'Email o contraseña incorrecta', path: 'credenciales'}]});
+            return res.render('login', { errors: [{ msg: 'Email o contraseña incorrecta', path: 'credenciales' }] });
         }
     },
     createUser: (req, res) => {
         const users = userModel.findAll();
         let errors = validationResult(req)
-            
-        if(errors.isEmpty()) {
-            if(req.file) {
+
+        if (errors.isEmpty()) {
+            if (req.file) {
                 let newUser = {
                     id: uuid.v4(),
                     ...req.body,
@@ -107,59 +121,67 @@ const controllers = {
 
                 // Agregamos el producto nuevo al array original
                 users.push(newUser);
-        
+
                 // Convertimos a JSON el array
                 usersJSON = JSON.stringify(users);
-        
+
                 // Sobreescribimos el JSON
                 fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJSON);
-        
+
                 res.redirect('/')
             } else {
                 res.render('signin', {
-				old: req.body,
-                img: req.file || ''
-			});
+                    old: req.body,
+                    img: req.file || ''
+                });
             }
         } else {
             res.render('signin', {
-				errors: errors.array(),
-				old: req.body,
+                errors: errors.array(),
+                old: req.body,
                 img: req.file || ''
-			});
+            });
         }
 
-        
+
 
     },
-    editUser: (req, res) => {
+    editUser: async (req, res) => {
         let idUser = req.params.idUser;
-        
-        // Con el findIndex, buscamos en qué indice del array de productos, está guardado el elemento buscado
-        const user = userModel.findById(idUser)
 
-        res.render('userEdit', {user});
+        try {
+            const user = await User.findByPk(idUser, { raw: true })
+            res.render('userEdit', { user });
+        } catch (error) {
+            console.log(error)
+            res.redirect('/')
+        }
     },
-    editedUser: (req, res) => {
+    editedUser: async (req, res) => {
         let idUser = req.params.idUser;
         const newData = req.body;
-        
-        const newPassword = bcrypt.hashSync(newData.password, 12);
-        newData.password = newPassword;
 
         delete newData.old_userImg;
-        newData.imagen = req.file ? req.file.filename : req.body.old_userImg;
+        newData.image = req.file ? req.file.filename : req.body.old_userImg;
 
-        let users = userModel.editUserById(idUser, newData)
+        await User.update({
+            full_name: newData.full_name,
+            email: newData.email,
+            user_name: newData.user_name,
+            image: newData.image
+        }, { where: { id: idUser } })
 
-        res.render('userList', {users})
+        res.redirect('detalle')
     },
-    deleteUser: (req, res) => {
+
+    deleteUser: async (req, res) => {
         let idUser = req.params.idUser;
 
-        let users = userModel.deleteById(idUser)
-        
-        res.render('userList', {users})
+        await User.destroy({
+            where: {id: idUser}
+        })
+
+        res.redirect('/user/userlist')
     }
 }
 

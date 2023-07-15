@@ -18,7 +18,7 @@ const middleware = {
     },
 
     allowAdmin: (req, res, next) => {
-        if(req.session.user.type === 'Admin'){
+        if(req.session.user && req.session.user.type === 'Admin'){
             next();
         } else {
             res.redirect('/');

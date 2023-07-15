@@ -32,15 +32,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(255),
             defaultValue: 'default_user.jpg'
         },
-        deleted: {
-            type: DataTypes.STRING(255),
-            defaultValue: 0
-        }
     };
 
     const config = {
         tablename: 'users',
-        timestamps: false
+        paranoid: true
     };
 
     const User = sequelize.define(alias, cols, config);

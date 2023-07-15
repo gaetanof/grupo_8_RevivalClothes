@@ -33,11 +33,6 @@ const productRouter = require('./routes/productRoutes.js');
 const logMiddleware = require('./middlewares/logMiddleware.js');
 const recuerdameMiddleware = require('./middlewares/recuerdameMiddleware.js')
 
-const {Product} = require('./database/models')
-app.get('/test', async (req, res) => {
-    const users = await Product.findAll()
-    res.send(users)
-})
 
 app.use(mainRouter);
 app.use(userRouter); // app.use('/user', userRouter);

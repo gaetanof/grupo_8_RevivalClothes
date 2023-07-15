@@ -16,7 +16,7 @@
 		<form action="/user/<%= user.id %>/edit?_method=PUT" method="POST" class="form-signin" enctype="multipart/form-data">
 			<div class="fullname-signin">
 				<label>Nombre Completo:</label>
-  				<input type="text" name="fullname" class="control-signin" value="<%= user.fullname %>">
+  				<input type="text" name="full_name" class="control-signin" value="<%= user.full_name %>">
 			</div>
 			<div class="email-signin">
 				<label>Email:</label>
@@ -24,11 +24,11 @@
 			</div>
 			<div class="username-signin">
 				<label>Username:</label>
-  				<input type="text" name="username" class="control-signin" value="<%= user.username %>">
+  				<input type="text" name="user_name" class="control-signin" value="<%= user.user_name %>">
 			</div>
 			<div class="username-signin">
 				<label>Imagen de perfil:</label>
-  				<input type="hidden" name="old_userImg" class="control-signin" value="/images/fotosUsuario/<%= user.imagen %>">
+  				<input type="hidden" name="old_userImg" class="control-signin" value="/images/fotosUsuario/<%= user.image %>">
   				<input type="file" name="userImg" class="control-signin">
 			</div>
 			<!-- <div class="password-signin">
