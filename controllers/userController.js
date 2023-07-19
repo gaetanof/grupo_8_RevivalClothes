@@ -27,7 +27,7 @@ const controllers = {
             res.render('changePassword', { user });
         } catch (error) {
             console.log(error);
-            res.redirect('/')
+            res.send(error)
         }
     },
     changePassword: async (req, res) => {
@@ -46,7 +46,7 @@ const controllers = {
                 res.redirect('/')
             } catch (error) {
                 console.log(error);
-                res.redirect('/')
+                res.send(error)
             }
         } else {
             res.render('changePassword', {
@@ -62,7 +62,7 @@ const controllers = {
             res.render('userDetail', { user })
         } catch (error) {
             console.log(error);
-            res.redirect('/')
+            res.send(error)
         }
     },
     getUserList: async (req, res) => {
@@ -71,7 +71,7 @@ const controllers = {
             res.render('userList', { users: users });
         } catch (error) {
             console.log(error);
-            res.redirect('/')
+            res.send(error)
         }
 
     },
@@ -102,33 +102,35 @@ const controllers = {
             return res.render('login', { errors: [{ msg: 'Email o contraseña incorrecta', path: 'credenciales' }] });
         }
     },
-    createUser: (req, res) => {
-        const users = userModel.findAll();
+    createUser: async (req, res) => {
+        const users = await User.findAll({ raw: true })
         let errors = validationResult(req)
-
+        
+        const equal_email = users.find(el => el.email === req.body.email)
+        
         if (errors.isEmpty()) {
             if (req.file) {
-                let newUser = {
-                    id: uuid.v4(),
-                    ...req.body,
-                    type: "User",
-                    imagen: req.file.filename,
-                    delete: 0
-                };
-
-                const newPassword = bcrypt.hashSync(newUser.password, 12);
-                newUser.password = newPassword;
-
-                // Agregamos el producto nuevo al array original
-                users.push(newUser);
-
-                // Convertimos a JSON el array
-                usersJSON = JSON.stringify(users);
-
-                // Sobreescribimos el JSON
-                fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJSON);
-
-                res.redirect('/')
+                if (!equal_email) {
+                    const password = bcrypt.hashSync(req.body.password, 12);
+                    delete req.body.password;
+    
+                    await User.create({
+                        id: uuid.v4(),
+                        ...req.body,
+                        password,
+                        type: "User",
+                        imagen: req.file.filename,
+                        delete: 0
+                    })
+    
+                    res.redirect('/')
+                } else {
+                    res.render('signin', {
+                        errors: [{msg: 'Este correo ya se encuentra registrado', path: 'email_equal'}],
+                        old: req.body,
+                        img: req.file || ''
+                    });
+                }
             } else {
                 res.render('signin', {
                     old: req.body,
@@ -142,9 +144,6 @@ const controllers = {
                 img: req.file || ''
             });
         }
-
-
-
     },
     editUser: async (req, res) => {
         let idUser = req.params.idUser;
@@ -154,7 +153,7 @@ const controllers = {
             res.render('userEdit', { user });
         } catch (error) {
             console.log(error)
-            res.redirect('/')
+            res.send(error)
         }
     },
     editedUser: async (req, res) => {

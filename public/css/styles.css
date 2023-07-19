@@ -196,7 +196,7 @@ p {
 .texto-home {
     text-align: center;
     width: 100%;
-    padding: 100px 0px 100px 0px;
+    padding: 50px 5px 100px 5px;
     background-color: #fff;
 }
 
@@ -204,7 +204,7 @@ p {
     @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&family=Roboto:wght@300;700&display=swap');
     font-family: 'Lora', serif;
     font-family: 'Roboto', sans-serif;
-    font-size: 3.5em;
+    font-size: 2.5em;
     font-weight: bold;
 }
 
@@ -284,7 +284,7 @@ p {
     color: #000;
     font-weight: 600;
     border: 1px solid #000;
-    padding: 5px 15px;
+    padding: 0px 5px;
     left: 50%;
     bottom: 65%;
     transform: translate(-50%, -65%);
@@ -344,6 +344,51 @@ p {
     opacity: 1;
 }
 
+.handbag {
+    width: 17px;
+}
+
+#user-home {
+    background: none;
+    border: none;
+    padding: 5px 0px;
+}
+.pe-home {
+    margin: 0;
+}
+
+.elements-header {
+    font-size: 12px;
+    font-style: italic;
+    padding: 0;
+}
+
+#card-header {
+    padding: 0px;
+}
+
+.center-navbar ul {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    gap: 10px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.center-navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 200;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 14px;
+    transition: all 0.3;
+}
+
+.center-navbar a:hover {
+    font-weight: 900;
+}
 /* Header hasta acá */
 /* ------------------------------------------------------------------- */
 /* Contenido flex del main vista home */
@@ -547,9 +592,6 @@ p {
     font-weight: 700;
 }
 
-/* .main-signin {
-    height: 62vh;
-} */
 /* Main */
 
 /* Footer */
@@ -913,7 +955,7 @@ footer {
         font-size: 17px;
     }
 
-    .main-navbar-desktop img {
+    .user-image {
         width: 40px;
         max-height: 40px;
         border-radius: 50%;
@@ -984,7 +1026,10 @@ footer {
     }
 
     .texto-home {
-        padding: 150px 0px 150px 0px;
+        padding: 150px 10px 150px 10px;
+    }
+    .texto-home h2 {
+        font-size: 3.5em;
     }
 
     /* fin Home */
@@ -1034,6 +1079,9 @@ footer {
     /* fin Footer */
     .contenedor-recomendados-home {
         flex-flow: row wrap;
+    }
+    .article-interaccion-home a {
+        padding: 5px 15px;
     }
 }
 

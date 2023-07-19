@@ -17,10 +17,10 @@
 		<form action="/user/signin" method="POST" class="form-signin" enctype="multipart/form-data">
 			<div class="fullname-signin">
 				<label>Nombre Completo:</label>
-  				<input type="text" name="fullname" class="control-signin" value="<%= locals.old && old.fullname ? old.fullname : '' %>">
+  				<input type="text" name="full_name" class="control-signin" value="<%= locals.old && old.full_name ? old.full_name : '' %>">
 				  <% if (locals.errors) { %>
 					<% errors.forEach(el => { %>
-						<p class="msg-error-signin"><%= el.path == 'fullname' ? el.msg : '' %></p>
+						<p class="msg-error-signin"><%= el.path == 'full_name' ? el.msg : '' %></p>
 						<% }) %>
 				<% } %>
 			</div>
@@ -32,13 +32,18 @@
 						<p class="msg-error-signin"><%= el.path == 'email' ? el.msg : '' %></p>
 						<% }) %>
 				<% } %>
+				<% if (locals.errors) { %>
+					<% errors.forEach(el => { %>
+						<p class="msg-error-signin"><%= el.path == 'email_equal' ? el.msg : '' %></p>
+						<% }) %>
+				<% } %>
 			</div>
 			<div class="username-signin">
 				<label>Apodo:</label>
-  				<input type="text" name="username" class="control-signin" value="<%= locals.old && old.username ? old.username : '' %>">
+  				<input type="text" name="user_name" class="control-signin" value="<%= locals.old && old.user_name ? old.user_name : '' %>">
 				  <% if (locals.errors) { %>
 					<% errors.forEach(el => { %>
-						<p class="msg-error-signin"><%= el.path == 'username' ? el.msg : '' %></p>
+						<p class="msg-error-signin"><%= el.path == 'user_name' ? el.msg : '' %></p>
 						<% }) %>
 				<% } %>
 			</div>

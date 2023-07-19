@@ -2,13 +2,13 @@ const { body } = require("express-validator");
 
 const validations = {
     validateCreateUser: [
-        body('fullname')
+        body('full_name')
         .notEmpty()
         .withMessage('El nombre no debe de estar vacío'),
         body('email')
         .isEmail()
         .withMessage('Ingrese un email válido'),
-        body('username')
+        body('user_name')
         .notEmpty()
         .withMessage('El Username no debe de estar vacío'),
         body('password')
