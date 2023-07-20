@@ -1,4 +1,4 @@
-const userModel = require('../models/user');
+const { User } = require('../database/models');
 
 const middleware = {
     allowUnsignedIn: (req, res, next) => {
@@ -23,6 +23,11 @@ const middleware = {
         } else {
             res.redirect('/');
         }
+    },
+
+    allowCreate: async (req, res, next) => {
+        const equal_email = await User.findAll({ where: {email: req.body.email}})
+        equal_email.length > 0 ? res.redirect('/user/signin') : next()
     }
 }
 

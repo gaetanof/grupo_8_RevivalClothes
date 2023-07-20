@@ -105,32 +105,23 @@ const controllers = {
     createUser: async (req, res) => {
         const users = await User.findAll({ raw: true })
         let errors = validationResult(req)
-        
-        const equal_email = users.find(el => el.email === req.body.email)
-        
+
         if (errors.isEmpty()) {
             if (req.file) {
-                if (!equal_email) {
-                    const password = bcrypt.hashSync(req.body.password, 12);
-                    delete req.body.password;
-    
-                    await User.create({
-                        id: uuid.v4(),
-                        ...req.body,
-                        password,
-                        type: "User",
-                        imagen: req.file.filename,
-                        delete: 0
-                    })
-    
-                    res.redirect('/')
-                } else {
-                    res.render('signin', {
-                        errors: [{msg: 'Este correo ya se encuentra registrado', path: 'email_equal'}],
-                        old: req.body,
-                        img: req.file || ''
-                    });
-                }
+                const password = bcrypt.hashSync(req.body.password, 12);
+                delete req.body.password;
+
+                await User.create({
+                    id: uuid.v4(),
+                    ...req.body,
+                    password,
+                    type: "User",
+                    imagen: req.file.filename,
+                    delete: 0
+                })
+
+                res.redirect('/')
+
             } else {
                 res.render('signin', {
                     old: req.body,
@@ -177,7 +168,7 @@ const controllers = {
         let idUser = req.params.idUser;
 
         await User.destroy({
-            where: {id: idUser}
+            where: { id: idUser }
         })
 
         res.redirect('/user/userlist')

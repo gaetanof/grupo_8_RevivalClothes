@@ -31,12 +31,12 @@ const storage = multer.diskStorage({
 const cargarImg = multer ({ storage })
 
 
-router.get('/products/carrito-de-compras', productController.getCarrito)
+router.get('/products/cart', productController.getCarrito)
 router.get('/products/create',productController.getCreateProduct)
 router.post('/products/create',[cargarImg.single('imgFile'), validateCreateProduct, logDBMiddleware ], productController.create)
 router.get('/products/publicado', productController.showPublished)
 router.get('/products/:id/detalle', productController.getDetalle);
-router.get('/products/productList', productController.getProductList);
+router.get('/products/productlist', productController.getProductList);
 
 
 module.exports = router

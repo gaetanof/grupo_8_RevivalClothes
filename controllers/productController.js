@@ -87,7 +87,7 @@ const controllers = {
 			const productos = await Product.findAll({
 				raw: true
 			});
-			res.render('productList', {productos,user})
+			res.render('productList', { productos, user })
 		}
 		catch (error) { console.log(error) }
 	}

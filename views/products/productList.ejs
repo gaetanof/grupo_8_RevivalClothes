@@ -1,20 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head') %>
-    <title>Productos</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+        <title>Carrito de Compras</title>
+        <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
-    <header><%- include('../partials/header.ejs', {user: locals.user ? user : {}}) %></header>
-    <main>  
-        <% productos.forEach(producto => { %>
-            <ul>  
-                <li> <%=producto.title %> </li>
-            </ul>
-            <% }) %>
+    <header class="main-header">
+        <%- include('../partials/header', {user: locals.user ? user : {}}) %>
+    </header>
+    <main>
+        <section class="shop-productList">
+            <div class="shop-content-productList">
+
+                <% productos.forEach(producto => { %>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                    <article class="product-box-productlist">
+                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        <h2 class="product-title"><%= producto.title %></h2>
+                        <span class="price">$<%= producto.price %></span>
+                        <img src="/images/handbag_orange.svg" class="handbag add-cart">
+                    </article>
+                <% }) %>
+
+            </div>
+        </section>
     </main>
     <%- include('../partials/footer.ejs') %>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 </body>
+
 </html>
