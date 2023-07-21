@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include('../partials/head') %>
-    <title>Create Product</title>
+    <title>Edit Product</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -17,11 +17,11 @@
         <%  })  
           }  
         %>
-        <form action="/create" method="post" enctype="multipart/form-data">
+        <form action="/products/<%=product.id%>/editar?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="field">
             <label for="titulo">Titulo</label>
             <div class="control">
-              <input type="text" name="titulo" id="titulo" value="<%= locals.old && old.titulo ? old.titulo : '' %>" />
+              <input type="text" name="title" id="titulo" value="<%=product.title%>" />
             </div>
             <p class="feedback"></p>
           </div>
@@ -29,7 +29,7 @@
           <div class="field">
             <label for="genero">Genero</label>
             <div class="control">
-              <input type="text" name="genero" id="genero" />
+              <input type="text" name="genre" id="genero" value="<%=product.genre%>" />
             </div>
             <p class="feedback"></p>
           </div>
@@ -37,7 +37,7 @@
           <div class="field">
             <label for="talle">Talle</label>
             <div class="control">
-              <input type="text" name="talle" id="talle" />
+              <input type="text" name="size" id="talle" value="<%=product.size%>"/>
             </div>
             <p class="feedback"></p>
           </div>
@@ -45,7 +45,7 @@
           <div class="field">
             <label for="precio">Precio</label>
             <div class="control">
-              <input type="number" name="precio" id="precio" />
+              <input type="number" name="price" id="precio" value="<%=product.price%>" />
             </div>
             <p class="feedback"></p>
           </div>
@@ -53,7 +53,7 @@
           <div class="field">
             <label for="descripcion">Descripción</label>
             <div class="control">
-              <textarea name="descripcion" id="descripcion"></textarea>
+              <input type="text" name="description" id="descripcion" value="<%= product.description%>"></input>
             </div>
             <p class="feedback"></p>
           </div>
@@ -61,14 +61,15 @@
           <div class="field">
             <label for="imgFile">Imagen del producto</label>
             <div class="control">
-              <input type="file" name="imgFile" id="imgFile" />
+              <input type="hidden" name="old_productImg" id="imgFile" value="/images/fotosProducto/<%= product.image%>" />
+              <input type="file" name="imgFile" id="imgFile" value="" />
             </div>
             <p class="feedback"></p>
           </div>
 
           <div class="field">
             <div class="control">
-              <button type="submit">Crear producto</button>
+              <input type="submit" value="editar producto" class="button-signin">
             </div>
           </div>
         </form>

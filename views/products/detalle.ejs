@@ -13,16 +13,16 @@
         <section class="section-descripcion-detalle">
             <article class="contenedor-producto-detalle">
                 <div class="titulo-producto-detalle">
-                    <h2><%= producto.titulo %></h2>
-                    <h3><%= producto.descripcion %></h3>
+                    <h2><%= product.title %></h2>
+                    <h3><%= product.description %></h3>
                     <a class="anadir-producto-detalle"><i class="fa-regular fa-heart"></i></a>
                 </div>
-                <img src="<%= producto.imagen %>" alt="">
+                <img src="/images/fotosProducto/<%= product.image%>" alt="">
                 <!-- logo -->
                 <div class="descripcion-producto-detalle">
-                    <p>Genero: <%= producto.genero %></p>
-                    <p>Talla: <%= producto.talla %></p>
-                    <p>Precio: <%= producto.precio %></p>
+                    <p>Genero: <%= product.genre %></p>
+                    <p>Talla: <%= product.size %></p>
+                    <p>Precio: <%= product.price %></p>
                 </div>
             </article>
 
@@ -33,6 +33,10 @@
 
                   <form action="#" method="">
                     <button type="submit">Agregar al Carrito</button>
+                  </form>
+                  <a href="/products/<%=product.id%>/editar">Editar</a>
+                  <form action="/products/<%= product.id%>/delete?_method=DELETE" method="POST">
+                    <button type="submit">Borrar Producto</button>
                   </form>
             </article>
         </section>   

@@ -4,18 +4,11 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const productController = require('../controllers/productController')
+const validations = require('../middlewares/productValidation')
 let logDBMiddleware = require('../middlewares/logDBMiddleware')
 
 
-//VALIDACIONES
-
-const validateCreateProduct = [
-    body('titulo').isLength({min:1}).withMessage('Campo de titulo obligatorio'),
-    body('genero').isLength({min:1}).withMessage('Campo de genero obligatorio'),
-    body('talle').isLength({min:1}).withMessage('Campo de talle obligatorio'),
-    body('precio').isLength({min:1}).withMessage('Campo de precio obligatorio'),
-    body('descripcion').isLength({min:1}).withMessage('Campo de descripcion obligatorio'),
-]
+//MULTER SETTINGS
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -33,10 +26,14 @@ const cargarImg = multer ({ storage })
 
 router.get('/products/cart', productController.getCarrito)
 router.get('/products/create',productController.getCreateProduct)
-router.post('/products/create',[cargarImg.single('imgFile'), validateCreateProduct, logDBMiddleware ], productController.create)
+router.post('/products/create',[cargarImg.single('imgFile'), validations.validateCreateProduct], productController.create)
 router.get('/products/publicado', productController.showPublished)
 router.get('/products/:id/detalle', productController.getDetalle);
+router.get('/products/:id/editar', productController.getEditProduct);
+router.put('/products/:id/editar',cargarImg.single('imgFile'), productController.editProduct);
 router.get('/products/productlist', productController.getProductList);
+router.delete('/products/:id/delete', productController.deleteProduct);
+
 
 
 module.exports = router
