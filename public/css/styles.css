@@ -185,7 +185,7 @@ p {
 
 .contenedor-baner-ropa {
     position: relative;
-    padding: 0px 0px 40px 0px;
+    padding: 0 0 2rem 0;
 }
 
 .imagen-header {
@@ -217,7 +217,7 @@ p {
 .texto-home {
     text-align: center;
     width: 100%;
-    padding: 50px 5px 100px 5px;
+    padding: 3rem 1rem;
     background-color: #fff;
 }
 
@@ -250,9 +250,9 @@ p {
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
+    margin: 3rem 0rem;
     background-color: #e6e6e6;
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
 }
 
 .article-servicios-home {
@@ -282,7 +282,7 @@ p {
     display: flex;
     flex-flow: row;
     justify-content: center;
-    padding-bottom: 100px;
+    padding-bottom: 3.2rem;
 }
 
 .article-interaccion-home {
@@ -300,7 +300,7 @@ p {
 
 .article-interaccion-home a {
     position: absolute;
-    z-index: 1;
+    /* z-index: 1; */
     text-decoration: none;
     color: #000;
     font-weight: 600;
@@ -321,6 +321,7 @@ p {
 .titulo-home {
     text-align: center;
     font-weight: 800;
+    padding-bottom: 2rem;
 }
 .contenedor-recomendados-home {
     display: flex;
@@ -331,7 +332,8 @@ p {
 }
 
 .contenedor-recomendados-home img {
-    aspect-ratio: 10/13;
+    /* aspect-ratio: 10/13; */
+    aspect-ratio: 5/6.5;
     width: 100%;
 }
 
@@ -416,16 +418,18 @@ p {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 360px;
+    width: 260px;
     min-height: 100vh;
     padding: 20px;
     background-color: #fff;
     box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
     transition: 0.5s;
+    
 }
 
 .cart.active {
     right: 0;
+    z-index: 100;
 }
 
 #carrito {
@@ -520,6 +524,30 @@ p {
     top: 1rem;
     right: 0.8rem;
     cursor: pointer;
+}
+
+.hamburger {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.hamburger .bar, .hamburger::after, .hamburger::before {
+    content: '';
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburger.is-active::before {
+    transform: rotate(-45deg) translate(-9px, 5px);
 }
 /* Header hasta acá */
 /* ------------------------------------------------------------------- */
@@ -1069,6 +1097,12 @@ footer {
     background: #d7875f48;
 }
 
+.user-image {
+    width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+}
+
 /* fin productList */
 @media (min-width: 768px) {
 
@@ -1214,7 +1248,7 @@ footer {
     }
 
     .texto-home {
-        padding: 150px 10px 150px 10px;
+        padding: 3.5rem 1rem;
     }
     .texto-home h2 {
         font-size: 3.5em;
@@ -1270,6 +1304,12 @@ footer {
     }
     .article-interaccion-home a {
         padding: 5px 15px;
+    }
+    .cart {
+        width: 360px;
+    }
+    .contenedor-baner-ropa {
+        padding: 3rem 0;
     }
 }
 
@@ -1383,7 +1423,7 @@ footer {
         margin: 50px 100px 10px 100px;
     }
     .contenedor-recomendados-home {
-        padding: 100px 0px;
+        padding: 1.5rem 0;
         gap: 80px;
     }
     /* Fin Main detalle producto */
