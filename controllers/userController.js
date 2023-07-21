@@ -116,7 +116,7 @@ const controllers = {
                     ...req.body,
                     password,
                     type: "User",
-                    imagen: req.file.filename,
+                    image: req.file.filename,
                     delete: 0
                 })
 
