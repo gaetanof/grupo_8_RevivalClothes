@@ -34,10 +34,15 @@
                   <form action="#" method="">
                     <button type="submit">Agregar al Carrito</button>
                   </form>
-                  <a href="/products/<%=product.id%>/editar">Editar</a>
-                  <form action="/products/<%= product.id%>/delete?_method=DELETE" method="POST">
-                    <button type="submit">Borrar Producto</button>
-                  </form>
+
+                  <% if ((locals.user && user.id) === product.id_user) { %>
+                    <a href="/products/<%=product.id%>/editar">Editar</a>
+  
+                    <form action="/products/<%= product.id%>/delete?_method=DELETE" method="POST">
+                      <button type="submit">Borrar Producto</button>
+                    </form>
+                  <% } %>
+
             </article>
         </section>   
 

@@ -5,7 +5,7 @@ const multer = require('multer');
 const path = require('path');
 const productController = require('../controllers/productController')
 const validations = require('../middlewares/productValidation')
-let logDBMiddleware = require('../middlewares/logDBMiddleware')
+let authProduct = require('../middlewares/authProductsMiddleware')
 
 
 //MULTER SETTINGS
@@ -23,16 +23,34 @@ const storage = multer.diskStorage({
 
 const cargarImg = multer ({ storage })
 
-
+// @GET /products/cart 
 router.get('/products/cart', productController.getCarrito)
+
+
 router.get('/products/create',productController.getCreateProduct)
-router.post('/products/create',[cargarImg.single('imgFile'), validations.validateCreateProduct], productController.create)
+
+
+router.post('/products/create',[cargarImg.single('imgFile'), validations.validateCreateProduct, authProduct.allowCreate], productController.create)
+
+
 router.get('/products/publicado', productController.showPublished)
+
+
 router.get('/products/:id/detalle', productController.getDetalle);
+
+
 router.get('/products/:id/editar', productController.getEditProduct);
-router.put('/products/:id/editar',cargarImg.single('imgFile'), productController.editProduct);
+
+
+router.put('/products/:id/editar',[cargarImg.single('imgFile'), authProduct.allowUpdate], productController.editProduct);
+
+
 router.get('/products/productlist', productController.getProductList);
-router.delete('/products/:id/delete', productController.deleteProduct);
+
+
+router.delete('/products/:id/delete', authProduct.allowDelete, productController.deleteProduct);
+
+
 
 
 

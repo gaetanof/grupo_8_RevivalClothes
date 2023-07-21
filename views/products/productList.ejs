@@ -15,16 +15,18 @@
         <section class="shop-productList">
             <div class="shop-content-productList">
 
-                <% productos.forEach(producto => { %>
-                    <a href="/products/<%= producto.id %>/editar">
+                <% productos.forEach(producto=> { %>
                     <article class="product-box-productlist">
-                        <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
-                        <h2 class="product-title"><%= producto.title %></h2>
+                        <a href="/products/<%= producto.id %>/detalle" class="link-productlist">
+                            <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
+                        </a>
+                        <h2 class="product-title">
+                            <%= producto.title %>
+                        </h2>
                         <span class="price">$<%= producto.price %></span>
                         <img src="/images/handbag_orange.svg" class="handbag add-cart">
                     </article>
-                </a>
-                <% }) %>
+                    <% }) %>
 
             </div>
         </section>

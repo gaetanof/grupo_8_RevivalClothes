@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
-const { Product,User } = require('../database/models');
+const { Product, User } = require('../database/models');
 
 const controllers = {
 	getDetalle: async (req, res) => {
@@ -11,28 +11,32 @@ const controllers = {
 		res.render('detalle', { product, user });
 	},
 
-
 	getCarrito: (req, res) => {
 		const user = req.session.user;
-		res.render('carrito', {user});
+		res.render('carrito', { user });
 	},
 
 	getCreateProduct: (req, res) => {
 		const user = req.session.user;
-		res.render('createProduct',{user});
+		res.render('createProduct', { user });
 	},
 
-	create: async  (req, res) => {
+	create: async (req, res) => {
 		let errors = validationResult(req);
 		if (errors.isEmpty()) {
 
 			if (req.file) {
-				Product.create({
-					...req.body,
-					image:req.file.filename,
-					id_user:req.session.user.id
-				})
-				res.redirect('/')
+				try {
+					const product = await Product.create({
+						...req.body,
+						image: req.file.filename,
+						id_user: req.session.user.id
+					})
+					res.redirect(`/products/${product.id}/detalle`)
+				} catch (error) {
+					console.log(error);
+					res.send(error);
+				}
 			}
 		} else {
 			res.render('createProduct', {
@@ -40,53 +44,55 @@ const controllers = {
 				old: req.body,
 			})
 		}
-	
+
 	},
-	getEditProduct: async  (req, res) => {
+	getEditProduct: async (req, res) => {
 		const id = req.params.id
 		const user = req.session.user
-		try{
-		const product = await Product.findByPk(id)
-		res.render('editProduct',{product,user})
-		}catch(error){
+		try {
+			const product = await Product.findByPk(id)
+			res.render('editProduct', { product, user })
+		} catch (error) {
 			console.log(error),
-			res.send(error)
+				res.send(error)
 		}
 	},
-	editProduct: async (req,res) => {
+	editProduct: async (req, res) => {
 		const id = req.params.id
 		let newData = req.body;
 
-        delete newData.old_productImg;
-        newData.image = req.file ? req.file.filename : req.body.old_productImg;
+		delete newData.old_productImg;
+		newData.image = req.file ? req.file.filename : req.body.old_productImg;
 		console.log(req.body)
-		try{ 
+		try {
 			await Product.update({
-			...newData,
-			image: newData.image
-		},{
-			where: {
-				id : id
-			}
-		})			
-		res.redirect('/')
-		}catch(error){
-			console.log(error),
-			res.send(error)
-		}
-	},
-	deleteProduct: async(req,res) => {
-		const id = req.params.id
-		try{
-			await Product.destroy({
+				...newData,
+				image: newData.image
+			}, {
 				where: {
-					id : id
+					id: id
 				}
 			})
-			res.redirect('/')
-		}catch(error){
+
+			const product = await Product.findByPk(id);
+			res.redirect(`/products/${product.id}/detalle`)
+		} catch (error) {
 			console.log(error),
-			res.send(error)
+				res.send(error)
+		}
+	},
+	deleteProduct: async (req, res) => {
+		const id = req.params.id
+		try {
+			await Product.destroy({
+				where: {
+					id: id
+				}
+			})
+			res.redirect('/products/productlist')
+		} catch (error) {
+			console.log(error),
+				res.send(error)
 		}
 	},
 	showPublished: (req, res) => {

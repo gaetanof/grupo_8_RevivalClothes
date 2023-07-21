@@ -982,7 +982,10 @@ footer {
 }
 
 /* Final userList */
-
+.link-productlist {
+    color: #000;
+    text-decoration: none;
+}
 /* Inicio userDetail */
 .main-userdetail {
     display: flex;
