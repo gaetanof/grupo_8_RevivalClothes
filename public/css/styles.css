@@ -323,6 +323,7 @@ p {
     font-weight: 800;
     padding-bottom: 2rem;
 }
+
 .contenedor-recomendados-home {
     display: flex;
     flex-flow: column;
@@ -376,6 +377,7 @@ p {
     border: none;
     padding: 5px 0px;
 }
+
 .pe-home {
     margin: 0;
 }
@@ -424,7 +426,7 @@ p {
     background-color: #fff;
     box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
     transition: 0.5s;
-    
+
 }
 
 .cart.active {
@@ -526,29 +528,6 @@ p {
     cursor: pointer;
 }
 
-.hamburger {
-    position: relative;
-    width: 35px;
-    height: 35px;
-    appearance: none;
-    background: none;
-    cursor: pointer;
-    outline: none;
-    border: none;
-}
-
-.hamburger .bar, .hamburger::after, .hamburger::before {
-    content: '';
-    width: 100%;
-    height: 5px;
-    background-color: #000000;
-    margin: 6px 0px;
-    transition: 0.4s;
-}
-
-.hamburger.is-active::before {
-    transform: rotate(-45deg) translate(-9px, 5px);
-}
 /* Header hasta acá */
 /* ------------------------------------------------------------------- */
 /* Contenido flex del main vista home */
@@ -986,6 +965,7 @@ footer {
     color: #000;
     text-decoration: none;
 }
+
 /* Inicio userDetail */
 .main-userdetail {
     display: flex;
@@ -1059,7 +1039,8 @@ footer {
 
 .shop-content-productList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 120px));
+    justify-content: center;
     object-fit: contain;
     gap: 1.5rem;
 }
@@ -1106,7 +1087,94 @@ footer {
     border-radius: 50%;
 }
 
+.info {
+    position: absolute;
+    right: 1rem;
+    padding: 6px;
+    transition: all 0.3s;
+    font-weight: 500;
+    border: 1px solid #d7875f;
+}
+
+.info:hover {
+    background-color: #d7875f48;
+}
+
+.toast-close {
+    background-color: transparent;
+    border: none;
+    font-weight: 100;
+}
+
 /* fin productList */
+
+/* Burger menu */
+.burger-button-header {
+    position: fixed;
+    top: 35px;
+    left: 15px;
+    z-index: 5;
+}
+#menu-toggle {
+    position: fixed;
+    top: 30px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#burgermenu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 260px;
+    height: 100vh;
+    padding: 20px 0px 20px 0;
+    background-color: #fff;
+    box-shadow: 2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.5s;
+}
+
+#burgermenu.active {
+    left: 0;
+    z-index: 100;
+}
+
+#burgermenu ul {
+    position: relative;
+    margin-top: 2rem;
+    padding-left: 0;
+}
+
+#burgermenu ul li {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 40px;
+}
+
+#burgermenu ul li:hover {
+    background-color: #d7875f48;
+    transition: all 0.1s;
+}
+
+#burgermenu ul li a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.close-menu {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
 
     /* inicio header */
@@ -1253,6 +1321,7 @@ footer {
     .texto-home {
         padding: 3.5rem 1rem;
     }
+
     .texto-home h2 {
         font-size: 3.5em;
     }
@@ -1297,22 +1366,46 @@ footer {
     .info2-user-userdetail {
         border: 1px solid #5D534A;
     }
+
     /* Footer */
     .listas {
         margin: 50px 50px 5px 50px;
     }
+
     /* fin Footer */
     .contenedor-recomendados-home {
         flex-flow: row wrap;
     }
+
     .article-interaccion-home a {
         padding: 5px 15px;
     }
+
     .cart {
         width: 360px;
     }
+
     .contenedor-baner-ropa {
         padding: 3rem 0;
+    }
+
+    .shop-content-productList {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+        justify-content: flex-start;
+    }
+
+    .info {
+        right: 3rem;
+    }
+    #menu-toggle {
+        display: none;
+    }
+    
+    #burgermenu {
+        display: none;
+    }
+    .burger-button-header {
+        display: none;
     }
 }
 
@@ -1422,25 +1515,42 @@ footer {
         left: 75%;
         top: 10%;
     }
+
     .listas {
         margin: 50px 100px 10px 100px;
     }
+
     .contenedor-recomendados-home {
         padding: 1.5rem 0;
         gap: 80px;
     }
-    /* Fin Main detalle producto */
 
+    /* Fin Main detalle producto */
+    .shop-content-productList {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+    }
+
+    .info {
+        right: 4.5rem;
+    }
 }
 
 @media (min-width: 1400px) {
     .contenedor-article {
         max-width: 340px;
     }
+
+    .info {
+        right: 5rem;
+    }
 }
 
 @media (min-width: 1600px) {
     .contenedor-article {
         max-width: 380px;
+    }
+
+    .info {
+        right: 6.5rem;
     }
 }

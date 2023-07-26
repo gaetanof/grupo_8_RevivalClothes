@@ -1,14 +1,22 @@
 <nav class="main-header-bar">
 	<div class="left-navbar">
-		<a href="#" class="button-bars"><i class="fa-solid fa-bars"></i></a>
-		<!-- <button class="hamburger is-active">
-			<div class="bar">
-	
-			</div>
-		</button> -->
+		<a href="#" class="button-bars"></a>
 
-		<!-- <button class="hamburger">
-		</button> -->
+		<i class="fa-solid fa-bars burger-button-header"></i>
+		<div id="menu-toggle"></div>
+		<div id="burgermenu">
+			<ul>
+				<li><a href="/">Inicio</a></li>
+				<% if (!user.id) { %>
+					<li><a href="../user/login">Ingresa</a></li>
+					<li><a href="../user/signin">Regístrate</a></li>
+
+					<% } %>
+					<li><a href="/products/productlist">Catálogo</a></li>
+					<li><a href="">Favoritos</a></li>
+			</ul>
+			<img src="/images/cancel.svg" class="close-menu">
+		</div>
 
 		<a href="/" class="a-header"><img src="/images/logoPNGcoloresHorizontal.png" alt="" class="logo"></a>
 	</div>
@@ -47,17 +55,17 @@
 					<li><img src="/images/handbag.svg" class="handbag" id="carrito">
 					</li>
 
-					<div class="cart">
-						<h2 class="cart-title">Tu carrito de compras</h2>
-						<div class="cart-content">
-							
+					<div class="cart" id="cart_open">
+						<h2 class="cart-title" id="cart-title">Tu carrito de compras</h2>
+						<div class="cart-content" id="cart-content">
+
 						</div>
 						<div class="total">
 							<h3 class="total-title">Total</h3>
 							<div class="total-price">$0</div>
 						</div>
 						<button type="button" class="btn-buy">Comprar</button>
-						<img src="/images/cancel.svg" class="close-cart">
+						<img src="/images/cancel.svg" class="close-cart" id="close-cart">
 					</div>
 
 					<% if (user.id) { %>
@@ -70,3 +78,4 @@
 </nav>
 
 <script src="/js/app.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

@@ -1,8 +1,8 @@
 /* Carrito */
 
-let cartIcon = document.querySelector('#carrito')
-let cart = document.querySelector('.cart')
-let closeCart = document.querySelector('.close-cart')
+let cartIcon = document.querySelector('#carrito');
+let cart = document.querySelector('.cart');
+let closeCart = document.querySelector('.close-cart');
 
 cartIcon.onclick = () => {
     cart.classList.add("active")
@@ -106,6 +106,17 @@ function addProductToCart(title, price, productImg) {
     cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
     cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
     updateTotal();
+    Toastify({
+        text: "Producto añadido al carrito ",
+        duration: 2000,
+        className: 'info',
+        close: true,
+        offset: { y: '3em' },
+        gravity: "top",
+        stopOnFocus: true,
+        style: { cursor: "pointer" },
+        onClick: () => {cart.classList.add("active")}
+    }).showToast();
 }
 
 
@@ -126,4 +137,26 @@ function updateTotal() {
     total = Math.round(total * 100) / 100;
 
     document.getElementsByClassName("total-price")[0].innerText = "$" + total;
+}
+
+/* Burger menu */
+
+const menu_toggle = document.getElementById('menu-toggle');
+const burgermenu = document.getElementById('burgermenu');
+const close_menu = document.querySelector('.close-menu');
+
+document.onclick = (e) => {
+    if (e.target.id !== 'burgermenu' && e.target.id !== 'menu-toggle') {
+        menu_toggle.classList.remove('active')
+        burgermenu.classList.remove('active')
+    }
+}
+
+close_menu.onclick = () => {
+    burgermenu.classList.remove('active')
+}
+
+menu_toggle.onclick = () => {
+    menu_toggle.classList.toggle('active')
+    burgermenu.classList.toggle('active')
 }
