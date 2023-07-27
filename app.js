@@ -31,14 +31,12 @@ app.set('views', [
 const mainRouter = require('./routes/mainRoutes.js');
 const userRouter = require('./routes/userRoutes.js');
 const productRouter = require('./routes/productRoutes.js');
-const logMiddleware = require('./middlewares/logMiddleware.js');
 const recuerdameMiddleware = require('./middlewares/recuerdameMiddleware.js')
 
 
 app.use(mainRouter);
 app.use(userRouter); // app.use('/user', userRouter);
 app.use(productRouter);
-app.use(logMiddleware);
 app.use(recuerdameMiddleware);
 
 app.use((req, res, next) => {

@@ -2199,3 +2199,8 @@ se ingreso en la pagina /products/4/images/clothe6.jpg
 se ingreso en la pagina /products/4/images/clothe7.jpg
 se ingreso en la pagina /products/4/images/clothe8.jpg
 se ingreso en la pagina /products/4/images/clothe9.jpg
+se ingreso en la pagina /products/3/images/clothe6.jpg
+se ingreso en la pagina /products/3/images/clothe7.jpg
+se ingreso en la pagina /products/3/images/clothe8.jpg
+se ingreso en la pagina /products/3/images/clothe9.jpg
+se ingreso en la pagina /favicon.ico

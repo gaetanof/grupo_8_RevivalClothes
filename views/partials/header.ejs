@@ -10,10 +10,12 @@
 				<% if (!user.id) { %>
 					<li><a href="../user/login">Ingresa</a></li>
 					<li><a href="../user/signin">Regístrate</a></li>
-
+					
+					<% } %>
+					<% if (user.id) { %>
+						<li><a href="">Favoritos</a></li>
 					<% } %>
 					<li><a href="/products/productlist">Catálogo</a></li>
-					<li><a href="">Favoritos</a></li>
 			</ul>
 			<img src="/images/cancel.svg" class="close-menu">
 		</div>
