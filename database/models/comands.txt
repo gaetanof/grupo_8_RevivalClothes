@@ -1,0 +1,3 @@
+npx sequelize migration:create --name <migration-name>
+
+npx sequelize db:migrate

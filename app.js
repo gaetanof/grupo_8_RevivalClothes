@@ -23,7 +23,8 @@ app.set('view engine', 'ejs');
 app.set('views', [
     path.join(__dirname, './views/main'),
     path.join(__dirname, './views/products'),
-    path.join(__dirname, './views/user')
+    path.join(__dirname, './views/user'),
+    path.join(__dirname, './views/cart')
 ]);
 
 
@@ -31,12 +32,14 @@ app.set('views', [
 const mainRouter = require('./routes/mainRoutes.js');
 const userRouter = require('./routes/userRoutes.js');
 const productRouter = require('./routes/productRoutes.js');
+const cartRouter = require('./routes/cartRoutes.js');
 const recuerdameMiddleware = require('./middlewares/recuerdameMiddleware.js')
 
 
 app.use(mainRouter);
 app.use(userRouter); // app.use('/user', userRouter);
 app.use(productRouter);
+app.use(cartRouter);
 app.use(recuerdameMiddleware);
 
 app.use((req, res, next) => {
