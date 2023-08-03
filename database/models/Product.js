@@ -49,5 +49,21 @@ module.exports = (sequelize, DataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
+    Product.associate = function(models){
+        Product.belongsTo(models.User,{
+        as: 'user',
+        foreignKey:'id_user'
+    });
+    Product.belongsToMany(models.Cart,{
+        as: 'carts',
+        through:'product_cart',
+        foreignKey:'id_product',
+        otherKey:'id_cart',
+        timestamps: false,
+        onDelete: 'CASCADE' // Agrega esta línea
+    })
+
+    }
+
     return Product
 }
