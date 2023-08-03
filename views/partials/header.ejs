@@ -66,7 +66,8 @@
 							<h3 class="total-title">Total</h3>
 							<div class="total-price">$0</div>
 						</div>
-						<button type="button" class="btn-buy">Comprar</button>
+						<a href="<%= user.idCart ? `/cart/${user.idCart}/detail` : '/user/login' %>" class="btn-buy">Continuar compra</a>
+
 						<img src="/images/cancel.svg" class="close-cart" id="close-cart">
 					</div>
 

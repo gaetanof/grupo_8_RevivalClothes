@@ -48,13 +48,17 @@ function ready() {
 }
 
 /* Lógica del boton de comprar */
+// function buyButtonClicked() {
+//     alert("Compra realizada!");
+//     const cartContent = document.getElementsByClassName('cart-content')[0];
+//     while (cartContent.hasChildNodes()) {
+//         cartContent.removeChild(cartContent.firstChild)
+//     }
+//     updateTotal();
+// }
+
 function buyButtonClicked() {
-    alert("Compra realizada!");
-    const cartContent = document.getElementsByClassName('cart-content')[0];
-    while (cartContent.hasChildNodes()) {
-        cartContent.removeChild(cartContent.firstChild)
-    }
-    updateTotal();
+    window.location.href = '/cart/1/detail';
 }
 
 /* Aunmentar cantidad de elementos */

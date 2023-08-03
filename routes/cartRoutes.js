@@ -5,10 +5,10 @@ const cartController = require('../controllers/cartController')
 
 
 // @GET /cart//:id/:idUser/detail
-router.get('/cart/:id/:idUser/detail', cartController.getCarrtio);
+router.get('/cart/:id/detail', cartController.getCarrtio);
 
 // // @PUT /products/:id/editar
-// router.put('/products/:id/editar', productController.editProduct);
+router.put('/cart/:id/add', cartController.updateCart);
 
 // // @GET /products/productlist 
 // router.get('/products/productlist', productController.getProductList);

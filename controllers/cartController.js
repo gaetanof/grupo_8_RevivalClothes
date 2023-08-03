@@ -4,18 +4,23 @@ const { Cart, ProductCart, Product } = require('../database/models');
 const controllers = {
     getCarrtio: async (req, res) => {
         const id_cart = req.params.id;
-        try {
-            const productsCarts = ProductCart.findAll({ 
-                raw: true,
-                where: {id_cart: id_cart}
-             });
-             
-            const product = Product.findByPk(productsCarts.id_product);
-            res.render('createCart', {productsCarts, product});
-        } catch (error) {
-            console.log(error);
-            res.send(error);
-        }
+
+        const cartProduct = await Cart.findAll({
+            include: 'cart_id_cart_products',
+            nest: true,
+            where: {id: id_cart}
+        })
+
+        console.log(cartProduct);
+
+        res.render('cartDetail', {cartProduct})
+
+        
+    },
+    updateCart: async (req, res) => {
+        const idUser = req.session.user.id;
+
+        
     }
 };
 

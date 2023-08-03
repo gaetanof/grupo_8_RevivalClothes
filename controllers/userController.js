@@ -4,7 +4,7 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const userModel = require('../models/user');
-const { User } = require('../database/models');
+const { User, Cart } = require('../database/models');
 
 const controllers = {
     logOut: (req, res) => {
@@ -93,6 +93,12 @@ const controllers = {
                 res.cookie('emai', user.email, { maxAge: 1000 * 60 * 60 * 24 * 360 * 9999 })
             }
 
+            const cart = await Cart.findOne({
+                where: { id_user: user.id },
+                raw: true
+            });
+            user.idCart = cart.id;
+
             delete user.password;
 
             req.session.user = user;
@@ -111,16 +117,22 @@ const controllers = {
                 const password = bcrypt.hashSync(req.body.password, 12);
                 delete req.body.password;
 
+                const idUser = uuid.v4();
                 await User.create({
-                    id: uuid.v4(),
+                    id: idUser,
                     ...req.body,
                     password,
                     type: "User",
                     image: req.file.filename,
                     delete: 0
-                })
+                });
 
-                res.redirect('/')
+                await Cart.create({
+                    id_user: idUser,
+                    total: 0
+                });
+
+                res.redirect('/');
 
             } else {
                 res.render('signin', {

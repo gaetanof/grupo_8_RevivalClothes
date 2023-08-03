@@ -35,11 +35,10 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey:'id_user'
         });
         Cart.belongsToMany(models.Product,{
-            as: 'products',
+            as: 'cart_id_cart_products',
             through:'products_cart', 
             foreignKey:'id_product',
             otherKey:'id_cart',
-            onDelete: 'CASCADE'
         })
     }
 

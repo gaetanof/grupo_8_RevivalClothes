@@ -55,12 +55,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey:'id_user'
     });
     Product.belongsToMany(models.Cart,{
-        as: 'carts',
+        as: 'cart_id_cart_products',
         through:'product_cart',
         foreignKey:'id_product',
         otherKey:'id_cart',
         timestamps: false,
-        onDelete: 'CASCADE' // Agrega esta línea
     })
 
     }
