@@ -33,7 +33,7 @@ router.get('/user/signin', authMiddleware.allowUnsignedIn, usercontroller.getSig
 router.post('/user/signin', [upload.single('userImg'), validations.validateCreateUser, authMiddleware.allowCreate], usercontroller.createUser)
 
 // @GET /user/:idUser/detalle
-router.get('/user/:idUser/detalle', usercontroller.getUserDetail)
+router.get('/user/:idUser/detalle', authMiddleware.allowSignedInId, usercontroller.getUserDetail)
 
 // @POST /user/:idUser/detalle
 router.post('/user/:idUser/detalle', usercontroller.logOut)
