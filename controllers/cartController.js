@@ -5,21 +5,21 @@ const controllers = {
     getCarrtio: async (req, res) => {
         const id_cart = req.params.id;
 
-        const cartProduct = await Cart.findAll({
-            include: 'cart_id_cart_products',
-            nest: true,
-            where: {id: id_cart}
-        })
-
-        console.log(cartProduct);
-
-        res.render('cartDetail', {cartProduct})
-
-        
+        try {
+            const cartProduct = await Cart.findAll({
+                include: 'cart_id_cart_products',
+                nest: true,
+                where: {id: id_cart}
+            });
+    
+            res.render('cartDetail', {cartProduct});
+        } catch (error) {
+            console.log(error);
+            res.send(error);
+        }
     },
     updateCart: async (req, res) => {
         const idUser = req.session.user.id;
-
         
     }
 };

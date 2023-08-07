@@ -23,8 +23,8 @@ const controllers = {
 
 	create: async (req, res) => {
 		let errors = validationResult(req);
+		console.log(req.body)
 		if (errors.isEmpty()) {
-
 			if (req.file) {
 				try {
 					const product = await Product.create({

@@ -6,9 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        holaaa
-
-    </div>
+    <ul>
+        <% cartProduct.forEach(el => { %>
+         <li>id: <%= el.id %></li>
+         <p>id_user: <%= el.id_user %></p>
+        <% }) %>
+    </ul>
 </body>
 </html>

@@ -75,6 +75,19 @@ const controllers = {
         }
 
     },
+    putAdmin: async (req, res) => {
+        const idUser = req.params.idUser;
+
+        try {
+            await User.update({
+                type: 'Admin'
+            }, {where: {id: idUser}})
+            res.redirect('userList')
+        } catch (error) {
+            console.log(error)
+            res.send(error)
+        }
+    },
     processLogin: async (req, res) => {
         const user = await User.findOne({
             where: { email: req.body.email },
