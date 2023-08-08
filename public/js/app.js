@@ -80,18 +80,45 @@ function removeCartItem(event) {
 function addCartCliked(event) {
     const button = event.target;
     const shopProducts = button.parentElement;
-    const title = shopProducts.getElementsByClassName('product-title')[0].innerText;
-    const price = shopProducts.getElementsByClassName('price')[0].innerText;
-    const productImg = shopProducts.getElementsByClassName('product-img')[0].src;
-    addProductToCart(title, price, productImg);
+    let id = shopProducts.id;
+    let title = shopProducts.getElementsByClassName('product-title')[0].innerText;
+    let price = shopProducts.getElementsByClassName('price')[0].innerText;
+    let productImg = shopProducts.getElementsByClassName('product-img')[0].src;
+    
+    if (!localStorage.getItem("idProduct")) {
+        localStorage.setItem("idProduct", id);
+    } else {
+        id = localStorage.getItem("idProduct");
+    }
+
+    if (!localStorage.getItem("title")) {
+        localStorage.setItem("title", title);
+    } else {
+        title = localStorage.getItem("title");
+    }
+    
+    if (!localStorage.getItem("price")) {
+        localStorage.setItem("price", price);
+    } else {
+        price = localStorage.getItem("price");
+    }
+
+    if (!localStorage.getItem("productImg")) {
+        localStorage.setItem("productImg", productImg);
+    } else {
+        productImg = localStorage.getItem("productImg");
+    }
+
+    addProductToCart(title, price, productImg, id);
     updateTotal();
 }
 
-function addProductToCart(title, price, productImg) {
+function addProductToCart(title, price, productImg, id) {
     const cartShopBox = document.createElement('div');
     cartShopBox.classList.add('cart-box');
     const cartItems = document.getElementsByClassName('cart-content')[0];
     const cartItemsNames = cartItems.getElementsByClassName('cart-product-title')
+    const formCarrito = document.querySelector('#form-carrito')
 
     for (let i = 0; i < cartItemsNames.length; i++) {
         if (cartItemsNames[i].innerText == title)
@@ -100,7 +127,7 @@ function addProductToCart(title, price, productImg) {
     const cartBoxContent = `
                                     <img src="${productImg}" alt="" class="cart-img">
                                     <div class="detail-box">
-                                        <div class="cart-product-title">${title}</div>
+                                        <div class="cart-product-title" name="title">${title}</div>
                                         <div class="cart-price">${price}</div>
                                         <input type="number" class="cart-quantity" value="1">
                                     </div>
@@ -119,8 +146,21 @@ function addProductToCart(title, price, productImg) {
         gravity: "top",
         stopOnFocus: true,
         style: { cursor: "pointer" },
-        onClick: () => {cart.classList.add("active")}
+        onClick: () => { cart.classList.add("active") }
     }).showToast();
+
+    if (cartItems) {
+        const inputQuantity = document.querySelector(".cart-quantity")
+        let value = inputQuantity.value
+        localStorage.setItem("quantity", value)
+        inputQuantity.onchange = (e) => {
+            value = e.target.value
+            localStorage.setItem("quantity", value)
+            console.log(localStorage.getItem("quantity"))
+            
+        }
+        console.log(localStorage.getItem("quantity"))
+    }
 }
 
 

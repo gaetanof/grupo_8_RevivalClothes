@@ -18,7 +18,7 @@ const controllers = {
             res.send(error);
         }
     },
-    updateCart: async (req, res) => {
+    addToCart: async (req, res) => {
         const idUser = req.session.user.id;
         
     }

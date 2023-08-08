@@ -477,7 +477,8 @@ p {
 .cart-quantity {
     border: 1px solid #000;
     outline-color: #000000;
-    width: 2.4rem;
+    width: 3rem;
+    padding-right: 6px;
     text-align: center;
     font-size: 1rem;
     font-weight: 600;

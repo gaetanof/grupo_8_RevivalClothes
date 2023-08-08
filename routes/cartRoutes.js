@@ -8,7 +8,7 @@ const cartController = require('../controllers/cartController')
 router.get('/cart/:id/detail', cartController.getCarrtio);
 
 // // @PUT /products/:id/editar
-router.put('/cart/:id/add', cartController.updateCart);
+router.put('/cart/add', cartController.addToCart);
 
 // // @GET /products/productlist 
 // router.get('/products/productlist', productController.getProductList);

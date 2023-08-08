@@ -16,7 +16,7 @@
             <div class="shop-content-productList">
 
                 <% productos.forEach(producto=> { %>
-                    <article class="product-box-productlist">
+                    <article class="product-box-productlist" id="<%= producto.id %>">
                         <a href="/products/<%= producto.id %>/detalle" class="link-productlist">
                             <img src="/images/fotosProducto/<%= producto.image %>" alt="" class="product-img">
                         </a>
