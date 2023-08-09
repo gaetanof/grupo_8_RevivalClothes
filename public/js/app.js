@@ -14,38 +14,38 @@ closeCart.onclick = () => {
 
 /* Lógica del carrito */
 
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready);
-} else {
-    ready();
-}
+// if (document.readyState == 'loading') {
+//     document.addEventListener('DOMContentLoaded', ready);
+// } else {
+//     ready();
+// }
 
 /* Remover productos del carrito */
-function ready() {
-    const removeCartButtons = document.getElementsByClassName('cart-remove');
-    for (let i = 0; i < removeCartButtons.length; i++) {
-        const button = removeCartButtons[i];
-        button.addEventListener('click', removeCartItem)
-    }
-    /* Cambios en la cantidad de items */
-    let quantityInputs = document.getElementsByClassName('cart-quantity');
-    for (let i = 0; i < quantityInputs.length; i++) {
-        let input = quantityInputs[i];
-        input.addEventListener('change', quantityChanged)
-    }
-    /* Añadir al carrito */
-    const addCart = document.getElementsByClassName('add-cart')
+// function ready() {
+//     const removeCartButtons = document.getElementsByClassName('cart-remove');
+//     for (let i = 0; i < removeCartButtons.length; i++) {
+//         const button = removeCartButtons[i];
+//         button.addEventListener('click', removeCartItem)
+//     }
+//     /* Cambios en la cantidad de items */
+//     let quantityInputs = document.getElementsByClassName('cart-quantity');
+//     for (let i = 0; i < quantityInputs.length; i++) {
+//         let input = quantityInputs[i];
+//         input.addEventListener('change', quantityChanged)
+//     }
+//     /* Añadir al carrito */
+//     const addCart = document.getElementsByClassName('add-cart')
 
-    for (let i = 0; i < addCart.length; i++) {
-        const button = addCart[i];
-        button.addEventListener('click', addCartCliked);
-    }
+//     for (let i = 0; i < addCart.length; i++) {
+//         const button = addCart[i];
+//         button.addEventListener('click', addCartCliked);
+//     }
 
-    /* Boton de comprar */
-    document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked)
+//     /* Boton de comprar */
+//     document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked)
 
-    updateTotal();
-}
+//     updateTotal();
+// }
 
 /* Lógica del boton de comprar */
 // function buyButtonClicked() {
@@ -77,41 +77,50 @@ function removeCartItem(event) {
 }
 
 /* Añadir productos al carrito */
-function addCartCliked(event) {
-    const button = event.target;
-    const shopProducts = button.parentElement;
-    let id = shopProducts.id;
-    let title = shopProducts.getElementsByClassName('product-title')[0].innerText;
-    let price = shopProducts.getElementsByClassName('price')[0].innerText;
-    let productImg = shopProducts.getElementsByClassName('product-img')[0].src;
+// function addCartCliked(event) {
+//     const button = event.target;
+//     const shopProducts = button.parentElement;
+//     let id = shopProducts.id;
+//     let title = shopProducts.getElementsByClassName('product-title')[0].innerText;
+//     let price = shopProducts.getElementsByClassName('price')[0].innerText;
+//     let productImg = shopProducts.getElementsByClassName('product-img')[0].src;
+//     let cartId = document.querySelector()
+
+//     // fetch(`http://localhost:5001/cart/${cartId}/detail`)
+//     // .then(function(respose){
+//     //     return response.json()
+//     // })
+//     // .then(function(data){
+//     //     console.log(data)
+//     // })
+
+//     if (!localStorage.getItem("idProduct")) {
+//         localStorage.setItem("idProduct", id);
+//     } else {
+//         id = localStorage.getItem("idProduct");
+//     }
+
+//     if (!localStorage.getItem("title")) {
+//         localStorage.setItem("title", title);
+//     } else {
+//         title = localStorage.getItem("title");
+//     }
     
-    if (!localStorage.getItem("idProduct")) {
-        localStorage.setItem("idProduct", id);
-    } else {
-        id = localStorage.getItem("idProduct");
-    }
+//     if (!localStorage.getItem("price")) {
+//         localStorage.setItem("price", price);
+//     } else {
+//         price = localStorage.getItem("price");
+//     }
 
-    if (!localStorage.getItem("title")) {
-        localStorage.setItem("title", title);
-    } else {
-        title = localStorage.getItem("title");
-    }
-    
-    if (!localStorage.getItem("price")) {
-        localStorage.setItem("price", price);
-    } else {
-        price = localStorage.getItem("price");
-    }
+//     if (!localStorage.getItem("productImg")) {
+//         localStorage.setItem("productImg", productImg);
+//     } else {
+//         productImg = localStorage.getItem("productImg");
+//     }
 
-    if (!localStorage.getItem("productImg")) {
-        localStorage.setItem("productImg", productImg);
-    } else {
-        productImg = localStorage.getItem("productImg");
-    }
-
-    addProductToCart(title, price, productImg, id);
-    updateTotal();
-}
+//     addProductToCart(title, price, productImg, id);
+//     updateTotal();
+// }
 
 function addProductToCart(title, price, productImg, id) {
     const cartShopBox = document.createElement('div');
@@ -204,3 +213,58 @@ menu_toggle.onclick = () => {
     menu_toggle.classList.toggle('active')
     burgermenu.classList.toggle('active')
 }
+
+
+// declaro esta funcion para saber si existe un carrito en local stora y en el caso de que exista que me de su longitud
+function productsInCart(){
+    return localStorage.cart ? JSON.parse(localStorage.cart).length : 0
+}
+
+window.addEventListener('load', function(){
+//llamo a todos los botones para agregar producto al carrito
+    let addToCartButtons = document.querySelectorAll(".add-to-cart")
+    let cartNumber = document.querySelector("#cart-number")
+//ejecuto la funcion para que me diga cuatos productos tengo en el carrito
+    cartNumber.innerText = productsInCart()
+    
+    addToCartButtons.forEach((button) => {
+        //escuchar click
+        button.addEventListener("click",(e) => {
+
+            const article = button.closest(".product-box-productlist")
+            const productId = article.getAttribute("id")
+            
+            if(localStorage.cart){
+
+                let cart = JSON.parse(localStorage.cart)
+                // esta formula me da -1 si el producto ya existe y 0 si no existe el producto en cuestion en el local storage
+                let index = cart.findIndex(
+                (prod) => (prod.id_product == productId ));
+                // aca uso el valor que me da esta formula que aplique para saber si tengo que agregar un objeto nuevo o si solo tengo que modificar el quantity
+                if(index != -1){
+                    cart[index].quantity++
+                }else{
+                    // como no existe ese determinado producto agrego id y cantidad
+                    cart.push({id_product: productId, quantity: 1 })
+                }                
+                localStorage.setItem('cart',JSON.stringify(cart))
+            
+            } else{
+                localStorage.setItem('cart',JSON.stringify([{id_product: productId, quantity: 1 }]))
+            
+            }
+            //notificar al ususario que se agrego el producto al carrito
+            Toastify({
+                text: "Producto añadido al carrito ",
+                duration: 2000,
+                className: 'info',
+                close: true,
+                offset: { y: '3em' },
+                gravity: "top",
+                stopOnFocus: true,
+                style: { cursor: "pointer" },
+                onClick: () => { cart.classList.add("active") }
+            }).showToast()
+        })
+    })
+})

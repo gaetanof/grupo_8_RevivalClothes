@@ -11,8 +11,8 @@ const controllers = {
                 nest: true,
                 where: {id: id_cart}
             });
-    
-            res.render('cartDetail', {cartProduct});
+            console.log(cartProduct)
+            res.render('cartDetail', {cartProduct,id_cart});
         } catch (error) {
             console.log(error);
             res.send(error);
@@ -20,7 +20,7 @@ const controllers = {
     },
     addToCart: async (req, res) => {
         const idUser = req.session.user.id;
-        
+
     }
 };
 
