@@ -5,3 +5,5 @@ se creo un registro al ingresar en la pagina/products/create
 se creo un registro al ingresar en la pagina/products/create
 se creo un registro al ingresar en la pagina/products/create
 se creo un registro al ingresar en la pagina/products/create
+se creo un registro al ingresar en la pagina/products/create
+se creo un registro al ingresar en la pagina/products/create

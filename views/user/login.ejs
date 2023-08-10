@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Ingresa</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <%- include('../partials/head') %>
+        <title>Login</title>
+        <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
 
-	<header class="main-header">
+    <header class="main-header">
         <%- include('../partials/header-users') %>
     </header>
 
     <main class="main-login">
         <div class="container-login">
             <% if (locals.errors) { %>
-                <% errors.forEach(el => { %>
-                    <p class="msg-error-login"><%= el.path === 'credenciales' ? el.msg : '' %></p>
+                <% errors.forEach(el=> { %>
+                    <p class="msg-error-login">
+                        <%= el.path==='credenciales' ? el.msg : '' %>
+                    </p>
                     <% }) %>
-            <% } %>
-            <form action="/user/login" method="POST" class="form-login">
-                <div class="email-login">
-                    <label>Email:</label>
-                    <input type="mail" name="email" class="control-login" value="<%= locals.old ? old.email : '' %>">
-                    <% if (locals.errors) { %>
-                        <% errors.forEach(el => { %>
-                            <p class="msg-error-signin"><%= el.path === 'email' ? el.msg : '' %></p>
-                            <% }) %>
-                    <% } %>
-                </div>
-                <div class="password-login">
-                    <label>Contraseña:</label>
-                    <input type="password" name="password" class="control-login">
-                </div>
-                <br>
-                <br>
-                <div class="account-login">
-                    <input type="checkbox" value="Ingresar" class="button-login" name="recuerdame">
-                    <label for="recuerdame">Recuerdame</label>
-                </div>
-                <br>
-                <div class="account-login">
-                    <p> ¿No tienes una cuenta aún? <a href="/signin">Entra aqui!</a> </p>
-                    <br>
-                    <input type="submit" value="Ingresar" class="button-signin">
-                </div>
-                
-    
-            </form>
+                        <% } %>
+                            <form action="/user/login" method="POST" class="form-login">
+                                <div class="email-login">
+                                    <label>Email:</label>
+                                    <input type="mail" name="email" class="control-login"
+                                        value="<%= locals.old ? old.email : '' %>">
+                                    <% if (locals.errors) { %>
+                                        <% errors.forEach(el=> { %>
+                                            <p class="msg-error-signin">
+                                                <%= el.path==='email' ? el.msg : '' %>
+                                            </p>
+                                            <% }) %>
+                                                <% } %>
+                                </div>
+                                <div class="password-login">
+                                    <label>Contraseña:</label>
+                                    <input type="password" name="password" class="control-login">
+                                </div>
+                                <br>
+                                <br>
+                                <div class="account-login">
+                                    <input type="checkbox" value="Ingresar" class="button-login" name="recuerdame">
+                                    <label for="recuerdame">Recuerdame</label>
+                                </div>
+                                <br>
+                                <div class="account-login">
+                                    <p> ¿No tienes una cuenta aún? <a href="/signin">Entra aqui!</a> </p>
+                                    <br>
+                                    <input type="submit" value="Ingresar" class="button-signin">
+                                </div>
+
+
+                            </form>
         </div>
     </main>
 
-	<footer>
-	<%- include('../partials/footer.ejs') %>
-    </footer>
+    <%- include('../partials/footer.ejs') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

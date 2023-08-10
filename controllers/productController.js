@@ -1,75 +1,42 @@
-const { validationResult } = require('express-validator');
 const path = require('path');
-const uuid = require('uuid');
-const fs = require('fs-extra');
-const userModel = require('../models/user');
+const fs = require('fs');
+const { validationResult } = require('express-validator');
+const { Product, User } = require('../database/models');
 
 const controllers = {
-	getDetalle: (req, res) => {
-		const productoDetalladoId = req.params.id;
-
-		const productosJSON = fs.readFileSync(path.join(__dirname, '../data/productos.json'), 'utf8')
-		if (!productosJSON) {
-			console.error('Error al leer el archivo de productos', err);
-			// Manejar el error apropiadamente
-			return;
-		}
-
-		const productos = JSON.parse(productosJSON);
-
-		// Buscar el producto correspondiente según el ID
-		const producto = productos.find((p) => p.id === productoDetalladoId);
-
+	getDetalle: async (req, res) => {
+		const id = req.params.id;
+		const product = await Product.findByPk(id)
 		const user = req.session.user;
-		res.render('detalle', { producto, user });
+		res.render('detalle', { product, user });
 	},
-
 
 	getCarrito: (req, res) => {
 		const user = req.session.user;
-		res.render('carrito', user);
+		res.render('carrito', { user });
 	},
 
 	getCreateProduct: (req, res) => {
 		const user = req.session.user;
-		res.render('createProduct', user);
+		res.render('createProduct', { user });
 	},
 
-	create: function (req, res) {
+	create: async (req, res) => {
 		let errors = validationResult(req);
-		console.log(req.body);
-		console.log(errors);
+		console.log(req.body)
 		if (errors.isEmpty()) {
 			if (req.file) {
-				let producto = {
-					id: uuid.v4(),
-					titulo: req.body.titulo,
-					talla: req.body.talle,
-					precio: req.body.precio,
-					genero: req.body.genero,
-					descripcion: req.body.descripcion,
-					imagen: req.file.filename,
-				};
-
-				fs.readFile(path.join(__dirname, '../data/productos.json'), 'utf8', (err, data) => {
-					if (err) {
-						console.error('Error al leer el archivo de productos', err);
-						return;
-					}
-
-					const productos = JSON.parse(data);
-
-					productos.push(producto);
-
-					fs.writeFile(path.join(__dirname, '../data/productos.json'), JSON.stringify(productos), 'utf8', (err) => {
-						if (err) {
-							console.error('Error al escribir el archivo de productos', err);
-							return;
-						}
-						console.log("Se creo con exito");
-						res.render('publishedProduct', { productoId: producto.id });
-					});
-				});
+				try {
+					const product = await Product.create({
+						...req.body,
+						image: req.file.filename,
+						id_user: req.session.user.id
+					})
+					res.redirect(`/products/${product.id}/detalle`)
+				} catch (error) {
+					console.log(error);
+					res.send(error);
+				}
 			}
 		} else {
 			res.render('createProduct', {
@@ -77,11 +44,72 @@ const controllers = {
 				old: req.body,
 			})
 		}
+
+	},
+	getEditProduct: async (req, res) => {
+		const id = req.params.id
+		const user = req.session.user
+		try {
+			const product = await Product.findByPk(id)
+			res.render('editProduct', { product, user })
+		} catch (error) {
+			console.log(error),
+				res.send(error)
+		}
+	},
+	editProduct: async (req, res) => {
+		const id = req.params.id
+		let newData = req.body;
+
+		delete newData.old_productImg;
+		newData.image = req.file ? req.file.filename : req.body.old_productImg;
+		console.log(req.body)
+		try {
+			await Product.update({
+				...newData,
+				image: newData.image
+			}, {
+				where: {
+					id: id
+				}
+			})
+
+			const product = await Product.findByPk(id);
+			res.redirect(`/products/${product.id}/detalle`)
+		} catch (error) {
+			console.log(error),
+				res.send(error)
+		}
+	},
+	deleteProduct: async (req, res) => {
+		const id = req.params.id
+		try {
+			await Product.destroy({
+				where: {
+					id: id
+				}
+			})
+			res.redirect('/products/productlist')
+		} catch (error) {
+			console.log(error),
+				res.send(error)
+		}
 	},
 	showPublished: (req, res) => {
 		const user = req.session.user;
 		res.render('publishedProduct', user);
 	},
+	getProductList: async (req, res) => {
+		try {
+			const user = req.session.user;
+			const productos = await Product.findAll({
+				raw: true
+			});
+			res.render('productList', { productos, user })
+		}
+		catch (error) { console.log(error) }
+	}
+
 };
 
 module.exports = controllers;

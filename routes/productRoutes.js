@@ -4,25 +4,14 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const productController = require('../controllers/productController')
-let logDBMiddleware = require('../middlewares/logDBMiddleware')
-
-
-//VALIDACIONES
-
-const validateCreateProduct = [
-    body('titulo').isLength({min:1}).withMessage('Campo de titulo obligatorio'),
-    body('genero').isLength({min:1}).withMessage('Campo de genero obligatorio'),
-    body('talle').isLength({min:1}).withMessage('Campo de talle obligatorio'),
-    body('precio').isLength({min:1}).withMessage('Campo de precio obligatorio'),
-    body('descripcion').isLength({min:1}).withMessage('Campo de descripcion obligatorio'),
-]
+const validations = require('../middlewares/productValidation')
+let authProduct = require('../middlewares/authProductsMiddleware')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/images/fotosProducto');
     },
     filename: function (req, file, cb) {
-        console.log(file)
         const nombreDeArchivo = "/clothe" + Date.now() + path.extname(file.originalname)
         cb(null,nombreDeArchivo);
     }
@@ -30,12 +19,33 @@ const storage = multer.diskStorage({
 
 const cargarImg = multer ({ storage })
 
+// @GET /products/cart 
+router.get('/products/cart', productController.getCarrito)
 
-router.get('/products/carrito-de-compras', productController.getCarrito)
+// @GET /products/create
 router.get('/products/create',productController.getCreateProduct)
-router.post('/products/create',[cargarImg.single('imgFile'), validateCreateProduct, logDBMiddleware ], productController.create)
+
+// @POST /products/create
+router.post('/products/create',[cargarImg.single('imgFile'), validations.validateCreateProduct, authProduct.allowCreate], productController.create)
+
+// @GET /products/publicado 
 router.get('/products/publicado', productController.showPublished)
+
+// @GET /products/:id/detalle 
 router.get('/products/:id/detalle', productController.getDetalle);
+
+// @GET /products/:id/editar 
+router.get('/products/:id/editar', productController.getEditProduct);
+
+// @PUT /products/:id/editar
+router.put('/products/:id/editar',[cargarImg.single('imgFile'), authProduct.allowUpdate], productController.editProduct);
+
+// @GET /products/productlist 
+router.get('/products/productlist', productController.getProductList);
+
+// @DELETE /products/:id/delete 
+router.delete('/products/:id/delete', authProduct.allowDelete, productController.deleteProduct);
+
 
 
 module.exports = router

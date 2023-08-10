@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>DETALLE</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <%- include('../partials/head') %>
+        <title>DETALLE</title>
+        <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
     <header class="main-header">
         <%- include('../partials/header', {user: locals.user ? user : {}}) %>
@@ -15,41 +14,68 @@
     <main>
         <section class="section-descripcion-detalle">
             <article class="contenedor-producto-detalle">
-                <div class="titulo-producto-detalle">
-                    <h2><%= producto.titulo %></h2>
-                    <h3><%= producto.descripcion %></h3>
-                    <a class="anadir-producto-detalle"><i class="fa-regular fa-heart"></i></a>
+
+                <h2 class="titulo-producto-detalle">
+                    <%= product.title %> <a class="anadir-producto-detalle"><i class="fa-regular fa-heart" style="color: #d87645;"></i></a>
+                </h2>
+
+                <div class="image-container-detalle">
+                    <img src="/images/fotosProducto/<%= product.image%>" alt="">
                 </div>
-                <img src="<%= producto.imagen %>" alt="">
-                <!-- logo -->
-                <div class="descripcion-producto-detalle">
-                    <p>Genero: <%= producto.genero %></p>
-                    <p>Talla: <%= producto.talla %></p>
-                    <p>Precio: <%= producto.precio %></p>
+
+                
+                <div class="descripcion-producto-detalle" id="descripcion-detalle-movile">
+                    <h3 class="description-text">
+                        <%= product.description %>
+                    </h3>
+                    <h4>Genero: <%= product.genre %></h4>
+                    <h4>Talla: <%= product.size %></h4>
+                    <h4 id="price-detalle">Precio: $<%= product.price %></h4>
                 </div>
             </article>
+            
+            <div class="btn-desc">
+                <div class="descripcion-producto-detalle" id="descripcion-detalle-desktop">
+                    <h3 class="description-text">
+                        <%= product.description %>
+                    </h3>
+                    <h4>Genero: <%= product.genre %></h4>
+                    <h4>Talla: <%= product.size %></h4>
+                    <h4 id="price-detalle">Precio: $<%= product.price %></h4>
+                </div>
 
-            <article class="article-botones-detalle">
-                <form action="#" method="">
-                    <button type="submit">Comprar Ahora</button>
-                  </form>
-
-                  <form action="#" method="">
-                    <button type="submit">Agregar al Carrito</button>
-                  </form>
-            </article>
-        </section>   
-
-        <section class="contenedor-section-parati-detalle">
-            <h2 class="subtitulos-detalle">Productos para ti</h2>
-            <div class="slider-detalle">
-                <img src="images/clothe6.jpg" alt="">
-                <img src="images/clothe7.jpg" alt="">
-                <img src="images/clothe8.jpg" alt="">
-                <img src="images/clothe9.jpg" alt="">
+                <div class="botones-detalle" id="product-container">
+                    <article class="article-botones-detalle product-box-productlist" id="<%= product.id %>">
+                        <!-- <form method="">
+                            <button id="add-to-cart" type="submit" data-id="<%= product.id %>">Agregar al carrito</button>
+                        </form> -->
+                        <button class="add-to-cart" data-id="<%= product.id %>"> 
+                        Agregar al carrito
+                        </button>
+                        <form action="#" method="">
+                            <button type="submit">Comprar ahora</button>
+                        </form>
+                    </article>
+        
+                    <article class="article-botones-detalle">
+                        <% if ((locals.user && user.id)===product.id_user) { %>
+                            <a href="/products/<%=product.id%>/editar">Editar producto</a>
+                            
+                            <form action="/products/<%= product.id%>/delete?_method=DELETE" method="POST">
+                                <button type="submit" id="borrar-producto">Borrar producto</button>
+                            </form>
+                            <% } %>
+                    </article>
+                </div>
             </div>
         </section>
+
     </main>
     <%- include('../partials/footer.ejs') %>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+            <script src="/js/app.js"></script>
+        </body>
+
 </html>
