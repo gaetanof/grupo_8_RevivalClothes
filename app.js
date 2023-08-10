@@ -33,6 +33,8 @@ const mainRouter = require('./routes/mainRoutes.js');
 const userRouter = require('./routes/userRoutes.js');
 const productRouter = require('./routes/productRoutes.js');
 const cartRouter = require('./routes/cartRoutes.js');
+const apiProductRouter = require('./routes/api/productRoutes.js');
+const apiUserRouter = require('./routes/api/userRoutes.js');
 const recuerdameMiddleware = require('./middlewares/recuerdameMiddleware.js')
 
 
@@ -40,6 +42,8 @@ app.use(mainRouter);
 app.use(userRouter); // app.use('/user', userRouter);
 app.use(productRouter);
 app.use(cartRouter);
+app.use(apiProductRouter);
+app.use(apiUserRouter);
 app.use(recuerdameMiddleware);
 
 app.use((req, res, next) => {
