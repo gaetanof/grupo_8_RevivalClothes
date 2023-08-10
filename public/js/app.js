@@ -231,7 +231,7 @@ window.addEventListener('load', function(){
         //escuchar click
         button.addEventListener("click",(e) => {
 
-            const article = button.closest(".product-box-productlist")
+            const article = button.closest(".agregar-carrito-producto")
             const productId = article.getAttribute("id")
             
             if(localStorage.cart){

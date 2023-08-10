@@ -82,7 +82,7 @@ const controllers = {
             await User.update({
                 type: 'Admin'
             }, {where: {id: idUser}})
-            res.redirect('userList')
+            res.redirect('/user/userList')
         } catch (error) {
             console.log(error)
             res.send(error)
@@ -149,6 +149,7 @@ const controllers = {
 
             } else {
                 res.render('signin', {
+                    errors: errors.array(),
                     old: req.body,
                     img: req.file || ''
                 });

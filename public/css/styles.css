@@ -1433,6 +1433,11 @@ footer {
     }
 }
 
+.foto-detalle-into {
+    aspect-ratio: 5/5;
+    max-width: 200px;
+}
+
 @media (min-width: 768px) {
 
     /* inicio header */

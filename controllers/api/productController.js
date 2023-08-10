@@ -15,7 +15,7 @@ const controller = {
 
         const response = await Product.findByPk(id)
 
-        return res.json({data: response})
+        return res.json(response)
     }
 };
 

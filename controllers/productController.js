@@ -37,7 +37,12 @@ const controllers = {
 					console.log(error);
 					res.send(error);
 				}
-			}
+			} else {
+                res.render('createProduct', {
+                    old: req.body,
+                    img: req.file || ''
+                });
+            }
 		} else {
 			res.render('createProduct', {
 				errors: errors.array(),
@@ -83,6 +88,7 @@ const controllers = {
 	},
 	deleteProduct: async (req, res) => {
 		const id = req.params.id
+
 		try {
 			await Product.destroy({
 				where: {

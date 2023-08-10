@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="botones-detalle" id="product-container">
-                    <article class="article-botones-detalle product-box-productlist" id="<%= product.id %>">
+                    <article class="article-botones-detalle agregar-carrito-producto" id="<%= product.id %>">
                         <!-- <form method="">
                             <button id="add-to-cart" type="submit" data-id="<%= product.id %>">Agregar al carrito</button>
                         </form> -->
@@ -61,7 +61,7 @@
                         <% if ((locals.user && user.id)===product.id_user) { %>
                             <a href="/products/<%=product.id%>/editar">Editar producto</a>
                             
-                            <form action="/products/<%= product.id%>/delete?_method=DELETE" method="POST">
+                            <form action="/products/<%= product.id %>/delete?_method=DELETE" method="POST">
                                 <button type="submit" id="borrar-producto">Borrar producto</button>
                             </form>
                             <% } %>

@@ -54,7 +54,7 @@ router.put('/user/:idUser/changepassword', validations.validateChangePassword, u
 router.get('/user/userlist', authMiddleware.allowAdmin, usercontroller.getUserList)
 
 // @GET /user/userList
-router.post('/user/:idUser/userlist', authMiddleware.allowAdmin, usercontroller.putAdmin)
+router.put('/user/:idUser/userlist', authMiddleware.allowAdmin, usercontroller.putAdmin)
 
 // @DELETE /user/:idUser/delete
 router.delete('/user/:idUser/delete', usercontroller.deleteUser)

@@ -1,5 +1,4 @@
 const { User } = require('../../database/models');
-const axios = require('axios');
 
 const controller = {
     getAll: async (req, res) => {
