@@ -1,18 +1,14 @@
 const path = require('path');
 const fs = require('fs');
+const axios = require('axios');
 
 const controllers = {
-    getIndex: (req, res) => {
-        fs.readFile(path.join(__dirname, '../data/productos.json'), 'utf8', (err, data) => {
-            if (err) {
-                console.error('Error al leer el archivo de productos', err);
-                // Manejar el error apropiadamente
-                return;
-            }
-            const user = req.session.user;
-            const productos = JSON.parse(data);
-            res.render('home', { productos, user });
-        });
+    getIndex: async (req, res) => {
+        let products = await axios.get('http://localhost:5001/api/products/n?count=3');
+
+        const user = req.session.user;
+        products = products.data.data
+        res.render('home', { products, user });
     }
 };
 

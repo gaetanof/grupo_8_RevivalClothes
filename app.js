@@ -34,6 +34,7 @@ const productRouter = require('./routes/productRoutes.js');
 const cartRouter = require('./routes/cartRoutes.js');
 const apiProductRouter = require('./routes/api/productRoutes.js');
 const apiUserRouter = require('./routes/api/userRoutes.js');
+const apiCartRouter = require('./routes/api/cartRoutes.js');
 const recuerdameMiddleware = require('./middlewares/recuerdameMiddleware.js')
 
 
@@ -43,6 +44,7 @@ app.use(productRouter);
 app.use(cartRouter);
 app.use(apiProductRouter);
 app.use(apiUserRouter);
+app.use(apiCartRouter);
 app.use(recuerdameMiddleware);
 
 app.use((req, res, next) => {

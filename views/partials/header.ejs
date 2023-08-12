@@ -53,10 +53,12 @@
 				<% } %>
 
 					<li><a href="#"><img src="/images/heart.svg" class="handbag"></a></li>
-
-					<li><img src="/images/handbag.svg" class="handbag" id="carrito"></li>
-
-					<li class="handbag cart-number" id="cart-number">0</li>
+					<div class="cart-container-position">
+						<li class="elemento-container-position"><img src="/images/handbag.svg" class="handbag" id="carrito"></li>
+						
+						<div class="cajita"> </div>
+						<li class="handbag cart-number" id="cart-number">0</li>
+					</div>
 
 
 					<div class="cart" id="cart_open">
@@ -69,7 +71,7 @@
 							<div class="total-price">$0</div>
 						</div>
 						<form action="/cart/add?_method=PUT" method="POST" id="form-carrito">
-							<a href="<%= user.idCart ? `/cart/${user.idCart}/detail` : '/user/login' %>" class="btn-buy">Continuar compra</a>
+							<a href="/cart/detail" class="btn-buy">Continuar compra</a>
 						</form>
 
 						<img src="/images/cancel.svg" class="close-cart" id="close-cart">

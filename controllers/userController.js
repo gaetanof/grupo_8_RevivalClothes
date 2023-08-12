@@ -110,7 +110,7 @@ const controllers = {
                 where: { id_user: user.id },
                 raw: true
             });
-            user.idCart = cart.id;
+            // user.idCart = cart.id;
 
             delete user.password;
 
@@ -140,10 +140,10 @@ const controllers = {
                     delete: 0
                 });
 
-                await Cart.create({
-                    id_user: idUser,
-                    total: 0
-                });
+                // await Cart.create({
+                //     id_user: idUser,
+                //     total: 0
+                // });
 
                 res.redirect('/');
 
