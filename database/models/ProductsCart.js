@@ -27,7 +27,15 @@ module.exports = (sequelize, DataTypes) => {
         quantity: {
             type: DataTypes.INTEGER,
             allowNull: false,
-        }
+        },
+        product_name: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
+        },
+        price: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false,
+        },
     }
 
     const config = {
@@ -36,6 +44,12 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     const ProductCart = sequelize.define(alias, cols, config);
+
+    ProductCart.associate = (models) => {
+        ProductCart.belongsTo(models.Cart, {
+            as: "order",
+        });
+    }
 
     return ProductCart
 }

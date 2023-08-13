@@ -7,8 +7,11 @@ module.exports = {
             id_user: req.session.user.id
         },
         {
-            include: Cart.ProductCart
+            include: [Cart.cart_id_cart_products],
+            raw: true
         });
-        res.json({ ok: true, status: 200, data: order })
+
+        console.log(order.dataValues);
+        res.json({ ok: true, status: 200, order: order })
     }
 }

@@ -45,9 +45,13 @@ module.exports = (sequelize, DataTypes) => {
         Cart.belongsToMany(models.Product, {
             as: 'cart_id_cart_products',
             through: 'products_cart',
-            foreignKey: 'id_product',
-            otherKey: 'id_cart',
-        })
+            foreignKey: 'id_cart',
+            otherKey: 'id_product',
+        });
+
+        Cart.cart_id_cart_products = Cart.hasMany(models.ProductCart, {
+            as: "orderItems",
+          });
     }
 
     return Cart

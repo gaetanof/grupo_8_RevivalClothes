@@ -38,10 +38,10 @@ if (localStorage.cart) {
 					</tr>
 					`;
 					products.push({
-						id: product.id,
-						title: product.title,
-						price: product.price,
-						quantity: el.quantity
+						id_product: product.id,
+						product_name: product.title,
+						quantity: el.quantity,
+						price: parseFloat(product.price)
 					});
 				} else {
 					cart.splice(i, 1);
@@ -73,7 +73,7 @@ checkoutCart.onsubmit = (e) => {
 		},
 		body: JSON.stringify(formData)
 	})
-	.then((res) => res)
+	.then((res) => res.json())
 	.then((product) => {
 		console.log(product);
 	})
