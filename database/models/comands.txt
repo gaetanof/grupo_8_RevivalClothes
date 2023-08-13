@@ -1,3 +1,5 @@
 npx sequelize migration:create --name <migration-name>
 
 npx sequelize db:migrate
+
+npx create-react-app ejemplo1

@@ -3,7 +3,6 @@ const path = require('path');
 let session = require('express-session');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5001;
 
 const app = express();
@@ -33,6 +32,9 @@ const mainRouter = require('./routes/mainRoutes.js');
 const userRouter = require('./routes/userRoutes.js');
 const productRouter = require('./routes/productRoutes.js');
 const cartRouter = require('./routes/cartRoutes.js');
+const apiProductRouter = require('./routes/api/productRoutes.js');
+const apiUserRouter = require('./routes/api/userRoutes.js');
+const apiCartRouter = require('./routes/api/cartRoutes.js');
 const recuerdameMiddleware = require('./middlewares/recuerdameMiddleware.js')
 
 
@@ -40,6 +42,9 @@ app.use(mainRouter);
 app.use(userRouter); // app.use('/user', userRouter);
 app.use(productRouter);
 app.use(cartRouter);
+app.use(apiProductRouter);
+app.use(apiUserRouter);
+app.use(apiCartRouter);
 app.use(recuerdameMiddleware);
 
 app.use((req, res, next) => {

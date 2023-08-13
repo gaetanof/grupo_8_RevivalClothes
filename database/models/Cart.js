@@ -19,7 +19,15 @@ module.exports = (sequelize, DataTypes) => {
         total: {
             type: DataTypes.DECIMAL,
             allowNull: false,
-        }
+        },
+        paymentMethod: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
+        },
+        shippingMethod: {
+            type: DataTypes.STRING(100),
+            allowNull: true,
+        },
     }
 
     const config = {
@@ -29,16 +37,16 @@ module.exports = (sequelize, DataTypes) => {
 
     const Cart = sequelize.define(alias, cols, config);
 
-    Cart.associate = function(models){
-        Cart.belongsTo(models.User,{
+    Cart.associate = function (models) {
+        Cart.belongsTo(models.User, {
             as: 'user',
-            foreignKey:'id_user'
+            foreignKey: 'id_user'
         });
-        Cart.belongsToMany(models.Product,{
+        Cart.belongsToMany(models.Product, {
             as: 'cart_id_cart_products',
-            through:'products_cart', 
-            foreignKey:'id_product',
-            otherKey:'id_cart',
+            through: 'products_cart',
+            foreignKey: 'id_product',
+            otherKey: 'id_cart',
         })
     }
 

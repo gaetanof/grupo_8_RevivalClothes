@@ -44,12 +44,14 @@
                     <h4 id="price-detalle">Precio: $<%= product.price %></h4>
                 </div>
 
-                <div class="botones-detalle">
-                    <article class="article-botones-detalle">
-                        <form method="">
-                            <button type="submit">Agregar al carrito</button>
-                        </form>
-        
+                <div class="botones-detalle" id="product-container">
+                    <article class="article-botones-detalle agregar-carrito-producto" id="<%= product.id %>">
+                        <!-- <form method="">
+                            <button id="add-to-cart" type="submit" data-id="<%= product.id %>">Agregar al carrito</button>
+                        </form> -->
+                        <button class="add-to-cart" data-id="<%= product.id %>"> 
+                        Agregar al carrito
+                        </button>
                         <form action="#" method="">
                             <button type="submit">Comprar ahora</button>
                         </form>
@@ -59,7 +61,7 @@
                         <% if ((locals.user && user.id)===product.id_user) { %>
                             <a href="/products/<%=product.id%>/editar">Editar producto</a>
                             
-                            <form action="/products/<%= product.id%>/delete?_method=DELETE" method="POST">
+                            <form action="/products/<%= product.id %>/delete?_method=DELETE" method="POST">
                                 <button type="submit" id="borrar-producto">Borrar producto</button>
                             </form>
                             <% } %>
@@ -73,6 +75,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
-</body>
+            <script src="/js/app.js"></script>
+        </body>
 
 </html>

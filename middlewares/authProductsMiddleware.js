@@ -1,4 +1,5 @@
 const { Product } = require('../database/models');
+const axios = require('axios');
 
 const productsMiddleware = {
     allowCreate: (req, res, next) => {
@@ -21,10 +22,13 @@ const productsMiddleware = {
     },
 
     allowDelete: async (req, res, next) => {
-        const id = req.body.id;
-        const product = await Product.findByPk(id);
+        const id = req.params.id;
+        
+        const endpoint = `http://localhost:5001/api/${id}/products`
 
-        if (req.session.user.id === product.id_user) {
+        const response = await axios.get(endpoint);
+
+        if (req.session.user.id === response.data.id_user) {
             next();
         } else {
             res.redirect(`/products/${id}/detalle`);
