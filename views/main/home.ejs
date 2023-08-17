@@ -26,7 +26,8 @@
 
         <div class="texto-home">
             <h2>The <span id="italic-home">future </span>is in your <br>closet you just have
-                    <br>to look twice</h2>
+                <br>to look twice
+            </h2>
             <br>
 
             <h3>vende tu ropa con nosotros y se parte del cambio</h3>
@@ -47,24 +48,27 @@
         <h2 class="titulo-home">¡Lo más popular del momento!</h2>
         <section class="contenedor-recomendados-home">
             <article class="article-recomendados-home">
-                <a href="/products/<%= products[0].id %>/detalle"><img src="images/fotosProducto/<%= products[0].image %>" alt="">
+                <a href="/products/<%= products[0].id %>/detalle"><img
+                        src="images/fotosProducto/<%= products[0].image %>" alt="">
                     <p>Vista rápida</p>
                 </a>
             </article>
 
             <article class="article-recomendados-home">
-                <a href="/products/<%= products[1].id %>/detalle"><img src="images/fotosProducto/<%= products[1].image %>" alt="">
+                <a href="/products/<%= products[1].id %>/detalle"><img
+                        src="images/fotosProducto/<%= products[1].image %>" alt="">
                     <p>Vista rápida</p>
                 </a>
             </article>
 
             <article class="article-recomendados-home">
-                <a href="/products/<%= products[2].id %>/detalle"><img src="images/fotosProducto/<%= products[2].image %>" alt="">
+                <a href="/products/<%= products[2].id %>/detalle"><img
+                        src="images/fotosProducto/<%= products[2].image %>" alt="">
                     <p>Vista rápida</p>
                 </a>
             </article>
         </section>
-        
+
         <section class="contenedor-servicios-home">
             <article class="article-servicios-home">
                 <i class="fa-solid fa-tags fa-rotate-270"></i>
@@ -98,9 +102,11 @@
 
     <%- include('../partials/footer.ejs') %>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script src="/js/cartHeader.js"></script>
 </body>
 
 </html>
