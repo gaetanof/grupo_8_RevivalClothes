@@ -1454,6 +1454,10 @@ footer {
     max-width: 200px;
 }
 
+.error-style{
+    color: red;
+}
+
 @media (min-width: 768px) {
 
     /* inicio header */
