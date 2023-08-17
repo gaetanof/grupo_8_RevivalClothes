@@ -6,6 +6,8 @@ const path = require('path');
 const productController = require('../controllers/productController')
 const validations = require('../middlewares/productValidation')
 let authProduct = require('../middlewares/authProductsMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware')
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -35,10 +37,10 @@ router.get('/products/publicado', productController.showPublished)
 router.get('/products/:id/detalle', productController.getDetalle);
 
 // @GET /products/:id/editar 
-router.get('/products/:id/editar', productController.getEditProduct);
+router.get('/products/:id/editar',[ authMiddleware.allowSignedIn], productController.getEditProduct);
 
 // @PUT /products/:id/editar
-router.put('/products/:id/editar',[cargarImg.single('imgFile'), authProduct.allowUpdate], productController.editProduct);
+router.put('/products/:id/editar',[cargarImg.single('imgFile'),authProduct.allowUpdate], productController.editProduct);
 
 // @GET /products/productlist 
 router.get('/products/productlist', productController.getProductList);

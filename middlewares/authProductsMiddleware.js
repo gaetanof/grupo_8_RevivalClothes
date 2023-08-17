@@ -11,10 +11,11 @@ const productsMiddleware = {
     },
 
     allowUpdate: async (req, res, next) => {
-        const id = req.body.id;
-        const product = await Product.findByPk(id);
-
-        if (req.session.user.id === product.id_user) {
+        const id = req.params.id;
+        const endpoint = `http://localhost:5001/api/${id}/products`
+        const product = await axios.get(endpoint)
+    
+        if (req.session.user.id === product.data.id_user) {
             next();
         } else {
             res.redirect(`/products/${id}/detalle`);
