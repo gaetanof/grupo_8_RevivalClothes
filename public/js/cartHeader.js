@@ -63,7 +63,6 @@ function removeCartItem(event) {
 function addCartCliked(event) {
     const button = event.target;
     const shopProducts = button.parentElement.parentElement;
-    console.log(shopProducts);
     let id = shopProducts.id;
     let title = shopProducts.getElementsByClassName('product-title')[0].innerText;
     let price = shopProducts.getElementsByClassName('price')[0].innerText;
@@ -73,16 +72,20 @@ function addCartCliked(event) {
     updateTotal();
 }
 
+let lastClickTime = 0;
+
 function addProductToCart(title, price, productImg, id) {
+    const currentTime = Date.now();
+
     const cartShopBox = document.createElement('div');
     cartShopBox.classList.add('cart-box');
     const cartItems = document.getElementsByClassName('cart-content')[0];
     const cartItemsNames = cartItems.getElementsByClassName('cart-product-title')
 
-    for (let i = 0; i < cartItemsNames.length; i++) {
-        if (cartItemsNames[i].innerText == title)
-            alert("¡Ya has añadido este producto al carrito!");
-    }
+    // for (let i = 0; i < cartItemsNames.length; i++) {
+    //     if (cartItemsNames[i].innerText == title)
+    //         alert("¡Ya has añadido este producto al carrito!");
+    // }
     const cartBoxContent = `
                                     <img src="${productImg}" alt="" class="cart-img">
                                     <div class="detail-box">
@@ -96,17 +99,16 @@ function addProductToCart(title, price, productImg, id) {
     cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
     cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
     updateTotal();
-    Toastify({
-        text: "Producto añadido al carrito ",
-        duration: 2000,
-        className: 'info',
-        close: true,
-        offset: { y: '3em' },
-        gravity: "top",
-        stopOnFocus: true,
-        style: { cursor: "pointer" },
-        onClick: () => { cart.classList.add("active") }
-    }).showToast();
+    if (currentTime - lastClickTime >= 10001) {
+        lastClickTime = currentTime;
+        Toastify({
+            text: "¡Producto añadido al carrito. Ve a verlo ahora!",
+            duration: 10000,
+            className: 'info',
+            close: true,
+            onClick: () => { cart.classList.add("active") }
+        }).showToast();
+    } 
 
     if (cartItems) {
         const inputQuantity = document.querySelector(".cart-quantity")

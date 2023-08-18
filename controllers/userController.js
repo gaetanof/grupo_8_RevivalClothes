@@ -122,7 +122,6 @@ const controllers = {
         }
     },
     createUser: async (req, res) => {
-        const users = await User.findAll({ raw: true })
         let errors = validationResult(req)
 
         if (errors.isEmpty()) {
@@ -139,11 +138,6 @@ const controllers = {
                     image: req.file.filename,
                     delete: 0
                 });
-
-                // await Cart.create({
-                //     id_user: idUser,
-                //     total: 0
-                // });
 
                 res.redirect('/');
 

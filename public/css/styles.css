@@ -1133,22 +1133,32 @@ footer {
 }
 
 .info {
-    position: absolute;
-    right: 1rem;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    width: 100%;
+    text-align: center;
     padding: 6px;
     transition: all 0.3s;
-    font-weight: 500;
-    border: 1px solid #d7875f;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #d7875ff3;
+    border: 1px solid #ffffff;
+    letter-spacing: 2px;
 }
 
 .info:hover {
-    background-color: #d7875f48;
+    background-color: #d7875fa9;
+    color: #000;
 }
 
 .toast-close {
+    display: flex;
+    align-items: flex-end;
     background-color: transparent;
     border: none;
-    font-weight: 100;
+    color: #fff;
+    align-self: flex-end;
 }
 
 .cart-number {
@@ -1184,14 +1194,15 @@ footer {
 
 /* Burger menu */
 .burger-button-header {
-    position: fixed;
+    position: absolute;
     top: 35px;
     left: 15px;
     z-index: 5;
+    transform: translate(10%, 10%);
 }
 
 #menu-toggle {
-    position: fixed;
+    position: absolute;
     top: 30px;
     left: 10px;
     width: 25px;
@@ -1652,7 +1663,8 @@ footer {
     }
 
     .info {
-        right: 3rem;
+        letter-spacing: 5px;
+
     }
 
     #menu-toggle {
@@ -1780,7 +1792,7 @@ footer {
     }
 
     .info {
-        right: 4.5rem;
+        padding: 10px;
     }
     .btn-desc {
         flex-flow: column;
@@ -1811,9 +1823,9 @@ footer {
         max-width: 340px;
     }
 
-    .info {
+    /* .info {
         right: 5rem;
-    }
+    } */
 }
 
 @media (min-width: 1600px) {
@@ -1821,7 +1833,7 @@ footer {
         max-width: 380px;
     }
 
-    .info {
+    /* .info {
         right: 6.5rem;
-    }
+    } */
 }
