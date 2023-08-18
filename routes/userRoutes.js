@@ -4,6 +4,7 @@ const { User } = require('../database/models');
 const multer = require('multer');
 const validations = require('../middlewares/userValidations');
 const authMiddleware = require('../middlewares/authMiddleware')
+const path = require('path')
 
 const router = express.Router();
 
@@ -17,8 +18,20 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage });
+const upload = multer({
+    storage: storage,
+    fileFilter: function (req, file, cb) {
+        const filetypes = /jpeg|jpg|png|gif/; // Lista de extensiones permitidas
+        const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+        const mimetype = filetypes.test(file.mimetype);
 
+        if (extname && mimetype) {
+            cb(null, true);
+        } else {
+            cb(new Error('Solo se permiten archivos de imagen: JPEG, JPG, PNG y GIF'));
+        }
+    }
+});
 
 // @GET /user/login 
 router.get('/user/login', authMiddleware.allowUnsignedIn, usercontroller.getLogin)

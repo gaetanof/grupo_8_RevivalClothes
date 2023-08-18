@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
             error.classList.add("error-style")
             error.innerText = "El nombre debe tener al menos 3 caracteres"
         } else {
-            error.classList.remove
+            error.classList.remove("error-style")
             error.innerText = ""
         }
     }
@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
             error.classList.add("error-style")
             error.innerText = "El email debe ser valido"
         } else {
-            error.classList.remove
+            error.classList.remove("error-style")
             error.innerText = ""
         }
 
@@ -42,7 +42,7 @@ window.addEventListener("load", () => {
             error.classList.add("error-style");
             error.innerText = "El nombre debe tener al menos 3 caracteres"
         } else {
-            error.classList.remove
+            error.classList.remove("error-style");
             error.innerText = ""
         }
     }
@@ -65,6 +65,7 @@ window.addEventListener("load", () => {
             if (!isImageValid) {
                 imageError.classList.add("error-style");
                 imageError.innerText = "Formato de imagen inválido (JPG, JPEG, PNG, GIF)";
+                formularioSignIn
             } else {
                 imageError.classList.remove("error-style");
                 imageError.innerText = "";
@@ -80,9 +81,17 @@ window.addEventListener("load", () => {
 
         if (!patron.test(e.target.value)) {
             error.innerText = "La contraseña debe contener al menos una letra mayúscula y al menos un número.";
+            error.classList.add("error-style");
         } else {
             error.classList.remove("error-style");
             error.innerText = "";
+        }
+    }
+
+    formularioSignIn.onsubmit = (e) => {
+        console.log(formularioSignIn.querySelector('.error-style'));
+        if (formularioSignIn.querySelector('.error-style') !== null) {
+            e.preventDefault();
         }
     }
 
