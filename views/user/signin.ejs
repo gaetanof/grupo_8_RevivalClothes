@@ -1,82 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<%- include('../partials/head') %>
-    <title>Sign In</title>
-    <link rel="stylesheet" href="/css/styles.css">
+		<title>Sign In</title>
+		<link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
 
 	<header class="main-header">
-        <%- include('../partials/header-users') %>
-    </header>
+		<%- include('../partials/header-users') %>
+	</header>
 
 	<main class="main-signin">
 
-	<div class="container-signin">
-		<form action="/user/signin" method="POST" class="form-signin formulario-signin" enctype="multipart/form-data">
-			<div class="fullname-signin">
-				<label>Nombre Completo:</label>
-  				<input type="text" name="full_name" class="control-signin formulario-signin-fullName" value="<%= locals.old && old.full_name ? old.full_name : '' %>">
-				<span class="error-fullName error-style"></span>
-				  <% if (locals.errors) { %>
-					<% errors.forEach(el => { %>
-						<p class="msg-error-signin"><%= el.path == 'full_name' ? el.msg : '' %></p>
-						<% }) %>
-				<% } %>
-			</div>
-			<div class="email-signin">
-				<label>Email:</label>
-  				<input type="mail" name="email" class="control-signin formulario-signin-email" value="<%= locals.old && old.email ? old.email : '' %>">
-				<span class="error-email error-style"></span>
-				  <% if (locals.errors) { %>
-					<% errors.forEach(el => { %>
-						<p class="msg-error-signin"><%= el.path == 'email' ? el.msg : '' %></p>
-						<% }) %>
-				<% } %>
-				<% if (locals.errors) { %>
-					<% errors.forEach(el => { %>
-						<p class="msg-error-signin"><%= el.path == 'email_equal' ? el.msg : '' %></p>
-						<% }) %>
-				<% } %>
-			</div>
-			<div class="username-signin">
-				<label>Apodo:</label>
-  				<input type="text" name="user_name" class="control-signin" value="<%= locals.old && old.user_name ? old.user_name : '' %>">
-				  <% if (locals.errors) { %>
-					<% errors.forEach(el => { %>
-						<p class="msg-error-signin"><%= el.path == 'user_name' ? el.msg : '' %></p>
-						<% }) %>
-				<% } %>
-			</div>
-			<div class="username-signin">
-				<label>Imagen de perfil:</label>
-  				<input type="file" name="userImg" class="control-signin">
-				  <% if (locals.img === '') { %>
+		<div class="container-signin">
+			<form action="/user/signin" method="POST" class="form-signin formulario-signin"
+				enctype="multipart/form-data">
+				<div class="fullname-signin">
+					<label>Nombre Completo:</label>
+					<input type="text" name="full_name" class="control-signin formulario-signin-fullName"
+						value="<%= locals.old && old.full_name ? old.full_name : '' %>">
+					<span class="error-fullName error-style"></span>
+					<% if (locals.errors) { %>
+						<% errors.forEach(el=> { %>
+							<p class="msg-error-signin">
+								<%= el.path=='full_name' ? el.msg : '' %>
+							</p>
+							<% }) %>
+								<% } %>
+				</div>
+				<div class="email-signin">
+					<label>Email:</label>
+					<input type="mail" name="email" class="control-signin formulario-signin-email"
+						value="<%= locals.old && old.email ? old.email : '' %>">
+					<span class="error-email error-style"></span>
+					<% if (locals.errors) { %>
+						<% errors.forEach(el=> { %>
+							<p class="msg-error-signin">
+								<%= el.path=='email' ? el.msg : '' %>
+							</p>
+							<% }) %>
+								<% } %>
+									<% if (locals.errors) { %>
+										<% errors.forEach(el=> { %>
+											<p class="msg-error-signin">
+												<%= el.path=='email_equal' ? el.msg : '' %>
+											</p>
+											<% }) %>
+												<% } %>
+				</div>
+				<div class="username-signin">
+					<label>Apodo:</label>
+					<input type="text" name="user_name" class="control-signin formulario-signin-username"
+						value="<%= locals.old && old.user_name ? old.user_name : '' %>">
+					<span class="error-username error-style"></span>
+					<% if (locals.errors) { %>
+						<% errors.forEach(el=> { %>
+							<p class="msg-error-signin">
+								<%= el.path=='user_name' ? el.msg : '' %>
+							</p>
+							<% }) %>
+								<% } %>
+				</div>
+				<div class="username-signin">
+					<label>Imagen de perfil:</label>
+					<input type="file" name="userImg" class="control-signin formulario-signin-image">
+					<span class="error-image error-style"></span>
+					<% if (locals.img==='' ) { %>
 						<p class="msg-error-signin">Ingresa una imagen válida</p>
-				<% } %>
-			</div>
-			<div class="password-signin">
-				<label>Contraseña:</label>
-  				<input type="password" name="password" class="control-signin">
-				  <% if (locals.errors) { %>
-					<% errors.forEach(el => { %>
-						<p class="msg-error-signin"><%= el.path == 'password' ? el.msg : '' %></p>
-						<% }) %>
-				<% } %>
-			</div>
-			<div class="account-signin">
-				<p> Ya tienes una cuenta? <a href="/login">Entra aqui!</a> </p>	
-				<input type="submit" value="Registrarse" class="button-signin">
-			</div>
+						<% } %>
+				</div>
+				<div class="password-signin">
+					<label>Contraseña:</label>
+					<input type="password" name="password" class="control-signin formulario-signin-password">
+					<span class="error-password error-style"></span>
+					<% if (locals.errors) { %>
+						<% errors.forEach(el=> { %>
+							<p class="msg-error-signin">
+								<%= el.path=='password' ? el.msg : '' %>
+							</p>
+							<% }) %>
+								<% } %>
+				</div>
+				<div class="account-signin">
+					<p> Ya tienes una cuenta? <a href="/login">Entra aqui!</a> </p>
+					<input type="submit" value="Registrarse" class="button-signin">
+				</div>
 
-		</form>
-	</div>
+			</form>
+		</div>
 	</main>
 
 	<%- include('../partials/footer.ejs') %>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-	<script src="/js/validation.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+			crossorigin="anonymous"></script>
+		<script src="/js/validation.js"></script>
 
 </body>
+
 </html>
