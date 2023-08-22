@@ -13,11 +13,25 @@ const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/images/fotosProducto');
     },
-    filename: function (req, file, cb) {
-        const nombreDeArchivo = "/clothe" + Date.now() + path.extname(file.originalname)
-        cb(null,nombreDeArchivo);
+    filename: async (req, file, cb) => {
+        cb(null, Date.now() + '-' + file.originalname);
     }
 })
+
+const upload = multer({
+    storage: storage,
+    fileFilter: function (req, file, cb) {
+        const filetypes = /jpeg|jpg|png|gif/; // Lista de extensiones permitidas
+        const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+        const mimetype = filetypes.test(file.mimetype);
+
+        if (extname && mimetype) {
+            cb(null, true);
+        } else {
+            cb(new Error('Solo se permiten archivos de imagen: JPEG, JPG, PNG y GIF'));
+        }
+    }
+});
 
 const cargarImg = multer ({ storage })
 
@@ -28,7 +42,7 @@ router.get('/products/cart', productController.getCarrito)
 router.get('/products/create',productController.getCreateProduct)
 
 // @POST /products/create
-router.post('/products/create',[cargarImg.single('imgFile'), validations.validateCreateProduct, authProduct.allowCreate], productController.create)
+router.post('/products/create',[upload.single('imgFile'), validations.validateCreateProduct, authProduct.allowCreate], productController.create)
 
 // @GET /products/publicado 
 router.get('/products/publicado', productController.showPublished)

@@ -73,7 +73,7 @@ window.addEventListener("load", () => {
         }
     }
 
-    // Validacion password 
+    // validacion password 
     const password = formularioSignIn.querySelector('.formulario-signin-password');
     password.oninput = (e) => {
         const error = formularioSignIn.querySelector(".error-password");
@@ -94,7 +94,6 @@ window.addEventListener("load", () => {
             e.preventDefault();
         }
     }
-
 })
 
 
