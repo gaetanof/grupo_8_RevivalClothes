@@ -29,7 +29,7 @@
 							value="<%=product.title%>">
 							<span>Nombre del producto</span>
 						</label>
-						<span class="error-productName error-style"></span>
+						<span class="error-productName"></span>
 						<label>
 							<select name="genre" id="" class="input" required="" placeholder="">
 								<option value="hombre" <%= product.genre === 'hombre' ? 'selected' : '' %>>hombre</option>
@@ -50,6 +50,18 @@
 							</select>
 							<span>Talla</span>
 						</label>
+
+						<label>
+							<select name="category" id="" class="input" required="" placeholder="">
+								<option value="" disabled selected></option>
+								<option value="adulto" <%= product.category === 'adulto' ? 'selected' : '' %>>Adulto</option>
+								<option value="ninos" <%= product.category === 'ninos' ? 'selected' : '' %>>Niños</option>
+								<option value="deportiva" <%= product.category === 'deportiva' ? 'selected' : '' %>>Deportiva</option>
+								<option value="marca" <%= product.category === 'marca' ? 'selected' : '' %>>Marcas exclusivas</option>
+								<option value="sombreros" <%= product.category === 'sombreros' ? 'selected' : '' %>>Sombreros</option>
+							</select>
+							<span>Categoria</span>
+						</label>
 	
 						<label>
 							<input required="" placeholder="" type="number" class="input"
@@ -63,7 +75,7 @@
 							<span>Descripción</span>
 						</label>
 
-					<span class="error-productDescription error-style"></span>
+					<span class="error-productDescription"></span>
 
 	
 						<div class="container">
@@ -97,7 +109,7 @@
 							<input type="hidden" name="old_productImg" id="imgFile" value="/images/fotosProducto/<%= product.image%>"  />
 							<input id="file" type="file" name="imgFile" class="formulario-product-image">
 						</div>
-						<span class="error-productImage error-style"></span>
+						<span class="error-productImage"></span>
 
 						<button class="submit" type="submit">Crear producto</button>
 					</form>

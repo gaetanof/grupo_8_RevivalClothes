@@ -39,7 +39,11 @@ module.exports = (sequelize, DataTypes) => {
                 model: 'users',
                 key: 'id'
             }
-        }
+        },
+        category: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
+        },
     }
 
     const config = {

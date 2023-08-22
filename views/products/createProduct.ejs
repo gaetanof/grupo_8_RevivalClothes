@@ -53,6 +53,18 @@
 					</label>
 
 					<label>
+						<select name="category" id="" class="input" required="" placeholder="">
+							<option value="" disabled selected></option>
+							<option value="adulto">Adulto</option>
+							<option value="ninos">Niños</option>
+							<option value="deportiva">Deportiva</option>
+							<option value="marca">Marcas exclusivas</option>
+							<option value="sombreros">Sombreros</option>
+						</select>
+						<span>Categoria</span>
+					</label>
+
+					<label>
 						<input required="" placeholder="" type="number" class="input"
 							value="<%= locals.old && old.price ? old.price : '' %>" name="price">
 						<span>Precio</span>
@@ -106,7 +118,7 @@
 						</label>
 						<input id="file" type="file" name="imgFile" class="formulario-product-image">
 					</div>
-					<span class="error-image error-style"></span>
+					<!-- <span class="error-image error-style"></span> -->
 					<button class="submit" type="submit">Crear producto</button>
 				</form>
 
