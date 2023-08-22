@@ -19,17 +19,17 @@
 				</p>
 				<% }) } %>
 
-					<form class="form" action="/products/<%=product.id%>/editar?_method=PUT" method="POST"
+					<form class="form formulario-product" action="/products/<%=product.id%>/editar?_method=PUT" method="POST" 
 						enctype="multipart/form-data">
 						<p class="title">Edita tu producto </p>
 						<p class="message">Cambia los campos que deseas modificar. </p>
 	
 						<label>
-							<input required="" placeholder="" type="text" class="input" name="title"
+							<input required="" placeholder="" type="text" class="input formulario-product-name" name="title"
 							value="<%=product.title%>">
 							<span>Nombre del producto</span>
 						</label>
-	
+						<span class="error-productName error-style"></span>
 						<label>
 							<select name="genre" id="" class="input" required="" placeholder="">
 								<option value="hombre" <%= product.genre === 'hombre' ? 'selected' : '' %>>hombre</option>
@@ -58,10 +58,13 @@
 						</label>
 	
 						<label>
-							<input required="" placeholder="" type="text" class="input" name="description"
+							<input required="" placeholder="" type="text" class="input formulario-product-description" name="description"
 							value="<%=product.description%>">
 							<span>Descripción</span>
 						</label>
+
+					<span class="error-productDescription error-style"></span>
+
 	
 						<div class="container">
 							<div class="header">
@@ -91,9 +94,11 @@
 									</g>
 								</svg>
 							</label>
-							<input type="hidden" name="old_productImg" id="imgFile" value="/images/fotosProducto/<%= product.image%>" />
-							<input id="file" type="file" name="imgFile">
+							<input type="hidden" name="old_productImg" id="imgFile" value="/images/fotosProducto/<%= product.image%>"  />
+							<input id="file" type="file" name="imgFile" class="formulario-product-image">
 						</div>
+						<span class="error-productImage error-style"></span>
+
 						<button class="submit" type="submit">Crear producto</button>
 					</form>
 		</section>
@@ -103,6 +108,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 			crossorigin="anonymous"></script>
+		<script src="/js/productsValidation.js"></script>
+	
 </body>
 
 </html>
