@@ -6,7 +6,7 @@ function setCarritoVacio() {
       `;
 }
 function vaciarCarrito() {
-	localStorage.removeItem("carrito");
+	localStorage.removeItem("cart");
 }
 
 function calcularTotal(products) {
@@ -65,7 +65,7 @@ checkoutCart.onsubmit = (e) => {
 		shippingMethod: checkoutCart.shippingMethod.value,
 		total: calcularTotal(products)
 	};
-	console.log("data",formData);
+	console.log("data", formData);
 	fetch("http://localhost:5001/api/checkout", {
 		method: 'POST',
 		headers: {
@@ -73,8 +73,11 @@ checkoutCart.onsubmit = (e) => {
 		},
 		body: JSON.stringify(formData)
 	})
-	.then((res) => res.json())
-	.then((product) => {
-		console.log(product);
-	})
+		.then((res) => res.json())
+		.then((product) => {
+			if (product.ok) {
+				vaciarCarrito();
+				location.href = '/products/productlist';
+			}
+		})
 }
