@@ -13,17 +13,12 @@ Francisco Gaetano, edad: 24.
 Contador Publico.
 Aumentar mis conocimientos en el campo para el desarrollo de mi carrera profesional.
 
-Melissa Bargman. edad: 29. 
-Licenciada en Comunicacion Social.
-Entender el detras de escena del funcionamiento del codigo para poder ampliar mis conocimientos y potenciar mi carrera profesional.
-
-Evelyn Cantero Coronado, edad: 26.
-Estudiante de contaduria publica.
-Deseo aprender mas sobre el mundo del desarrollo web, ya que es algo que me abrira muchas puertas en el mercado laboral.
+¡Hola a todos! Soy Juan Camilo Zapata Vélez. Tengo 22 años y vivo en Medellín ☕. Soy ingeniero mecatrónico y me apasiona la programación. Disfruto enfrentar grandes desafíos y demostrar todo mi potencial.
 
 Agustin bravo, edad: 30.
 estudiante de Medicina Veterinaria.
 Bartender.
+
 busco opciones de salidas labrales rapidas para hacer frente a la situacion de incertidumbre economica del pais, aprovechando mi versatilidad a la hora de aprender.
 
 Lucas Arce, edad: 36.
@@ -33,14 +28,23 @@ Estoy interesado en aprender programacion e introducirme al mundo de la informat
 ### Referentes del mercado:
 
 ## [GALPÓN DE ROPA](https://www.galponderopa.com/) :
+
 Se eligio esta pagina porque contiene un sistmea de negocio parecido al que plantearemos en el desarrollo del proyecto.
+
 ## [Patagonia](https://patagonia-ar.com/) :
+
 Esta pagina nos es inspiradora por el publico al cual apunta y la disposicion de sus pantallas vinculadas al cuidado del medio ambiente y el activimos realacionado a dicho nicho.
+
 ## [Zara](https://www.zara.com/) :
+
 Esta página web es reconocida a nivel mundial y se destaca por su diseño limpio y minimalista, lo que facilita la navegación y categorización de productos.
+
 ## [Everlane](https://www.everlane.com/) :
+
 Esta marca de ropa se enfoca en la transparencia y la sostenibilidad en su proceso de producción. Me pareció interesante cómo utilizan su sitio web para educar a los clientes sobre sus prácticas éticas mediante el relato de historias. Además, su diseño es sencillo y atractivo, con un enfoque en la funcionalidad.
+
 ## [thrift+](https://thrift.plus/) :
+
 Thrift+ vende ropa de calidad a precios bajos, fomentando la economía circular y la sostenibilidad. Los usuarios pueden vender su ropa usada y obtener créditos para comprar en el sitio.
 
 ## tablero de trabajo (https://trello.com/b/kBJBswEY/tablero-proyecto-integrador)
