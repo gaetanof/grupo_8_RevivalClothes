@@ -1,16 +1,10 @@
 import './assets/App.css';
-import Card from './components/Card';
-
-const product = fetch('http://localhost:5001/api/10/products')
-  .then(res => res.json())
-  .then(product => (product));
-
-console.log(product);
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
     <div className="App">
-      <Card />
+      <Dashboard />
     </div>
   );
 }

@@ -8,14 +8,14 @@
 			<ul>
 				<li><a href="/">Inicio</a></li>
 				<% if (!user.id) { %>
-					<li><a href="../user/login">Ingresa</a></li>
-					<li><a href="../user/signin">Regístrate</a></li>
-					
+					<li><a href="/user/login">Ingresa</a></li>
+					<li><a href="/user/signin">Regístrate</a></li>
+
 					<% } %>
-					<% if (user.id) { %>
-						<li><a href="">Favoritos</a></li>
-					<% } %>
-					<li><a href="/products/productlist">Catálogo</a></li>
+						<% if (user.id) { %>
+							<li><a href="">Favoritos</a></li>
+							<% } %>
+								<li><a href="/products/productlist">Catálogo</a></li>
 			</ul>
 			<img src="/images/cancel.svg" class="close-menu">
 		</div>
@@ -45,8 +45,8 @@
 					<div class="collapse collapse-horizontal" id="collapseWidthExample">
 						<div class="card card-body" style="width: auto; background-color: #f5f9ff; border: none;"
 							id="card-header">
-							<li><a href="../user/login" class="elements-header">Ingresa</a></li>
-							<li><a href="../user/signin" class="elements-header">logueate</a></li>
+							<li><a href="/user/login" class="elements-header">Ingresa</a></li>
+							<li><a href="/user/signin" class="elements-header">logueate</a></li>
 						</div>
 					</div>
 				</div>
@@ -54,8 +54,9 @@
 
 					<li><a href="#"><img src="/images/heart.svg" class="handbag"></a></li>
 					<div class="cart-container-position">
-						<li class="elemento-container-position"><img src="/images/handbag.svg" class="handbag carrito-button-logic" id="carrito"></li>
-						
+						<li class="elemento-container-position"><img src="/images/handbag.svg"
+								class="handbag carrito-button-logic" id="carrito"></li>
+
 						<div class="cajita"> </div>
 						<li class="handbag cart-number" id="cart-number">0</li>
 					</div>
@@ -78,7 +79,7 @@
 					</div>
 
 					<% if (user.id) { %>
-						<li><a href="../user/<%= user.id %>/detalle"><img src="/images/fotosUsuario/<%= user.image %>"
+						<li><a href="/user/<%= user.id %>/detalle"><img src="/images/fotosUsuario/<%= user.image %>"
 									class="user-image"></a>
 						</li>
 						<% } %>
