@@ -18,12 +18,12 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(cookieParser());
-const corsOptions = {
-    origin: 'http://localhost:3000', // Reemplaza con el origen de tu cliente
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // Habilita las cookies y cabeceras de autorización (si las usas)
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: 'http://localhost:3000/*', // Reemplaza con el origen de tu cliente
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true, // Habilita las cookies y cabeceras de autorización (si las usas)
+// };
+app.use(cors());
 
 app.set('view engine', 'ejs');
 app.set('views', [

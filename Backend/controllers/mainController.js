@@ -9,6 +9,10 @@ const controllers = {
         const user = req.session.user;
         products = products.data.data
         res.render('home', { products, user });
+    },
+    getAboutUs: (req, res) => {
+        const user = req.session.user;
+        res.render('aboutus', { user })
     }
 };
 

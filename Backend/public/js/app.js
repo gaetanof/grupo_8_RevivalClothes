@@ -22,42 +22,42 @@ menu_toggle.onclick = () => {
 
 
 // declaro esta funcion para saber si existe un carrito en local stora y en el caso de que exista que me de su longitud
-function productsInCart(){
+function productsInCart() {
     return localStorage.cart ? JSON.parse(localStorage.cart).length : 0
 }
 
-window.addEventListener('load', function(){
-//llamo a todos los botones para agregar producto al carrito
+window.addEventListener('load', function () {
+    //llamo a todos los botones para agregar producto al carrito
     let addToCartButtons = document.querySelectorAll(".add-to-cart")
     let cartNumber = document.querySelector("#cart-number")
-//ejecuto la funcion para que me diga cuatos productos tengo en el carrito
+    //ejecuto la funcion para que me diga cuatos productos tengo en el carrito
     cartNumber.innerText = productsInCart()
-    
+
     addToCartButtons.forEach((button) => {
         //escuchar click
-        button.addEventListener("click",(e) => {
+        button.addEventListener("click", (e) => {
 
             const article = button.closest(".agregar-carrito-producto")
             const productId = article.getAttribute("id")
-            
-            if(localStorage.cart){
+
+            if (localStorage.cart) {
 
                 let cart = JSON.parse(localStorage.cart)
                 // esta formula me da -1 si el producto ya existe y 0 si no existe el producto en cuestion en el local storage
                 let index = cart.findIndex(
-                (prod) => (prod.id_product == productId ));
+                    (prod) => (prod.id_product == productId));
                 // aca uso el valor que me da esta formula que aplique para saber si tengo que agregar un objeto nuevo o si solo tengo que modificar el quantity
-                if(index != -1){
+                if (index != -1) {
                     cart[index].quantity++
-                }else{
+                } else {
                     // como no existe ese determinado producto agrego id y cantidad
-                    cart.push({id_product: productId, quantity: 1 })
-                }                
-                localStorage.setItem('cart',JSON.stringify(cart))
-            
-            } else{
-                localStorage.setItem('cart',JSON.stringify([{id_product: productId, quantity: 1 }]))
-            
+                    cart.push({ id_product: productId, quantity: 1 })
+                }
+                localStorage.setItem('cart', JSON.stringify(cart))
+
+            } else {
+                localStorage.setItem('cart', JSON.stringify([{ id_product: productId, quantity: 1 }]))
+
             }
         })
     })
