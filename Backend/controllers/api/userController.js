@@ -26,6 +26,7 @@ const controller = {
         delete response.dataValues.createdAt;
         delete response.dataValues.updatedAt;
         delete response.dataValues.deletedAt;
+        response.dataValues.image = `/images/fotosUsuario/${response.dataValues.image}`
 
         return res.json({ data: response })
     }
