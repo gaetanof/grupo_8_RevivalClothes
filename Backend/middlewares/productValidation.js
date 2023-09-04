@@ -7,8 +7,7 @@ const validations = {
             .isIn(['hombre', 'mujer', 'unisex']).withMessage('Género inválido'),
         body('size').notEmpty().withMessage('Campo de talle obligatorio')
             .isIn(['XS', 'S', 'M', 'L', 'XL', 'XXL']).withMessage('Talle inválido'),
-        body('price').notEmpty().withMessage('Campo de precio obligatorio')
-            .isFloat({ min: 1, max: 1000 }).withMessage('Precio debe estar entre 1 y 1000'),
+        body('price').notEmpty().withMessage('Campo de precio obligatorio'),
         body('description').isLength({ max: 200 }).withMessage('Campo de descripción obligatorio'),
     ]
 };

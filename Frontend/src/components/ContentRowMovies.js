@@ -3,37 +3,35 @@ import CardMovies from "./CardMovies";
 import axios from "axios";
 
 let a = {
-    title: 'Movies in Data Base',
+    title: 'Total de categorias',
     color: 'primary',
-    total: 21,
     icon: 'film'
 }
 let b = {
-    title: 'Total awards',
+    title: 'Total de productos',
     color: 'success',
-    total: 79,
     icon: 'award'
 }
 let c = {
-    title: 'Actors quantity',
+    title: 'Total de usuarios',
     color: 'warning',
-    total: 49,
     icon: 'user'
 }
 
 let arr = [a, b, c]
 
 function ContentRowMovies() {
-    const [products, setProducts] = useState([]);
-    const [users, setUsers] = useState([]);
-    const [user, setUser] = useState([]);
+
+    const [totalC, setTotalC] = useState('');
+    const [totalP, setTotalP] = useState([]);
+    const [totalU, setTotalU] = useState([]);
 
     useEffect(() => {
         const products = async () => {
             try {
                 const response = await axios.get('http://localhost:5001/api/products');
-                setProducts(response.data.data)
-                console.log(response.data.data);
+                setTotalC(Object.keys(response.data.countByCategory).length.toString())
+                setTotalP(response.data.total)
             } catch (error) {
                 console.log(error);
             }
@@ -45,8 +43,7 @@ function ContentRowMovies() {
         const users = async () => {
             try {
                 const response = await axios.get('http://localhost:5001/api/users');
-                setUsers(response.data.data)
-                console.log(response.data.data);
+                setTotalU(response.data.total)
             } catch (error) {
                 console.log(error);
             }
@@ -58,8 +55,6 @@ function ContentRowMovies() {
         const user = async () => {
             try {
                 const response = await axios.get(`http://localhost:5001/api/0b419a21-03d8-4e9f-a9ed-c14569cdd9a0/users`);
-                setUser(response.data.data)
-                console.log(response.data.data);
             } catch (error) {
                 console.log(error);
             }
@@ -69,9 +64,13 @@ function ContentRowMovies() {
 
     return (
         <>
-            {arr.map((el, i) => {
+            {totalC != '' && <CardMovies contenido={totalC} {...a} key={totalC} />}
+            {totalP != '' && <CardMovies contenido={totalP} {...b} key={totalP} />}
+            {totalU != '' && <CardMovies contenido={totalU} {...c} key={totalU} />}
+
+            {/* {products && cards.map((el, i) => {
                 return <CardMovies {...el} key={el + i} />
-            })}
+            })} */}
         </>
     )
 };

@@ -35,9 +35,11 @@ const controller = {
             contNino
         }
 
+        response.map(el => el.detaii = `http://localhost:5001/products/${el.id}/detalle`)
+
         return res.json({
-            countByCategory,
             total: response.length,
+            countByCategory: countByCategory,
             data: response
         })
     },
