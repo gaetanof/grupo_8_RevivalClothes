@@ -1,7 +1,7 @@
-import axios from 'axios'
-import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import React, { useState, useRef, useEffect } from "react";
 
-function Dashboard() {
+function ApisState() {
     const [products, setProducts] = useState([]);
     const [users, setUsers] = useState([]);
     const lista = useRef();
@@ -41,22 +41,22 @@ function Dashboard() {
 
 
     return (
-        <>
+        <>  
             <h2>Productos</h2>
             <ul ref={lista} onClick={click}>
-                {products.map((el, i) => (
-                    <li key={el + i}>{el.category}</li>
-                ))}
+            {products.map((el, i) => (
+                <li key={el + i}>{el.category}</li>
+            ))}
             </ul>
-
+            
             <h2>Usuarios</h2>
             <ul>
-                {users.map((el, i) => (
-                    <li key={el + i}>{el.full_name}</li>
-                ))}
+            {users.map((el, i) => (
+                <li key={el + i}>{el.full_name}</li>
+            ))}
             </ul>
         </>
     )
-}
+};
 
-export default Dashboard;
+export default ApisState;

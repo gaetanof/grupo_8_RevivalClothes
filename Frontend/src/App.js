@@ -1,11 +1,17 @@
-import './assets/App.css';
-import Dashboard from './components/Dashboard';
+import React from 'react';
+import SideBar from './components/SideBar';
+import ContentWrapper from './components/ContentWrapper';
+import ApiState from './components/ApisState'
 
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-    </div>
+    <React.Fragment>
+      <ApiState />
+      <div id="wrapper">
+        <SideBar />
+        <ContentWrapper />
+      </div>
+    </React.Fragment>
   );
 }
 
