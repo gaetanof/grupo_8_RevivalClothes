@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CardMovies from "./CardMovies";
+import axios from "axios";
+
+
 
 let a = {
     title: 'Movies in Data Base',
@@ -23,6 +26,38 @@ let c = {
 let arr = [a, b, c]
 
 function ContentRowMovies() {
+    const [products, setProducts] = useState([]);
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const products = async () => {
+            try {
+                const response = await axios.get('http://localhost:5001/api/products');
+                setProducts(response.data.data)
+                console.log(response.data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        products();
+
+    }, [])
+
+    useEffect(() => {
+        const users = async () => {
+            try {
+                const response = await axios.get('http://localhost:5001/api/users');
+                setUsers(response.data.data)
+                console.log(response.data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        users();
+
+    }, [])
     return (
         <>
 

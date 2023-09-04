@@ -9,6 +9,7 @@ const controller = {
             delete el.createdAt;
             delete el.updatedAt;
             delete el.deletedAt;
+            el.detail = `http://localhost:5001/user/${el.id}/detalle`
         })
         return res.json({
             total: response.length,
@@ -26,7 +27,7 @@ const controller = {
         delete response.dataValues.updatedAt;
         delete response.dataValues.deletedAt;
 
-        return res.json({data: response})
+        return res.json({ data: response })
     }
 };
 
