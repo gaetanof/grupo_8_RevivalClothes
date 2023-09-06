@@ -18,8 +18,6 @@ let c = {
     icon: 'user'
 }
 
-let arr = [a, b, c]
-
 function ContentRowMovies() {
 
     const [totalC, setTotalC] = useState('');
@@ -32,6 +30,7 @@ function ContentRowMovies() {
                 const response = await axios.get('http://localhost:5001/api/products');
                 setTotalC(Object.keys(response.data.countByCategory).length.toString())
                 setTotalP(response.data.total)
+                console.log(response.data);
             } catch (error) {
                 console.log(error);
             }
@@ -51,22 +50,22 @@ function ContentRowMovies() {
         users();
     }, [])
 
-    useEffect(() => {
-        const user = async () => {
-            try {
-                const response = await axios.get(`http://localhost:5001/api/0b419a21-03d8-4e9f-a9ed-c14569cdd9a0/users`);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        user();
-    }, [])
+    // useEffect(() => {
+    //     const user = async () => {
+    //         try {
+    //             const response = await axios.get(`http://localhost:5001/api/0b419a21-03d8-4e9f-a9ed-c14569cdd9a0/users`);
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     };
+    //     user();
+    // }, [])
 
     return (
         <>
-            {totalC != '' && <CardMovies contenido={totalC} {...a} key={totalC} />}
-            {totalP != '' && <CardMovies contenido={totalP} {...b} key={totalP} />}
-            {totalU != '' && <CardMovies contenido={totalU} {...c} key={totalU} />}
+            {totalC !== '' && <CardMovies contenido={totalC} {...a} key={totalC} />}
+            {totalP !== '' && <CardMovies contenido={totalP} {...b} key={totalP} />}
+            {totalU !== '' && <CardMovies contenido={totalU} {...c} key={totalU} />}
 
             {/* {products && cards.map((el, i) => {
                 return <CardMovies {...el} key={el + i} />
