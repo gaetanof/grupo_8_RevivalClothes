@@ -1,8 +1,8 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/230502-REVIVALCLOTHING-Logotipo-colores.png';
 
-function SideBar(){
-    return(
+function SideBar() {
+    return (
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -10,22 +10,22 @@ function SideBar(){
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                        <img className="w-100" src={image} alt="Revival Clothing" />
                     </div>
                 </a>
 
                 {/*<!-- Divider -->*/}
-                <hr className="sidebar-divider my-0"/>
+                <hr className="sidebar-divider my-0" />
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
                     <a className="nav-link" href="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></a>
+                        <span>Dashboard - Revival</span></a>
                 </li>
 
                 {/*<!-- Divider -->*/}
-                <hr className="sidebar-divider"/>
+                <hr className="sidebar-divider" />
 
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">Actions</div>
@@ -53,10 +53,10 @@ function SideBar(){
                 </li>
 
                 {/*<!-- Divider -->*/}
-                <hr className="sidebar-divider d-none d-md-block"/>
+                <hr className="sidebar-divider d-none d-md-block" />
             </ul>
             {/*<!-- End of Sidebar -->*/}
-            
+
         </React.Fragment>
     )
 }

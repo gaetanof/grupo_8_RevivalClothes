@@ -50,26 +50,11 @@ function ContentRowMovies() {
         users();
     }, [])
 
-    // useEffect(() => {
-    //     const user = async () => {
-    //         try {
-    //             const response = await axios.get(`http://localhost:5001/api/0b419a21-03d8-4e9f-a9ed-c14569cdd9a0/users`);
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     };
-    //     user();
-    // }, [])
-
     return (
         <>
-            {totalC !== '' && <CardMovies contenido={totalC} {...a} key={totalC} />}
-            {totalP !== '' && <CardMovies contenido={totalP} {...b} key={totalP} />}
-            {totalU !== '' && <CardMovies contenido={totalU} {...c} key={totalU} />}
-
-            {/* {products && cards.map((el, i) => {
-                return <CardMovies {...el} key={el + i} />
-            })} */}
+            {totalC !== '' && <CardMovies contenido={totalC} {...a} />}
+            {totalP !== '' && <CardMovies contenido={totalP} {...b} />}
+            {totalU !== '' && <CardMovies contenido={totalU} {...c} />}
         </>
     )
 };
