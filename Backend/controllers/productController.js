@@ -11,11 +11,6 @@ const controllers = {
 		res.render('detalle', { product, user });
 	},
 
-	getCarrito: (req, res) => {
-		const user = req.session.user;
-		res.render('carrito', { user });
-	},
-
 	getCreateProduct: (req, res) => {
 		const user = req.session.user;
 		res.render('createProduct', { user });
@@ -38,11 +33,11 @@ const controllers = {
 					res.send(error);
 				}
 			} else {
-                res.render('createProduct', {
-                    old: req.body,
-                    img: req.file || ''
-                });
-            }
+				res.render('createProduct', {
+					old: req.body,
+					img: req.file || ''
+				});
+			}
 		} else {
 			res.render('createProduct', {
 				errors: errors.array(),
@@ -100,10 +95,6 @@ const controllers = {
 			console.log(error),
 				res.send(error)
 		}
-	},
-	showPublished: (req, res) => {
-		const user = req.session.user;
-		res.render('publishedProduct', user);
 	},
 	getProductList: async (req, res) => {
 		try {

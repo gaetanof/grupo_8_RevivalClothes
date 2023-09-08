@@ -33,28 +33,22 @@ const upload = multer({
     }
 });
 
-const cargarImg = multer ({ storage })
-
-// @GET /products/cart 
-router.get('/products/cart', productController.getCarrito)
+const cargarImg = multer({ storage })
 
 // @GET /products/create
-router.get('/products/create',productController.getCreateProduct)
+router.get('/products/create', productController.getCreateProduct)
 
 // @POST /products/create
-router.post('/products/create',[upload.single('imgFile'), validations.validateCreateProduct, authProduct.allowCreate], productController.create)
-
-// @GET /products/publicado 
-router.get('/products/publicado', productController.showPublished)
+router.post('/products/create', [upload.single('imgFile'), validations.validateCreateProduct, authProduct.allowCreate], productController.create)
 
 // @GET /products/:id/detalle 
 router.get('/products/:id/detalle', productController.getDetalle);
 
 // @GET /products/:id/editar 
-router.get('/products/:id/editar',[ authMiddleware.allowSignedIn], productController.getEditProduct);
+router.get('/products/:id/editar', [authMiddleware.allowSignedIn], productController.getEditProduct);
 
 // @PUT /products/:id/editar
-router.put('/products/:id/editar',[cargarImg.single('imgFile'),authProduct.allowUpdate], productController.editProduct);
+router.put('/products/:id/editar', [cargarImg.single('imgFile'), authProduct.allowUpdate], productController.editProduct);
 
 // @GET /products/productlist 
 router.get('/products/productlist', productController.getProductList);

@@ -72,8 +72,4 @@ router.put('/user/:idUser/userlist', authMiddleware.allowAdmin, usercontroller.p
 // @DELETE /user/:idUser/delete
 router.delete('/user/:idUser/delete', usercontroller.deleteUser)
 
-// @GET /user/search
-router.get('/user/search', usercontroller.getUserList)
-
-
 module.exports = router
