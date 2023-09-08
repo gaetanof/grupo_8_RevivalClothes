@@ -14,7 +14,6 @@ const productsMiddleware = {
         const id = req.params.id;
         const endpoint = `http://localhost:5001/api/${id}/products`
         const product = await axios.get(endpoint)
-    
         if (req.session.user.id === product.data.id_user) {
             next();
         } else {
@@ -24,7 +23,6 @@ const productsMiddleware = {
 
     allowDelete: async (req, res, next) => {
         const id = req.params.id;
-        
         const endpoint = `http://localhost:5001/api/${id}/products`
 
         const response = await axios.get(endpoint);

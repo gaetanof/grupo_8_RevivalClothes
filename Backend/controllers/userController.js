@@ -81,7 +81,7 @@ const controllers = {
         try {
             await User.update({
                 type: 'Admin'
-            }, {where: {id: idUser}})
+            }, { where: { id: idUser } })
             res.redirect('/user/userList')
         } catch (error) {
             console.log(error)
