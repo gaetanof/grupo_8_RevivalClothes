@@ -1,41 +1,40 @@
 import Table from 'react-bootstrap/Table';
-// import { Routes, Route } from 'react-router-dom';
 import axios from 'axios'
 import React, { useState, useEffect } from 'react';
-import FilaTabla from './FilaTabla';
+import RowTableUsers from './RowTableUsers';
 
-function StripedColumnsExample() {
-    const [products, setProducts] = useState([]);
+function UserTable() {
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        const products = async () => {
+        const users = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/api/products');
-                setProducts(response.data.data)
+                const response = await axios.get('http://localhost:5001/api/users');
+                setUsers(response.data.data)
                 console.log(response.data.data)
             } catch (error) {
                 console.log(error);
             }
         };
-        products();
+        users();
     }, [])
     return (
         <Table hover>
             <thead>
                 <tr>
-                    <th>Titulo</th>
-                    <th>Precio</th>
-                    <th>Talla</th>
-                    <th>Genero</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apodo</th>
+                    <th>Correo</th>
                 </tr>
             </thead>
             <tbody>
-                {products.map((el, i) => (
-                    <FilaTabla key={el.title + i} col1={el.title} col2={el.price} col3={el.size} col4={el.genre} />
+                {users.map((el, i) => (
+                    <RowTableUsers key={el.id + i} col1={el.id} col2={el.full_name} col3={el.user_name} col4={el.email} id={el.id} />
                 ))}
             </tbody>
         </Table>
     );
 }
 
-export default StripedColumnsExample;
+export default UserTable;

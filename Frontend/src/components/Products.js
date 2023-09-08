@@ -1,26 +1,23 @@
-import React from 'react';
-import TopBar from './TopBar';
-import ContentRowTop from './ContentRowTop';
-import Footer from './Footer';
 import ProductTable from './ProductTable'
+import TopBar from './TopBar';
+import Footer from './Footer';
 import SideBar from './SideBar';
 
-
-function ContentWrapper() {
+function Products() {
     return (
-        <React.Fragment>
+        <>
             <SideBar />
-            {/*<!-- Content Wrapper -->*/}
             <div id="content-wrapper" className="d-flex flex-column">
                 {/*<!-- Main Content -->*/}
                 <div id="content">
                     <TopBar />
-                    <ContentRowTop />
+                    <h2>Listado de productos</h2>
                     <ProductTable />
                     <Footer />
                 </div>
             </div>
-        </React.Fragment>
+        </>
     )
 }
-export default ContentWrapper;
+
+export default Products;

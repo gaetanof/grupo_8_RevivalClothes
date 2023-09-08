@@ -29,7 +29,7 @@ function LastMovieDataBase() {
                             <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + 'rem' }} src={`http://localhost:5001/images/fotosProducto/${product.image}`} alt=" Star Wars - Mandalorian " />
                         </div>
                         <p>{product.description}</p>
-                        <a className="btn btn-danger" target="_blank" rel="nofollow" href={`http://localhost:5001/products/${product.id}/detalle`}>Ver más detalles del producto</a>
+                        <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`http://localhost:5001/products/${product.id}/detalle`}>Ver más detalles del producto</a>
                     </div>
                 </div>
             </div >

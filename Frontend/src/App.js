@@ -1,15 +1,20 @@
 import React from 'react';
-import SideBar from './components/SideBar';
 import ContentWrapper from './components/ContentWrapper';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Products from './components/Products'
+import Users from './components/Users'
 
 function App() {
   return (
-    <React.Fragment>
-      <div id="wrapper">
-        <SideBar />
-        <ContentWrapper />
-      </div>
-    </React.Fragment>
+    <BrowserRouter>
+      <main id="wrapper">
+        <Routes>
+          <Route path='/' element={<ContentWrapper />} />
+          <Route path='products' element={<Products />} />
+          <Route path='users' element={<Users />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 
