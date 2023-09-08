@@ -2,6 +2,7 @@ import Table from 'react-bootstrap/Table';
 // import { Routes, Route } from 'react-router-dom';
 import axios from 'axios'
 import React, { useState, useEffect } from 'react';
+import FilaTabla from './FilaTabla';
 
 function StripedColumnsExample() {
     const [products, setProducts] = useState([]);
@@ -19,7 +20,7 @@ function StripedColumnsExample() {
         products();
     }, [])
     return (
-        <Table striped="columns">
+        <Table hover>
             <thead>
                 <tr>
                     <th>Titulo</th>
@@ -29,14 +30,9 @@ function StripedColumnsExample() {
                 </tr>
             </thead>
             <tbody>
-                {products.map((product, i) => {
-                    <tr key={product.title + i}>
-                        <td key={product.title + i}>1</td>
-                        <td key={product.title + i}>Mark</td>
-                        <td key={product.title + i}>Otto</td>
-                        <td key={product.title + i}>@mdo</td>
-                    </tr>
-                })}
+                {products.map((el, i) => (
+                    <FilaTabla key={el.title + i} col1={el.title} col2={el.price} col3={el.size} col4={el.genre} />
+                ))}
             </tbody>
         </Table>
     );
