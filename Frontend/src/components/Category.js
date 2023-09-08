@@ -6,7 +6,8 @@ function Category(props) {
             <div className="card bg-gradient-dark text-white shadow">
                 <div className="card-body">
 
-                    <span>{props.texto}</span>
+                    <span>{props.texto} - </span>
+                    <span>{props.total}</span>
                 </div>
             </div>
         </div>
