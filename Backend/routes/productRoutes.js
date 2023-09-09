@@ -36,7 +36,7 @@ const upload = multer({
 const cargarImg = multer({ storage })
 
 // @GET /products/create
-router.get('/products/create', productController.getCreateProduct)
+router.get('/products/create', authMiddleware.allowSignedIn, productController.getCreateProduct)
 
 // @POST /products/create
 router.post('/products/create', [upload.single('imgFile'), validations.validateCreateProduct, authProduct.allowCreate], productController.create)

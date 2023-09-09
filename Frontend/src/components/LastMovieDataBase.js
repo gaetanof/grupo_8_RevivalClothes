@@ -9,7 +9,6 @@ function LastMovieDataBase() {
             try {
                 const response = await axios.get('http://localhost:5001/api/products');
                 setProduct(response.data.data[response.data.total - 1]);
-                console.log();
             } catch (error) {
                 console.log(error);
             }
@@ -26,7 +25,7 @@ function LastMovieDataBase() {
                     </div>
                     <div className="card-body">
                         <div className="text-center">
-                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + 'rem' }} src={`http://localhost:5001/images/fotosProducto/${product.image}`} alt=" Star Wars - Mandalorian " />
+                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + 'rem' }} src={`http://localhost:5001/images/fotosProducto/${product.image}`} alt="producto" />
                         </div>
                         <p>{product.description}</p>
                         <a className="btn btn-danger" target="_blank" rel="noreferrer" href={`http://localhost:5001/products/${product.id}/detalle`}>Ver más detalles del producto</a>

@@ -9,7 +9,10 @@ router.get('/api/products', apiControllers.getAll);
 // @GET - /api/:id/products
 router.get('/api/:id/products', apiControllers.getById);
 
-// @GET - /api/products
+// @GET - /api/products/n
 router.get('/api/products/n', apiControllers.getNProducts);
+
+// @GET - /api/products
+router.get('/api/products/pages', apiControllers.getProductsPages);
 
 module.exports = router;

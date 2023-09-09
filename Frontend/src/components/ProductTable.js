@@ -9,9 +9,9 @@ function ProductTable() {
     useEffect(() => {
         const products = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/api/products');
+                const response = await axios.get(`http://localhost:5001/api/products/pages?page=`);
                 setProducts(response.data.data)
-                console.log(response.data.data)
+                console.log(response.data)
             } catch (error) {
                 console.log(error);
             }

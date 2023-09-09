@@ -797,6 +797,7 @@ footer {
     font-weight: 700;
     text-transform: uppercase;
     margin: 0 auto;
+    max-width: 440px;
     padding: 0 2rem;
     width: 100%;
 }
@@ -1688,7 +1689,7 @@ footer {
         justify-content: center;
     }
     .image-container-detalle {
-        justify-content: unset;
+        justify-content: center;
     }
     .contenedor-producto-detalle {
         width: 40%;
@@ -1713,7 +1714,7 @@ footer {
         width: 160px;
     }
     .titulo-producto-detalle {
-        width: 60%;
+        max-width: 600px;
     }
     .btn-desc {
         display: flex;
@@ -1803,7 +1804,7 @@ footer {
         gap: 3rem;
     }
     .titulo-producto-detalle {
-        width: 50%;
+        max-width: 500px;
     }
     .image-container-detalle img {
         max-width: 400px;
