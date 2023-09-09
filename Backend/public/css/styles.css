@@ -796,6 +796,8 @@ footer {
     justify-content: space-between;
     font-weight: 700;
     text-transform: uppercase;
+    margin: 0 auto;
+    padding: 0 2rem;
     width: 100%;
 }
 
@@ -819,6 +821,8 @@ footer {
 }
 
 .descripcion-producto-detalle {
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     flex-flow: column nowrap;
     gap: 0.5rem;
@@ -827,8 +831,9 @@ footer {
 
 .botones-detalle {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
+    gap: 1rem;
 }
 
 #price-detalle {
@@ -845,14 +850,8 @@ footer {
 
 .article-botones-detalle {
     display: flex;
-    flex-flow: column nowrap;
-    width: 150px;
-}
-
-.article-botones-detalle {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
+    justify-content: space-between;
+    align-items: center;
     flex-flow: column nowrap;
     gap: 1rem;
 }
@@ -1696,15 +1695,16 @@ footer {
     }
     .botones-detalle {
         flex-flow: column;
-        gap: 1rem;
-        justify-content: center;
+        gap: 2rem;
+        justify-content: space-between;
         align-items: center;
-        width: 40%;
+        /* width: 40%; */
     }
     .article-botones-detalle {
         display: flex;
         flex-flow: column nowrap;
         width: 150px;
+        gap: 2rem;
     }
     .article-botones-detalle button {
         width: 160px;
