@@ -13,5 +13,17 @@ module.exports = {
         ProductCart.bulkCreate(newProducts)
         // console.log(order.dataValues);
         res.json({ ok: true, status: 200, order: order })
+    },
+    getAll: async (req, res) => {
+        const response = await Cart.findAll({ raw: true })
+        response.map(el => {
+            delete el.createdAt;
+            delete el.updatedAt;
+            delete el.deletedAt;
+        })
+        return res.json({
+            total: response.length,
+            data: response
+        })
     }
 }

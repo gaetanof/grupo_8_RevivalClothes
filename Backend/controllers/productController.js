@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 const { Product, User } = require('../database/models');
+const axios = require('axios')
 
 const controllers = {
 	getDetalle: async (req, res) => {
@@ -105,6 +106,16 @@ const controllers = {
 		}
 		catch (error) { console.log(error) }
 	}
+	// 	const page = req.query.page || 1
+	// 	console.log(page);
+	// 	const user = req.session.user;
+	// 	try {
+	// 		const getProductos = async () => (await axios.get(`http://localhost:5001/api/products/pages?page=${page}`));
+	// 		const productos = await getProductos()
+	// 		res.render('productList', { productos: productos.data.data, user })
+	// 	}
+	// 	catch (error) { console.log(error) }
+	// }
 
 };
 

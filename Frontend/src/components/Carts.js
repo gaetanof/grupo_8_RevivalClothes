@@ -1,9 +1,10 @@
-import UserTable from './UserTable'
+import CartTable from './CartsTable'
 import TopBar from './TopBar';
 import Footer from './Footer';
 import SideBar from './SideBar';
 
-function Users() {
+function Carts() {
+
     return (
         <>
             <SideBar />
@@ -11,9 +12,9 @@ function Users() {
                 {/*<!-- Main Content -->*/}
                 <div id="content">
                     <TopBar />
-                    <h2>Listado de usuarios</h2>
+                    <h2>Listado de carritos</h2>
                     <br></br>
-                    <UserTable />
+                    <CartTable />
                     <Footer />
                 </div>
             </div>
@@ -21,4 +22,4 @@ function Users() {
     )
 }
 
-export default Users;
+export default Carts;

@@ -13,6 +13,7 @@ function Products() {
                 <div id="content">
                     <TopBar />
                     <h2>Listado de productos</h2>
+                    <br></br>
                     <ProductTable />
                     <Footer />
                 </div>

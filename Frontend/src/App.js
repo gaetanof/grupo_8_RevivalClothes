@@ -3,6 +3,7 @@ import ContentWrapper from './components/ContentWrapper';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Products from './components/Products'
 import Users from './components/Users'
+import Carts from './components/Carts'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route index element={<ContentWrapper />} />
           <Route path='products' element={<Products />} />
           <Route path='users' element={<Users />} />
+          <Route path='carts' element={<Carts />} />
         </Routes>
       </main>
     </BrowserRouter>

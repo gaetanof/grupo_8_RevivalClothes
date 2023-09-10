@@ -66,7 +66,7 @@ const controller = {
     },
     getProductsPages: async (req, res) => {
         const page = req.query.page || 1;
-        const perPage = 2;
+        const perPage = 5;
 
         if (!page || isNaN(page)) {
             return res.status(400).json({ error: 'Invalid page parameter' });
