@@ -5,6 +5,9 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const userModel = require('../models/user');
 const { User, Cart } = require('../database/models');
+const axios = require('axios')
+const apiUser = require('./api/userController')
+
 
 const controllers = {
     logOut: (req, res) => {
@@ -139,7 +142,7 @@ const controllers = {
                     delete: 0
                 });
 
-                res.redirect('/');
+                res.redirect('/user/login');
 
             } else {
                 res.render('signin', {
@@ -191,7 +194,28 @@ const controllers = {
             where: { id: idUser }
         })
 
+        if (!req.session.user.type === "Admin") {
+            res.clearCookie('email');
+
+            delete req.session.user;
+
+        }
+
         res.redirect('/user/userlist')
+    },
+
+    deleteUserByUser: async (req, res) => {
+
+        let idUser = req.params.idUser;
+        try {
+            const apiRequest = async () => (await axios.get(`http://localhost:5001/api/${idUser}/users`))
+            const user = await apiRequest()
+            res.render('deleteUserByUser', { user: user.data.data });
+        } catch (error) {
+            console.log(error)
+            res.send(error)
+        }
+
     }
 }
 

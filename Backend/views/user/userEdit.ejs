@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<%- include('../partials/head') %>
-    <title>Edit user</title>
-    <link rel="stylesheet" href="/css/styles.css">
+		<title>Edit user</title>
+		<link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
 
 	<header class="main-header">
-        <%- include('../partials/header-users') %>
-    </header>
+		<%- include('../partials/header-users') %>
+	</header>
 
 	<main class="main-signin">
-	<div class="container-signin">
-		<form action="/user/<%= user.id %>/edit?_method=PUT" method="POST" class="form-signin" enctype="multipart/form-data">
-			<div class="fullname-signin">
-				<label>Nombre Completo:</label>
-  				<input type="text" name="full_name" class="control-signin" value="<%= user.full_name %>">
-			</div>
-			<div class="email-signin">
-				<label>Email:</label>
-  				<input type="mail" name="email" class="control-signin" value="<%= user.email %>">
-			</div>
-			<div class="username-signin">
-				<label>Username:</label>
-  				<input type="text" name="user_name" class="control-signin" value="<%= user.user_name %>">
-			</div>
-			<div class="username-signin">
-				<label>Imagen de perfil:</label>
-  				<input type="hidden" name="old_userImg" class="control-signin" value="/images/fotosUsuario/<%= user.image %>">
-  				<input type="file" name="userImg" class="control-signin">
-			</div>
-			<!-- <div class="password-signin">
+		<div class="container-signin">
+			<form action="/user/<%= user.id %>/edit?_method=PUT" method="POST" class="form-signin"
+				enctype="multipart/form-data">
+				<div class="fullname-signin">
+					<label>Nombre Completo:</label>
+					<input type="text" name="full_name" class="control-signin" value="<%= user.full_name %>">
+				</div>
+				<div class="email-signin">
+					<label>Email:</label>
+					<input type="mail" name="email" class="control-signin" value="<%= user.email %>">
+				</div>
+				<div class="username-signin">
+					<label>Username:</label>
+					<input type="text" name="user_name" class="control-signin" value="<%= user.user_name %>">
+				</div>
+				<div class="username-signin">
+					<label>Imagen de perfil:</label>
+					<input type="hidden" name="old_userImg" class="control-signin" value="/images/fotosUsuario/<%= user.image %>">
+					<input type="file" name="userImg" class="control-signin">
+				</div>
+				<!-- <div class="password-signin">
 				<label>Contraseña:</label>
   				<input type="password" name="password" class="control-signin">
 			</div> -->
-			<div>
-				<label for=""><a href="/user/<%= user.id %>/changepassword">Olvidé mi contraseña</a></label>
-			</div>
-			<div class="account-signin">
-				<input type="submit" value="Editar" class="button-signin">
-			</div>
+				<div>
+					<label for=""><a href="/user/<%= user.id %>/changepassword">Olvidé mi contraseña</a></label>
+				</div>
+				<div class="account-signin">
+					<input type="submit" value="Editar" class="button-signin">
+				</div>
+				<div class="account-signin">
+					<a href="/user/<%= user.id %>/deleteUserByUser" class="button-signin">Eliminar Cuenta</a>
+				</div>
+			</form>
 
-		</form>
-	</div>
+		</div>
 	</main>
 
 	<%- include('../partials/footer.ejs') %>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+			crossorigin="anonymous"></script>
 </body>
+
 </html>

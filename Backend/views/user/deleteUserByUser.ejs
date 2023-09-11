@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+    <title>Delete User</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+  <header class="main-header">
+    <%- include('../partials/header-users') %>
+  </header>
+
+  <main class="main-signin">
+    <div class="container-signin">
+      Estas a punto de eliminar tu cuenta para siempre, seguro que quieres hacerlo?
+    </div>
+    <div class="botones-delete">
+      <form action="/user/<%= user.id %>/delete?_method=DELETE" method="POST">
+        <button type="submit" class="lista-usuarios-deleteuser">Eliminar</button>
+      </form>
+      <a href="/" class="button-home-deleteuser">Home</a>
+    </div>
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -961,6 +961,38 @@ footer {
     list-style: none;
 }
 
+.lista-usuarios-deleteuser{
+    margin: 0 auto 0 auto;
+    padding: 12px 20px;
+    background-color: #dc4d3b;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.button-home-deleteuser{
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    background-color: #84a27f;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.botones-delete{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
 .user-userlist {
     display: flex;
     flex-flow: row nowrap;

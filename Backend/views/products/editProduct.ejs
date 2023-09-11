@@ -19,34 +19,34 @@
 				</p>
 				<% }) } %>
 
-					<form class="form formulario-product" action="/products/<%=product.id%>/editar?_method=PUT" method="POST" 
+					<form class="form formulario-product" action="/products/<%=product.id%>/editar?_method=PUT" method="POST"
 						enctype="multipart/form-data">
 						<p class="title">Edita tu producto </p>
 						<p class="message">Cambia los campos que deseas modificar. </p>
-	
+
 						<label>
 							<input required="" placeholder="" type="text" class="input formulario-product-name" name="title"
-							value="<%=product.title%>">
+								value="<%=product.title%>">
 							<span>Nombre del producto</span>
 						</label>
 						<span class="error-productName"></span>
 						<label>
 							<select name="genre" id="" class="input" required="" placeholder="">
-								<option value="hombre" <%= product.genre === 'hombre' ? 'selected' : '' %>>hombre</option>
-								<option value="mujer" <%= product.genre === 'mujer' ? 'selected' : '' %>>mujer</option>
-								<option value="unisex" <%= product.genre === 'unisex' ? 'selected' : '' %>>unisex</option>
+								<option value="hombre" <%=product.genre==='hombre' ? 'selected' : '' %>>hombre</option>
+								<option value="mujer" <%=product.genre==='mujer' ? 'selected' : '' %>>mujer</option>
+								<option value="unisex" <%=product.genre==='unisex' ? 'selected' : '' %>>unisex</option>
 							</select>
 							<span>Genero</span>
 						</label>
-	
+
 						<label>
 							<select name="size" id="" class="input" required="" placeholder="">
-								<option value="XS" <%= product.size === 'XS' ? 'selected' : '' %>>XS</option>
-								<option value="S" <%= product.size === 'S' ? 'selected' : '' %>>S</option>
-								<option value="M" <%= product.size === 'M' ? 'selected' : '' %>>M</option>
-								<option value="L" <%= product.size === 'L' ? 'selected' : '' %>>L</option>
-								<option value="XL" <%= product.size === 'XL' ? 'selected' : '' %>>XL</option>
-								<option value="XXL" <%= product.size === 'XXL' ? 'selected' : '' %>>XXL</option>
+								<option value="XS" <%=product.size==='XS' ? 'selected' : '' %>>XS</option>
+								<option value="S" <%=product.size==='S' ? 'selected' : '' %>>S</option>
+								<option value="M" <%=product.size==='M' ? 'selected' : '' %>>M</option>
+								<option value="L" <%=product.size==='L' ? 'selected' : '' %>>L</option>
+								<option value="XL" <%=product.size==='XL' ? 'selected' : '' %>>XL</option>
+								<option value="XXL" <%=product.size==='XXL' ? 'selected' : '' %>>XXL</option>
 							</select>
 							<span>Talla</span>
 						</label>
@@ -54,30 +54,29 @@
 						<label>
 							<select name="category" id="" class="input" required="" placeholder="">
 								<option value="" disabled selected></option>
-								<option value="adulto" <%= product.category === 'adulto' ? 'selected' : '' %>>Adulto</option>
-								<option value="ninos" <%= product.category === 'ninos' ? 'selected' : '' %>>Niños</option>
-								<option value="deportiva" <%= product.category === 'deportiva' ? 'selected' : '' %>>Deportiva</option>
-								<option value="marca" <%= product.category === 'marca' ? 'selected' : '' %>>Marcas exclusivas</option>
-								<option value="sombreros" <%= product.category === 'sombreros' ? 'selected' : '' %>>Sombreros</option>
+								<option value="adulto" <%=product.category==='adulto' ? 'selected' : '' %>>Adulto</option>
+								<option value="ninos" <%=product.category==='ninos' ? 'selected' : '' %>>Niños</option>
+								<option value="deportiva" <%=product.category==='deportiva' ? 'selected' : '' %>>Deportiva</option>
+								<option value="marca" <%=product.category==='marca' ? 'selected' : '' %>>Marcas exclusivas</option>
+								<option value="sombreros" <%=product.category==='sombreros' ? 'selected' : '' %>>Sombreros</option>
 							</select>
 							<span>Categoria</span>
 						</label>
-	
+
 						<label>
-							<input required="" placeholder="" type="number" class="input"
-							value="<%=product.price%>" name="price">
+							<input required="" placeholder="" type="number" class="input" value="<%=product.price%>" name="price">
 							<span>Precio</span>
 						</label>
-	
+
 						<label>
-							<input required="" placeholder="" type="text" class="input formulario-product-description" name="description"
-							value="<%=product.description%>">
+							<input required="" placeholder="" type="text" class="input formulario-product-description"
+								name="description" value="<%=product.description%>">
 							<span>Descripción</span>
 						</label>
 
-					<span class="error-productDescription"></span>
+						<span class="error-productDescription"></span>
 
-	
+
 						<div class="container">
 							<div class="header">
 								<img class="foto-detalle-into" src="/images/fotosProducto/<%= product.image%>" alt="">
@@ -101,17 +100,18 @@
 											stroke="#000000" stroke-width="2"></path>
 										<path d="M19.5 5H4.5" stroke="#000000" stroke-width="2" stroke-linecap="round">
 										</path>
-										<path d="M10 3C10 2.44772 10.4477 2 11 2H13C13.5523 2 14 2.44772 14 3V5H10V3Z"
-											stroke="#000000" stroke-width="2"></path>
+										<path d="M10 3C10 2.44772 10.4477 2 11 2H13C13.5523 2 14 2.44772 14 3V5H10V3Z" stroke="#000000"
+											stroke-width="2"></path>
 									</g>
 								</svg>
 							</label>
-							<input type="hidden" name="old_productImg" id="imgFile" value="/images/fotosProducto/<%= product.image%>"  />
+							<input type="hidden" name="old_productImg" id="imgFile"
+								value="/images/fotosProducto/<%= product.image%>" />
 							<input id="file" type="file" name="imgFile" class="formulario-product-image">
 						</div>
 						<span class="error-productImage"></span>
 
-						<button class="submit" type="submit">Crear producto</button>
+						<button class="submit" type="submit">Editar producto</button>
 					</form>
 		</section>
 	</main>
@@ -121,7 +121,7 @@
 			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 			crossorigin="anonymous"></script>
 		<script src="/js/productsValidation.js"></script>
-	
+
 </body>
 
 </html>
