@@ -1,6 +1,8 @@
 import React from 'react';
 import ContentRowMovies from './ContentRowMovies';
-import LastMovieDataBase from './LastMovieDataBase';
+import LastProductDataBase from './LastProductDataBase';
+import LastUserDataBase from './LastUserDataBase';
+import LastCartDataBase from './LastCartDataBase';
 import GenresInDb from './GenresInDb';
 
 
@@ -26,11 +28,13 @@ function ContentRowTop() {
 				{/*<!-- Content Row Last Movie in Data Base -->*/}
 				<div className="row">
 					{/*<!-- Last Movie in DB -->*/}
-					<LastMovieDataBase />
+					<LastProductDataBase />
+					<LastUserDataBase />
+					<GenresInDb />
+					<LastCartDataBase />
 					{/*<!-- End content row last movie in Data Base -->*/}
 
 					{/*<!-- Genres in DB -->*/}
-					<GenresInDb />
 				</div>
 			</div>
 			{/*<!--End Content Row Top-->*/}

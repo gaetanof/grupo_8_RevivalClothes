@@ -35,7 +35,7 @@ const middleware = {
 
     allowCreate: async (req, res, next) => {
         const equal_email = await User.findAll({ where: { email: req.body.email } })
-        equal_email.length > 0 ? res.redirect('/user/signin') : next()
+        equal_email.length > 0 ? res.render('signin', { errors: [{ msg: 'El email ya se encuentra registrado', path: 'email' }] }) : next()
     }
 }
 

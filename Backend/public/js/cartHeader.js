@@ -82,10 +82,10 @@ function addProductToCart(title, price, productImg, id) {
     const cartItems = document.getElementsByClassName('cart-content')[0];
     const cartItemsNames = cartItems.getElementsByClassName('cart-product-title')
 
-    // for (let i = 0; i < cartItemsNames.length; i++) {
-    //     if (cartItemsNames[i].innerText == title)
-    //         alert("¡Ya has añadido este producto al carrito!");
-    // }
+    for (let i = 0; i < cartItemsNames.length; i++) {
+        if (cartItemsNames[i].innerText == title)
+            alert("¡Ya has añadido este producto al carrito!");
+    }
     const cartBoxContent = `
                                     <img src="${productImg}" alt="" class="cart-img">
                                     <div class="detail-box">
@@ -108,7 +108,7 @@ function addProductToCart(title, price, productImg, id) {
             close: true,
             onClick: () => { cart.classList.add("active") }
         }).showToast();
-    } 
+    }
 
     if (cartItems) {
         const inputQuantity = document.querySelector(".cart-quantity")
@@ -117,10 +117,7 @@ function addProductToCart(title, price, productImg, id) {
         inputQuantity.onchange = (e) => {
             value = e.target.value
             localStorage.setItem("quantity", value)
-            console.log(localStorage.getItem("quantity"))
-            
         }
-        console.log(localStorage.getItem("quantity"))
     }
 }
 

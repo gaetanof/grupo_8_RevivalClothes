@@ -11,9 +11,9 @@ function ProductTable() {
 
     const getCart = async (page) => {
         try {
-            const response = await axios.get(`http://localhost:5001/api/carts`);
+            const response = await axios.get(`http://localhost:5001/api/carts/pages?page=${page}`);
             setCart(response.data.data)
-            setiInforPages(response.data)
+            setiInforPages(response.data.totalPages)
         } catch (error) {
             console.log(error);
         }

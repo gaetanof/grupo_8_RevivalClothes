@@ -189,23 +189,23 @@ const controllers = {
 
     deleteUser: async (req, res) => {
         let idUser = req.params.idUser;
-
         await User.destroy({
             where: { id: idUser }
         })
+        res.clearCookie('email');
+        delete req.session.user;
+        res.redirect('/')
+    },
 
-        if (!req.session.user.type === "Admin") {
-            res.clearCookie('email');
-
-            delete req.session.user;
-
-        }
-
+    deleteUserAdmin: async (req, res) => {
+        let idUser = req.params.idUser;
+        await User.destroy({
+            where: { id: idUser }
+        })
         res.redirect('/user/userlist')
     },
 
     deleteUserByUser: async (req, res) => {
-
         let idUser = req.params.idUser;
         try {
             const apiRequest = async () => (await axios.get(`http://localhost:5001/api/${idUser}/users`))
