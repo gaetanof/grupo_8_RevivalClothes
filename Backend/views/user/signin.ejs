@@ -16,7 +16,8 @@
 	<main class="main-signin">
 
 		<div class="container-signin">
-			<form action="/user/signin" method="POST" class="form-signin formulario-signin" enctype="multipart/form-data">
+			<form action="/user/signin" method="POST" class="form-signin formulario-signin"
+				enctype="multipart/form-data">
 				<div class="fullname-signin">
 					<label>Nombre Completo:</label>
 					<input type="text" name="full_name" class="control-signin formulario-signin-fullName"
@@ -64,8 +65,11 @@
 								<% } %>
 				</div>
 				<div class="username-signin">
+					<img src="/images/defaultUser.png" alt="defaultuser" class="image-signin-default"
+						id="preview-signin">
+					<br>
 					<label>Imagen de perfil:</label>
-					<input type="file" name="userImg" class="control-signin formulario-signin-image">
+					<input type="file" name="userImg" class="control-signin formulario-signin-image" id="foto">
 					<span class="error-image error-style"></span>
 					<% if (locals.img==='' ) { %>
 						<p class="msg-error-signin">Ingresa una imagen válida</p>
@@ -97,6 +101,7 @@
 			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 			crossorigin="anonymous"></script>
 		<script src="/js/signInValidation.js"></script>
+		<script src="/js/uploadImage.js"></script>
 
 </body>
 

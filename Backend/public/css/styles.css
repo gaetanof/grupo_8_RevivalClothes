@@ -1507,6 +1507,10 @@ footer {
     color: red;
 }
 
+.image-signin-default {
+    max-width: 120px;
+}
+
 @media (min-width: 768px) {
 
     /* inicio header */
