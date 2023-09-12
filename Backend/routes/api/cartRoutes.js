@@ -9,4 +9,7 @@ router.post("/api/checkout", controller.checkout);
 // @GET - /api/carts
 router.get('/api/carts', controller.getAll);
 
+// @GET - /api/cart/pages
+router.get('/api/carts/pages', controller.getCartsPages);
+
 module.exports = router;

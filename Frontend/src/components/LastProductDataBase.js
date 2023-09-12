@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function LastMovieDataBase() {
+function LastProductDataBase() {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
@@ -36,4 +36,4 @@ function LastMovieDataBase() {
     )
 }
 
-export default LastMovieDataBase;
+export default LastProductDataBase;
