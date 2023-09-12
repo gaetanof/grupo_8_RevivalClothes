@@ -8,7 +8,10 @@ function LastUserDataBase() {
         const user = async () => {
             try {
                 const response = await axios.get('http://localhost:5001/api/users');
-                setUser(response.data.data[response.data.total - 1]);
+                const sortedData = response.data.data.slice().sort((a, b) => {
+                    return new Date(b.createdAt) - new Date(a.createdAt);
+                });
+                setUser(sortedData[0]);
             } catch (error) {
                 console.log(error);
             }

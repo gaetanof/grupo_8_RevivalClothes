@@ -7,9 +7,6 @@ const controller = {
         response.map(el => {
             delete el.password;
             delete el.type;
-            delete el.createdAt;
-            delete el.updatedAt;
-            delete el.deletedAt;
             el.detail = `http://localhost:5001/user/${el.id}/detalle`
         })
         return res.json({
