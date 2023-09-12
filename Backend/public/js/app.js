@@ -21,17 +21,10 @@ menu_toggle.onclick = () => {
 }
 
 
-// declaro esta funcion para saber si existe un carrito en local stora y en el caso de que exista que me de su longitud
-function productsInCart() {
-    return localStorage.cart ? JSON.parse(localStorage.cart).length : 0
-}
-
 window.addEventListener('load', function () {
     //llamo a todos los botones para agregar producto al carrito
     let addToCartButtons = document.querySelectorAll(".add-to-cart")
     let cartNumber = document.querySelector("#cart-number")
-    //ejecuto la funcion para que me diga cuatos productos tengo en el carrito
-    cartNumber.innerText = productsInCart()
 
     addToCartButtons.forEach((button) => {
         //escuchar click
@@ -39,6 +32,7 @@ window.addEventListener('load', function () {
 
             const article = button.closest(".agregar-carrito-producto")
             const productId = article.getAttribute("id")
+            cartNumber.innerText = localStorage.cart ? JSON.parse(localStorage.cart).length + 1 : 0;
 
             if (localStorage.cart) {
 

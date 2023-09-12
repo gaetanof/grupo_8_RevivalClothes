@@ -185,7 +185,7 @@ p {
 
 .contenedor-baner-ropa {
     position: relative;
-    padding: 0 0 2rem 0;
+    /* padding: 0 0 2rem 0; */
 }
 
 .imagen-header {
@@ -196,7 +196,13 @@ p {
 }
 
 .texto-imagen {
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(0, 4%, 15%, 0.541);
     width: 100%;
+    height: 100%;
     text-align: center;
     position: absolute;
     font-size: 160%;
@@ -1689,9 +1695,9 @@ footer {
         width: 360px;
     }
 
-    .contenedor-baner-ropa {
+    /* .contenedor-baner-ropa {
         padding: 3rem 0;
-    }
+    } */
 
     .shop-content-productList {
         grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
