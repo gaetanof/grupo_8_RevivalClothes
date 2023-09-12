@@ -105,6 +105,32 @@ const controllers = {
 			res.render('productList', { productos, user })
 		}
 		catch (error) { console.log(error) }
+	},
+	getFemaleProductList: async (req, res) => {
+		try {
+			const user = req.session.user;
+			const productos = await Product.findAll({
+				raw: true,
+				where: {
+					genre: "mujer"
+				}
+			});
+			res.render('femaleProduct', { productos, user })
+		}
+		catch (error) { console.log(error) }
+	},
+	getMaleProductList: async (req, res) => {
+		try {
+			const user = req.session.user;
+			const productos = await Product.findAll({
+				raw: true,
+				where: {
+					genre: "hombre"
+				}
+			});
+			res.render('maleProduct', { productos, user })
+		}
+		catch (error) { console.log(error) }
 	}
 	// 	const page = req.query.page || 1
 	// 	console.log(page);

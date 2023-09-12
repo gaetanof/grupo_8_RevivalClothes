@@ -25,9 +25,9 @@
 
 	<div class="center-navbar">
 		<ul>
-			<li><a href="/products/productlist">Hombre</a></li>
-			<li><a href="/products/productlist">Mujer</a></li>
-			<li><a href="/products/productlist">Catálogo completo</a></li>
+			<li><a href="/products/maleProducts">Hombre</a></li>
+			<li><a href="/products/femaleProducts">Mujer</a></li>
+			<li><a href="/products/productlist"> Catalogo Completo</a></li>
 		</ul>
 	</div>
 
@@ -35,16 +35,14 @@
 		<ul>
 			<% if (!user.image) { %>
 				<p class="pe-home">
-					<button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-						data-bs-target="#collapseWidthExample" aria-expanded="false"
-						aria-controls="collapseWidthExample" id="user-home">
+					<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+						aria-expanded="false" aria-controls="collapseWidthExample" id="user-home">
 						<img src="/images/user.svg" alt="">
 					</button>
 				</p>
 				<div style="min-height: 73px;">
 					<div class="collapse collapse-horizontal" id="collapseWidthExample">
-						<div class="card card-body" style="width: auto; background-color: #f5f9ff; border: none;"
-							id="card-header">
+						<div class="card card-body" style="width: auto; background-color: #f5f9ff; border: none;" id="card-header">
 							<li><a href="/user/login" class="elements-header">Ingresa</a></li>
 							<li><a href="/user/signin" class="elements-header">logueate</a></li>
 						</div>
@@ -54,8 +52,8 @@
 
 					<li><a href="#"><img src="/images/heart.svg" class="handbag"></a></li>
 					<div class="cart-container-position">
-						<li class="elemento-container-position"><img src="/images/handbag.svg"
-								class="handbag carrito-button-logic" id="carrito"></li>
+						<li class="elemento-container-position"><img src="/images/handbag.svg" class="handbag carrito-button-logic"
+								id="carrito"></li>
 
 						<div class="cajita"> </div>
 						<li class="handbag cart-number" id="cart-number">0</li>

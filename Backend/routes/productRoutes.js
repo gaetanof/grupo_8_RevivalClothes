@@ -53,6 +53,12 @@ router.put('/products/:id/editar', [cargarImg.single('imgFile'), authProduct.all
 // @GET /products/productlist 
 router.get('/products/productlist', productController.getProductList);
 
+// @GET /products/femaleProducts 
+router.get('/products/femaleProducts', productController.getFemaleProductList);
+
+// @GET /products/maleProducts 
+router.get('/products/maleProducts', productController.getMaleProductList);
+
 // @DELETE /products/:id/delete 
 router.delete('/products/:id/delete', authProduct.allowDelete, productController.deleteProduct);
 
