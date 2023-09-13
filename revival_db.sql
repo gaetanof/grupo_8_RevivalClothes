@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2023 at 09:16 PM
+-- Generation Time: Sep 13, 2023 at 10:05 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,32 +43,18 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `id_user`, `total`, `deletedAt`, `createdAt`, `updatedAt`, `paymentMethod`, `shippingMethod`) VALUES
-(50, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 2900, NULL, '2023-08-13 22:01:10', '2023-08-13 22:01:10', 'Débito', 'Cadete'),
-(51, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-14 16:50:13', '2023-08-14 16:50:13', 'Crédito', 'Correo'),
-(52, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-15 02:51:49', '2023-08-15 02:51:49', 'Débito', 'Correo'),
-(53, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:34:32', '2023-08-17 01:34:32', 'Débito', 'Correo'),
-(54, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:36:51', '2023-08-17 01:36:51', 'Débito', 'Correo'),
-(55, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:39:14', '2023-08-17 01:39:14', 'Débito', 'Cadete'),
-(56, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:40:04', '2023-08-17 01:40:04', 'Crédito', 'Correo'),
-(57, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:41:19', '2023-08-17 01:41:19', 'Débito', 'Correo'),
-(58, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:45:37', '2023-08-17 01:45:37', 'Débito', 'Correo'),
-(59, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:48:39', '2023-08-17 01:48:39', 'Crédito', 'Cadete'),
-(60, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:55:41', '2023-08-17 01:55:41', 'Débito', 'Correo'),
-(61, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:55:43', '2023-08-17 01:55:43', 'Débito', 'Correo'),
-(62, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 3700, NULL, '2023-08-17 01:56:20', '2023-08-17 01:56:20', 'Efectivo', 'Cadete'),
-(63, '8ddd72b5-3240-4a89-9aed-41809014bed8', 3000, NULL, '2023-08-17 16:32:51', '2023-08-17 16:32:51', 'Débito', 'Correo'),
-(64, '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 200300, NULL, '2023-08-21 23:26:02', '2023-08-21 23:26:02', 'Crédito', 'Correo'),
-(65, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 202820, NULL, '2023-08-24 19:08:32', '2023-08-24 19:08:32', 'Débito', 'Andreani'),
-(66, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 4140, NULL, '2023-08-27 17:47:11', '2023-08-27 17:47:11', 'Débito', 'Correo'),
-(67, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 3040, NULL, '2023-08-29 19:36:15', '2023-08-29 19:36:15', 'Crédito', 'Andreani'),
-(68, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 1320, NULL, '2023-08-30 20:33:21', '2023-08-30 20:33:21', 'Débito', 'Cadete'),
-(69, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 1040, NULL, '2023-09-08 16:01:47', '2023-09-08 16:01:47', 'Efectivo', 'Correo'),
-(70, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 1500, NULL, '2023-09-08 17:01:02', '2023-09-08 17:01:02', 'Efectivo', 'Correo'),
-(71, '2dc7ba54-94a7-40df-a1e5-5e20150a62ab', 5856, NULL, '2023-09-08 17:09:18', '2023-09-08 17:09:18', 'Débito', 'Andreani'),
-(72, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 5890, NULL, '2023-09-08 17:14:26', '2023-09-08 17:14:26', 'Efectivo', 'Andreani'),
-(73, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 1320, NULL, '2023-09-08 17:15:45', '2023-09-08 17:15:45', 'Débito', 'Correo'),
-(74, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 500, NULL, '2023-09-08 17:18:03', '2023-09-08 17:18:03', 'Débito', 'Cadete'),
-(75, '8c12cf20-f80c-49d8-a95f-c020b352cd6e', 500, NULL, '2023-09-08 17:18:11', '2023-09-08 17:18:11', 'Crédito', 'Correo');
+(80, '45f482b8-cd3f-4d32-86e9-588ca5b61bbf', 700, NULL, '2023-09-13 02:45:44', '2023-09-13 02:45:44', 'Débito', 'Correo'),
+(81, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 15800, NULL, '2023-09-13 15:16:42', '2023-09-13 15:16:42', 'Crédito', 'Andreani'),
+(82, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 2900, NULL, '2023-09-13 15:19:42', '2023-09-13 15:19:42', 'Débito', 'Andreani'),
+(83, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 2200, NULL, '2023-09-13 15:30:51', '2023-09-13 15:30:51', 'Crédito', 'Correo'),
+(84, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 2900, NULL, '2023-09-13 15:57:51', '2023-09-13 15:57:51', 'Crédito', 'Cadete'),
+(85, '529750d8-837b-492b-8c09-bf452467765c', 21900, NULL, '2023-09-13 18:26:13', '2023-09-13 18:26:13', 'Débito', 'Andreani'),
+(86, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 9700, NULL, '2023-09-13 18:28:29', '2023-09-13 18:28:29', 'Efectivo', 'Correo'),
+(87, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 7380, NULL, '2023-09-13 18:50:37', '2023-09-13 18:50:37', 'Débito', 'DHL'),
+(88, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 8880, NULL, '2023-09-13 19:48:15', '2023-09-13 19:48:15', 'Débito', 'Correo'),
+(89, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 11620, NULL, '2023-09-13 19:50:30', '2023-09-13 19:50:30', 'Débito', 'Correo'),
+(90, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 9400, NULL, '2023-09-13 19:50:53', '2023-09-13 19:50:53', 'Crédito', 'Correo'),
+(91, 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 1400, NULL, '2023-09-13 19:53:46', '2023-09-13 19:53:46', 'Crédito', 'Correo');
 
 -- --------------------------------------------------------
 
@@ -96,20 +82,42 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `genre`, `size`, `price`, `description`, `image`, `id_user`, `createdAt`, `updatedAt`, `deletedAt`, `category`) VALUES
-(6, 'loneta', 'hombre', 'L', 321, 'pantaloneta deportiva', '/clothe1691422655398.jpeg', '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', '2023-08-07 15:37:35', '2023-08-07 15:37:35', '2023-08-11 20:34:33', 'marca'),
-(8, 'sudadera negra', 'mujer', 'S', 450, 'comoda sudadera para el frio o verano', '/clothe1691700323888.jpg', '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', '2023-08-10 20:45:23', '2023-08-10 20:45:23', '2023-08-11 20:34:36', 'adulto'),
-(9, 'sudadera', 'unisex', 'L', 454, 'comoda sudadera para el frio o verano', '/clothe1691701082701.jpg', '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', '2023-08-10 20:58:02', '2023-08-10 20:58:02', '2023-08-10 21:36:18', 'ninos'),
-(10, 'buso caliente', 'mujer', 'S', 500, 'Buso perfecto para el invierno', '/clothe1691785875489.jpg', '97a51f72-0139-4244-9203-d134e3fb0fc1', '2023-08-11 20:31:15', '2023-08-11 20:31:15', NULL, 'deportiva'),
-(11, 'Sudadera caliente', 'mujer', 'S', 700, 'Deliciosa sudadera para el invierno', '/clothe1691786047734.jpg', '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', '2023-08-11 20:34:07', '2023-08-11 20:34:07', NULL, 'marca'),
-(12, 'Chamarra de la nasa', 'unisex', 'M', 800, 'Chamarra para los fuertes frios del espacio', '/clothe1691786239876.jpg', '0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', '2023-08-11 20:37:19', '2023-08-11 20:37:19', NULL, 'sombreros'),
-(13, 'blalba', 'hombre', 'M', 520, 'comoda sudadera para el frio o verano', '1692737773267-nal.jpg', '8c12cf20-f80c-49d8-a95f-c020b352cd6e', '2023-08-22 20:56:13', '2023-08-22 20:56:13', '2023-08-22 20:56:23', 'deportiva'),
-(14, 'camisita boniat', 'hombre', 'M', 520, 'la mejor vblablbasdfsdf', '1692738380435-nal.jpg', '8c12cf20-f80c-49d8-a95f-c020b352cd6e', '2023-08-22 20:56:54', '2023-08-22 21:06:20', NULL, 'marca'),
-(15, 'asdfasdf', 'hombre', 'S', 159, 'asdfasdfasdfasdfsadfasdf', '1693859207652-1693858937702-clothe1691453288582.jpg', '8c12cf20-f80c-49d8-a95f-c020b352cd6e', '2023-09-04 20:26:47', '2023-09-04 20:26:47', '2023-09-04 20:30:03', 'deportiva'),
-(16, 'sdfsdf', 'mujer', 'M', 1590, 'asdfasdfasdfasdfasdfsadf', '1693859554538-1693859040632-clothe1691453288582.jpg', '8c12cf20-f80c-49d8-a95f-c020b352cd6e', '2023-09-04 20:32:34', '2023-09-04 20:32:45', '2023-09-08 17:19:17', 'deportiva'),
-(17, 'saco caliente', 'hombre', 'XL', 1263, 'comoda sudadera para el frio o verano', '1693859630646-1693859536398-1693859040632-clothe1691453288582.jpg', '8c12cf20-f80c-49d8-a95f-c020b352cd6e', '2023-09-04 20:33:50', '2023-09-04 20:33:50', NULL, 'marca'),
-(18, 'Gorra de ferxxo :D', 'unisex', 'L', 1200, 'La mejor gorra del mundo porque es de feid', '1694193463207-image_2023-09-08_121741533.png', '8c12cf20-f80c-49d8-a95f-c020b352cd6e', '2023-09-08 17:17:43', '2023-09-08 17:18:42', NULL, 'sombreros'),
-(19, 'blabla', 'unisex', 'M', 651, 'comoda sudadera para el frio o verano', '1694194040704-ferxxo.jpg', '8c12cf20-f80c-49d8-a95f-c020b352cd6e', '2023-09-08 17:27:20', '2023-09-08 17:27:20', '2023-09-08 17:28:10', 'marca'),
-(20, 'tieleas', 'unisex', 'M', 198, 'comoda sudadera para el frio o verano', '1694199912881-hacker.jpg', '8c12cf20-f80c-49d8-a95f-c020b352cd6e', '2023-09-08 18:53:47', '2023-09-08 19:05:12', NULL, 'deportiva');
+(21, 'Varsity Jacket', 'hombre', 'L', 1200, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694572243626-image_2023-09-12_213042866.png', 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', '2023-09-13 02:30:43', '2023-09-13 02:31:52', NULL, 'deportiva'),
+(22, 'Harajuku Jackets', 'mujer', 'XL', 1000, 'aLorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694572539345-image_2023-09-12_213537273.png', 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', '2023-09-13 02:35:39', '2023-09-13 02:35:59', NULL, 'adulto'),
+(23, 'Fashion Cartoon', 'unisex', 'L', 1500, 'fLorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694572629894-image_2023-09-12_213708720.png', 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', '2023-09-13 02:37:09', '2023-09-13 02:37:09', NULL, 'marca'),
+(24, 'Gorra de ferxxo', 'hombre', 'M', 700, 'aLorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694572852075-image_2023-09-12_214043135.png', 'd1f6d5e0-7709-4683-903a-d1ba3d8f33e0', '2023-09-13 02:40:52', '2023-09-13 18:53:09', NULL, 'sombreros'),
+(25, 'Gestriftes shirt', 'mujer', 'L', 2200, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694573112933-image_2023-09-12_214507638.png', '45f482b8-cd3f-4d32-86e9-588ca5b61bbf', '2023-09-13 02:45:12', '2023-09-13 02:45:12', NULL, 'marca'),
+(26, 'Butterfly Groove', 'mujer', 'XL', 2500, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694573295144-image_2023-09-12_214809379.png', '45f482b8-cd3f-4d32-86e9-588ca5b61bbf', '2023-09-13 02:48:15', '2023-09-13 02:48:15', NULL, 'marca'),
+(27, 'Gorrax ferxxo', 'unisex', 'S', 3000, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694573451417-image_2023-09-12_215045196.png', 'ab5b4fdc-65bb-49b2-8fd7-35b5f641736e', '2023-09-13 02:50:51', '2023-09-13 02:50:51', '2023-09-13 19:21:57', 'sombreros'),
+(28, 'Internal Reform', 'mujer', 'XS', 1400, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694573564829-image_2023-09-12_215243903.png', 'ab5b4fdc-65bb-49b2-8fd7-35b5f641736e', '2023-09-13 02:52:44', '2023-09-13 02:52:44', NULL, 'ninos'),
+(29, 'Aonga dinos :3', 'unisex', 'M', 3020, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694573739004-image_2023-09-12_215537533.png', '2f85aa4e-cbb3-46e8-966a-6f982a6dc74c', '2023-09-13 02:55:39', '2023-09-13 02:55:39', NULL, 'adulto'),
+(30, 'Vintage Embroidery', 'hombre', 'XXL', 1600, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694573815279-image_2023-09-12_215653726.png', '2f85aa4e-cbb3-46e8-966a-6f982a6dc74c', '2023-09-13 02:56:55', '2023-09-13 02:56:55', '2023-09-13 19:28:59', 'deportiva'),
+(31, 'Harajuku Vintage', 'unisex', 'XXL', 2200, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694573965639-image_2023-09-12_215924712.png', '5ac38dc3-c333-4e2e-8431-daacbc3afa3c', '2023-09-13 02:59:25', '2023-09-13 02:59:25', NULL, 'adulto'),
+(32, 'Retro Knit', 'mujer', 'XS', 2500, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694574043363-image_2023-09-12_220042517.png', '5ac38dc3-c333-4e2e-8431-daacbc3afa3c', '2023-09-13 03:00:43', '2023-09-13 03:00:43', NULL, 'marca'),
+(33, 'Aelfric', 'mujer', 'XXL', 2800, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694574224598-image_2023-09-12_220343652.png', 'bebc5527-cd6b-460e-b40b-906969487572', '2023-09-13 03:03:44', '2023-09-13 03:03:44', NULL, 'deportiva'),
+(34, 'Feid gxrrx', 'mujer', 'XL', 3500, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694574324543-image_2023-09-12_220523333.png', 'bebc5527-cd6b-460e-b40b-906969487572', '2023-09-13 03:05:24', '2023-09-13 03:05:24', NULL, 'sombreros'),
+(35, 'Bxsitx parchxdx', 'hombre', 'L', 2500, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694574608489-image_2023-09-12_221007726.png', 'c3216a0a-8f5c-44de-b60a-25100b0a0990', '2023-09-13 03:10:08', '2023-09-13 03:10:08', NULL, 'deportiva'),
+(36, 'Shirt Baige', 'unisex', 'XS', 3400, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694574667292-image_2023-09-12_221106543.png', 'c3216a0a-8f5c-44de-b60a-25100b0a0990', '2023-09-13 03:11:07', '2023-09-13 03:11:07', NULL, 'marca'),
+(37, 'Varsoty Jacket', 'mujer', 'XL', 2750, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694574962375-image_2023-09-12_221601460.png', '524dbfcd-3fcf-421c-9bdb-c92404d607d3', '2023-09-13 03:16:02', '2023-09-13 03:16:02', NULL, 'deportiva'),
+(38, 'Gxrrx Ferxxo', 'mujer', 'XL', 1480, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694575142816-image_2023-09-12_221901845.png', '12ee483d-adef-457b-8d45-9289f0d682db', '2023-09-13 03:19:02', '2023-09-13 03:19:02', NULL, 'sombreros'),
+(39, 'Cherub Graphic', 'mujer', 'XL', 1300, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694575349662-image_2023-09-12_222228940.png', '4f533820-0a15-4c0a-9d92-f063bcab862a', '2023-09-13 03:22:29', '2023-09-13 03:22:29', NULL, 'ninos'),
+(40, 'Vintage Clothing', 'hombre', 'XL', 2000, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694619900343-image_2023-09-13_104459360.png', 'ce8af538-a818-4ed4-9c8a-09369c3afff5', '2023-09-13 15:45:00', '2023-09-13 15:45:00', NULL, 'ninos'),
+(41, 'pantalon', 'mujer', 'M', 500, 'pantalon lindo lindo ', '1694620775564-61TfwdZYLdL._AC_UF894,1000_QL80_.jpg', 'f4439ec3-8b8b-4428-accf-2c3d9690a226', '2023-09-13 15:59:35', '2023-09-13 15:59:35', NULL, 'adulto'),
+(42, 'pantalon trekking', 'hombre', 'XL', 26000, 'pantalon verde para trekking', '1694621855479-24bfdb53654be23ea5d6cd2061d4f710.jpg', 'a195fe61-dfea-4ff5-be4b-a987e502da26', '2023-09-13 16:17:35', '2023-09-13 16:17:35', NULL, 'adulto'),
+(43, 'Jean negro', 'mujer', 'L', 15000, 'jena negro desmontable', '1694622471934-69931b652923b2702c49c42d314d508e.jpg', '68fa5056-fd80-44a1-8fb7-b1842eff5b43', '2023-09-13 16:27:52', '2023-09-13 16:27:52', NULL, 'adulto'),
+(44, 'Mushroom Print', 'hombre', 'XXL', 1600, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, duis pretium facilisis porta himenaeos id, justo odio suspendisse inceptos tempus fermentum.', '1694628561222-image_2023-09-13_130918743.png', '529750d8-837b-492b-8c09-bf452467765c', '2023-09-13 18:09:21', '2023-09-13 18:09:21', NULL, 'deportiva'),
+(45, 'Vestido de Niña Sweetie', 'mujer', 'S', 505, 'Lindo vestido para las niñas más dulces.', '1694629487463-Vestido de NinÌa Sweetie.jpeg', 'e83c3f03-ad74-4ab6-96c6-556bdaf96d89', '2023-09-13 18:24:47', '2023-09-13 18:24:47', NULL, 'ninos'),
+(46, 'Chaqueta Deportiva UrbanFlex', 'hombre', 'M', 600, 'Chaqueta deportiva flexible y con estilo.', '1694629550732-Chaqueta Deportiva UrbanFlex.jpeg', 'e83c3f03-ad74-4ab6-96c6-556bdaf96d89', '2023-09-13 18:25:50', '2023-09-13 18:25:50', NULL, 'adulto'),
+(47, 'Sombrero de Playa Sunset', 'unisex', 'M', 200, 'Sombrero de paja para disfrutar de la playa.', '1694629763890-Sombrero de Playa Sunset.jpeg', 'dd15696d-84db-4a63-8c26-6e71aa47fed4', '2023-09-13 18:29:23', '2023-09-13 18:29:23', NULL, 'sombreros'),
+(48, 'Sudadera con Cremallera Outdoor Trek', 'hombre', 'L', 300, 'Sudadera con cremallera perfecta para aventuras al aire libre.', '1694629827137-Sudadera con Cremallera Outdoor Trek.jpeg', 'dd15696d-84db-4a63-8c26-6e71aa47fed4', '2023-09-13 18:30:27', '2023-09-13 18:30:27', NULL, 'adulto'),
+(49, 'Vestido de Fiesta GlamourChic', 'mujer', 'L', 800, 'Vestido elegante para ocasiones glamurosas.', '1694629918669-Vestido de Fiesta Glamour.jpeg', '4b26fb23-d82f-4de6-b469-0dc8bdf04f62', '2023-09-13 18:31:58', '2023-09-13 18:31:58', NULL, 'adulto'),
+(50, 'Camiseta Vintage Vibes', 'unisex', 'XL', 300, 'Camiseta vintage con vibraciones retro.', '1694629968536-Camiseta Vintage Vibes.jpeg', '4b26fb23-d82f-4de6-b469-0dc8bdf04f62', '2023-09-13 18:32:48', '2023-09-13 18:32:48', NULL, 'adulto'),
+(51, 'campera', 'hombre', 'XL', 70000, 'campera de cuervo vacuno', '1694630824268-6d4745fb747fd02430e1a76a7da11f59.jpg', 'a195fe61-dfea-4ff5-be4b-a987e502da26', '2023-09-13 18:47:04', '2023-09-13 18:47:04', NULL, 'adulto'),
+(52, 'Pantalones de Yoga ZenFlow', 'mujer', 'L', 100, 'Pantalones de yoga para una experiencia zen.', '1694631071184-Pantalones de Yoga ZenFlow.jpeg', 'da69e395-9b78-40de-b419-f815649aab88', '2023-09-13 18:51:11', '2023-09-13 18:51:11', NULL, 'deportiva'),
+(53, 'Chaqueta de Invierno', 'mujer', 'L', 1000, 'Chaqueta abrigada y elegante para el invierno.', '1694631146786-Chaqueta de Invierno CosyChic.jpeg', 'da69e395-9b78-40de-b419-f815649aab88', '2023-09-13 18:52:26', '2023-09-13 18:53:09', NULL, 'adulto'),
+(54, 'Camiseta de Fútbol Fanático', 'hombre', 'M', 1000, 'Camiseta de fútbol para verdaderos fanáticos.', '1694631519096-Camiseta de FuÌtbol.jpeg', 'f15b6cce-9edf-4808-b10b-e737b35a04fb', '2023-09-13 18:58:39', '2023-09-13 18:58:39', NULL, 'deportiva'),
+(55, 'Jeans Urban Vibes11111', 'hombre', 'M', 200, 'Jeans con un toque de estilo urbano.', '1694633228014-Jeans Urban Vibes.jpeg', 'e83c3f03-ad74-4ab6-96c6-556bdaf96d89', '2023-09-13 19:27:08', '2023-09-13 19:27:42', '2023-09-13 19:27:51', 'adulto'),
+(56, 'Vestido de Verano Sunshine', 'unisex', 'M', 77, 'Vestido ligero y radiante para el verano.', '1694633425724-Vestido de Verano Sunshine.jpeg', 'e83c3f03-ad74-4ab6-96c6-556bdaf96d89', '2023-09-13 19:30:25', '2023-09-13 19:31:14', '2023-09-13 19:31:18', 'marca');
 
 -- --------------------------------------------------------
 
@@ -134,44 +142,48 @@ CREATE TABLE `products_cart` (
 --
 
 INSERT INTO `products_cart` (`id`, `id_cart`, `id_product`, `quantity`, `deletedAt`, `updatedAt`, `createdAt`, `product_name`, `price`) VALUES
-(1, 60, 11, 3, NULL, '2023-08-17 01:55:41', '2023-08-17 01:55:41', 'Sudadera caliente', 700.00),
-(2, 60, 12, 2, NULL, '2023-08-17 01:55:41', '2023-08-17 01:55:41', 'Chamarra de la nasa', 800.00),
-(3, 61, 11, 3, NULL, '2023-08-17 01:55:43', '2023-08-17 01:55:43', 'Sudadera caliente', 700.00),
-(4, 61, 12, 2, NULL, '2023-08-17 01:55:43', '2023-08-17 01:55:43', 'Chamarra de la nasa', 800.00),
-(5, 62, 11, 3, NULL, '2023-08-17 01:56:20', '2023-08-17 01:56:20', 'Sudadera caliente', 700.00),
-(6, 62, 12, 2, NULL, '2023-08-17 01:56:20', '2023-08-17 01:56:20', 'Chamarra de la nasa', 800.00),
-(7, 63, 12, 2, NULL, '2023-08-17 16:32:51', '2023-08-17 16:32:51', 'Chamarra de la nasa', 800.00),
-(8, 63, 11, 2, NULL, '2023-08-17 16:32:51', '2023-08-17 16:32:51', 'Sudadera caliente', 700.00),
-(9, 64, 12, 139, NULL, '2023-08-21 23:26:02', '2023-08-21 23:26:02', 'Chamarra de la nasa', 800.00),
-(10, 64, 11, 98, NULL, '2023-08-21 23:26:02', '2023-08-21 23:26:02', 'Sudadera caliente', 700.00),
-(11, 64, 10, 41, NULL, '2023-08-21 23:26:02', '2023-08-21 23:26:02', 'buso caliente', 500.00),
-(12, 65, 12, 140, NULL, '2023-08-24 19:08:32', '2023-08-24 19:08:32', 'Chamarra de la nasa', 800.00),
-(13, 65, 11, 99, NULL, '2023-08-24 19:08:32', '2023-08-24 19:08:32', 'Sudadera caliente', 700.00),
-(14, 65, 10, 42, NULL, '2023-08-24 19:08:32', '2023-08-24 19:08:32', 'buso caliente', 500.00),
-(15, 65, 14, 1, NULL, '2023-08-24 19:08:32', '2023-08-24 19:08:32', 'camisita boniat', 520.00),
-(16, 66, 10, 2, NULL, '2023-08-27 17:47:11', '2023-08-27 17:47:11', 'buso caliente', 500.00),
-(17, 66, 14, 2, NULL, '2023-08-27 17:47:11', '2023-08-27 17:47:11', 'camisita boniat', 520.00),
-(18, 66, 11, 3, NULL, '2023-08-27 17:47:11', '2023-08-27 17:47:11', 'Sudadera caliente', 700.00),
-(19, 67, 14, 2, NULL, '2023-08-29 19:36:15', '2023-08-29 19:36:15', 'camisita boniat', 520.00),
-(20, 67, 11, 1, NULL, '2023-08-29 19:36:15', '2023-08-29 19:36:15', 'Sudadera caliente', 700.00),
-(21, 67, 10, 1, NULL, '2023-08-29 19:36:15', '2023-08-29 19:36:15', 'buso caliente', 500.00),
-(22, 67, 12, 1, NULL, '2023-08-29 19:36:15', '2023-08-29 19:36:15', 'Chamarra de la nasa', 800.00),
-(23, 68, 14, 1, NULL, '2023-08-30 20:33:21', '2023-08-30 20:33:21', 'camisita boniat', 520.00),
-(24, 68, 12, 1, NULL, '2023-08-30 20:33:21', '2023-08-30 20:33:21', 'Chamarra de la nasa', 800.00),
-(25, 69, 14, 2, NULL, '2023-09-08 16:01:47', '2023-09-08 16:01:47', 'camisita boniat', 520.00),
-(26, 70, 11, 1, NULL, '2023-09-08 17:01:02', '2023-09-08 17:01:02', 'Sudadera caliente', 700.00),
-(27, 70, 12, 1, NULL, '2023-09-08 17:01:02', '2023-09-08 17:01:02', 'Chamarra de la nasa', 800.00),
-(28, 71, 11, 1, NULL, '2023-09-08 17:09:18', '2023-09-08 17:09:18', 'Sudadera caliente', 700.00),
-(29, 71, 16, 1, NULL, '2023-09-08 17:09:18', '2023-09-08 17:09:18', 'sdfsdf', 1590.00),
-(30, 71, 17, 2, NULL, '2023-09-08 17:09:18', '2023-09-08 17:09:18', 'saco caliente', 1263.00),
-(31, 71, 14, 2, NULL, '2023-09-08 17:09:18', '2023-09-08 17:09:18', 'camisita boniat', 520.00),
-(32, 72, 10, 7, NULL, '2023-09-08 17:14:26', '2023-09-08 17:14:26', 'buso caliente', 500.00),
-(33, 72, 12, 1, NULL, '2023-09-08 17:14:26', '2023-09-08 17:14:26', 'Chamarra de la nasa', 800.00),
-(34, 72, 16, 1, NULL, '2023-09-08 17:14:26', '2023-09-08 17:14:26', 'sdfsdf', 1590.00),
-(35, 73, 12, 1, NULL, '2023-09-08 17:15:45', '2023-09-08 17:15:45', 'Chamarra de la nasa', 800.00),
-(36, 73, 14, 1, NULL, '2023-09-08 17:15:45', '2023-09-08 17:15:45', 'camisita boniat', 520.00),
-(37, 74, 18, 1, NULL, '2023-09-08 17:18:03', '2023-09-08 17:18:03', 'Gorra de ferxxo', 500.00),
-(38, 75, 18, 1, NULL, '2023-09-08 17:18:11', '2023-09-08 17:18:11', 'Gorra de ferxxo', 500.00);
+(48, 80, 24, 1, NULL, '2023-09-13 02:45:44', '2023-09-13 02:45:44', 'Gorra de ferxxo', 700.00),
+(49, 81, 25, 1, NULL, '2023-09-13 15:16:42', '2023-09-13 15:16:42', 'Gestriftes shirt', 2200.00),
+(50, 81, 24, 1, NULL, '2023-09-13 15:16:42', '2023-09-13 15:16:42', 'Gorra de ferxxo', 700.00),
+(51, 81, 22, 1, NULL, '2023-09-13 15:16:42', '2023-09-13 15:16:42', 'Harajuku Jackets', 1000.00),
+(52, 81, 30, 1, NULL, '2023-09-13 15:16:42', '2023-09-13 15:16:42', 'Vintage Embroidery', 1600.00),
+(53, 81, 31, 1, NULL, '2023-09-13 15:16:42', '2023-09-13 15:16:42', 'Harajuku Vintage', 2200.00),
+(54, 81, 33, 2, NULL, '2023-09-13 15:16:42', '2023-09-13 15:16:42', 'Aelfric', 2800.00),
+(55, 81, 32, 1, NULL, '2023-09-13 15:16:42', '2023-09-13 15:16:42', 'Retro Knit', 2500.00),
+(56, 82, 25, 1, NULL, '2023-09-13 15:19:42', '2023-09-13 15:19:42', 'Gestriftes shirt', 2200.00),
+(57, 82, 24, 1, NULL, '2023-09-13 15:19:42', '2023-09-13 15:19:42', 'Gorra de ferxxo', 700.00),
+(58, 83, 31, 1, NULL, '2023-09-13 15:30:51', '2023-09-13 15:30:51', 'Harajuku Vintage', 2200.00),
+(59, 84, 24, 1, NULL, '2023-09-13 15:57:51', '2023-09-13 15:57:51', 'Gorra de ferxxo', 700.00),
+(60, 84, 25, 1, NULL, '2023-09-13 15:57:51', '2023-09-13 15:57:51', 'Gestriftes shirt', 2200.00),
+(61, 85, 34, 1, NULL, '2023-09-13 18:26:13', '2023-09-13 18:26:13', 'Feid gxrrx', 3500.00),
+(62, 85, 24, 2, NULL, '2023-09-13 18:26:13', '2023-09-13 18:26:13', 'Gorra de ferxxo', 700.00),
+(63, 85, 21, 1, NULL, '2023-09-13 18:26:13', '2023-09-13 18:26:13', 'Varsity Jacket', 1200.00),
+(64, 85, 26, 1, NULL, '2023-09-13 18:26:13', '2023-09-13 18:26:13', 'Butterfly Groove', 2500.00),
+(65, 85, 27, 1, NULL, '2023-09-13 18:26:13', '2023-09-13 18:26:13', 'Gorrax ferxxo', 3000.00),
+(66, 85, 33, 1, NULL, '2023-09-13 18:26:13', '2023-09-13 18:26:13', 'Aelfric', 2800.00),
+(67, 85, 32, 3, NULL, '2023-09-13 18:26:13', '2023-09-13 18:26:13', 'Retro Knit', 2500.00),
+(68, 86, 24, 1, NULL, '2023-09-13 18:28:29', '2023-09-13 18:28:29', 'Gorra de ferxxo', 700.00),
+(69, 86, 35, 1, NULL, '2023-09-13 18:28:29', '2023-09-13 18:28:29', 'Bxsitx parchxdx', 2500.00),
+(70, 86, 27, 1, NULL, '2023-09-13 18:28:29', '2023-09-13 18:28:29', 'Gorrax ferxxo', 3000.00),
+(71, 86, 34, 1, NULL, '2023-09-13 18:28:29', '2023-09-13 18:28:29', 'Feid gxrrx', 3500.00),
+(72, 87, 21, 1, NULL, '2023-09-13 18:50:37', '2023-09-13 18:50:37', 'Varsity Jacket', 1200.00),
+(73, 87, 38, 1, NULL, '2023-09-13 18:50:37', '2023-09-13 18:50:37', 'Gxrrx Ferxxo', 1480.00),
+(74, 87, 22, 1, NULL, '2023-09-13 18:50:37', '2023-09-13 18:50:37', 'Harajuku Jackets', 1000.00),
+(75, 87, 24, 1, NULL, '2023-09-13 18:50:37', '2023-09-13 18:50:37', 'Gorra de ferxxo', 700.00),
+(76, 87, 27, 1, NULL, '2023-09-13 18:50:37', '2023-09-13 18:50:37', 'Gorrax ferxxo', 3000.00),
+(77, 88, 24, 2, NULL, '2023-09-13 19:48:15', '2023-09-13 19:48:15', 'Gorra de ferxxo', 700.00),
+(78, 88, 34, 1, NULL, '2023-09-13 19:48:15', '2023-09-13 19:48:15', 'Feid gxrrx', 3500.00),
+(79, 88, 38, 1, NULL, '2023-09-13 19:48:15', '2023-09-13 19:48:15', 'Gxrrx Ferxxo', 1480.00),
+(80, 88, 35, 1, NULL, '2023-09-13 19:48:15', '2023-09-13 19:48:15', 'Bxsitx parchxdx', 2500.00),
+(81, 89, 24, 1, NULL, '2023-09-13 19:50:30', '2023-09-13 19:50:30', 'Gorra de ferxxo', 700.00),
+(82, 89, 25, 1, NULL, '2023-09-13 19:50:30', '2023-09-13 19:50:30', 'Gestriftes shirt', 2200.00),
+(83, 89, 29, 1, NULL, '2023-09-13 19:50:30', '2023-09-13 19:50:30', 'Aonga dinos :3', 3020.00),
+(84, 89, 31, 1, NULL, '2023-09-13 19:50:30', '2023-09-13 19:50:30', 'Harajuku Vintage', 2200.00),
+(85, 89, 34, 1, NULL, '2023-09-13 19:50:30', '2023-09-13 19:50:30', 'Feid gxrrx', 3500.00),
+(86, 90, 36, 1, NULL, '2023-09-13 19:50:53', '2023-09-13 19:50:53', 'Shirt Baige', 3400.00),
+(87, 90, 35, 1, NULL, '2023-09-13 19:50:53', '2023-09-13 19:50:53', 'Bxsitx parchxdx', 2500.00),
+(88, 90, 34, 1, NULL, '2023-09-13 19:50:53', '2023-09-13 19:50:53', 'Feid gxrrx', 3500.00),
+(89, 91, 28, 1, NULL, '2023-09-13 19:53:46', '2023-09-13 19:53:46', 'Internal Reform', 1400.00);
 
 -- --------------------------------------------------------
 
@@ -220,19 +232,33 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `user_name`, `password`, `type`, `image`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-('0031b630-2521-4b40-bc16-2cff79254c33', 'test', 'test12@gmail.com', 'test', '$2a$12$lirYwS3MB9vCW.Zkd1LVkOhddFrZA0RLrtC75XhOJL6d2NM3g3DtG', 'User', '1691796423402-risas.jpg', '2023-08-11 23:27:03', '2023-08-11 23:27:03', NULL),
-('0b419a21-03d8-4e9f-a9ed-c14569cdd9a0', 'Juan Camilo', 'camilo@gmail.com', 'Juanca', '$2a$12$hjFIItdqF9e9eyh0ZOUfH.FWiWNVwNiDStvS.g3c1.9YMOUmVRMgy', 'Admin', '1691420398444-foto_camilo.jpg', '2023-08-07 14:59:58', '2023-08-07 14:59:58', NULL),
-('2dc7ba54-94a7-40df-a1e5-5e20150a62ab', 'nachito', 'nachito@gmail.com', 'nochiviris', '$2a$12$poX88HJzcj3sRaQ4WRtFkOmCreglfMjgyrA6eSYTHAlJ0EsT9qNOO', 'User', '1694192806039-ferxxo.jpg', '2023-09-08 17:06:46', '2023-09-08 17:06:46', NULL),
-('57a0d6fc-3b4f-4394-a784-03f933d3f8ec', 'Luisita', 'luisa@gmail.com', 'Luisita', '$2a$12$SkZfEgxfzD2OXIEgB97RSeNzkuh9MVK2fCtCR4FNzTsX.exxlT4rm', 'Admin', '1691439300280-niÃ±axd2.png', '2023-08-07 20:15:00', '2023-08-10 21:42:25', NULL),
-('57d524ca-12d2-4834-8964-fb5e92b80507', 'test', 'test123@gmail.com', 'test', '$2a$12$gvOAaca7BZF8303aujQfl.7jhj5cDkdiK5Z/ZIJ2RGPwHtL87Hl9a', 'User', '1691796193281-risas.jpg', '2023-08-11 23:23:13', '2023-08-11 23:23:13', '2023-09-08 17:10:23'),
-('6e85d4b7-f6f0-470f-a93a-bb4bcb3d5df2', 'test', 'tert@fdg.vom', 'dfgf', '$2a$12$Mn9xNKXdnrR/pWpIXslLfel6Tnsufjtmk4VomoDDmh7QTZuIhsttm', 'User', '1692395414078-revival_db.sql', '2023-08-18 21:50:14', '2023-08-18 21:50:14', '2023-08-18 22:39:58'),
-('8c12cf20-f80c-49d8-a95f-c020b352cd6e', 'Juanca', 'milozap37@gmail.com', 'El milo', '$2a$12$X2rRXE7zuqT9lj0xnTRnje9TIIBZDgtP0RcptVzsNs4/s8oITh6L6', 'Admin', '1692737264633-foto_camilo.jpg', '2023-08-22 20:47:44', '2023-09-08 17:21:54', NULL),
-('8ddd72b5-3240-4a89-9aed-41809014bed8', 'Marlon', 'marlon@gmail.com', 'marlon', '$2a$12$Ghw/EJi9Erk3iWm/GN/o7.RKac01dIKYAoCmvTlDeV0915v59tAsC', 'User', '1692289933096-1691785819563-risas.jpg', '2023-08-17 16:32:13', '2023-08-17 16:32:13', NULL),
-('97a51f72-0139-4244-9203-d134e3fb0fc1', 'El risas', 'joker@gmail.com', 'joker', '$2a$12$dxyq2mO0gTyO6wRPHelTAeSmmwoVPPEG0927.9HVR.BfJ5Kg32iLC', 'User', '1691785819563-risas.jpg', '2023-08-11 20:30:19', '2023-08-11 20:30:19', NULL),
-('b2bf250a-2ca4-4af6-b796-a481f9cb771b', 'Francisco Gaetano', 'adriana@gmail.com', 'adriana', '$2a$12$0kiKdVcBKkjab.rPtEW3Yu/BvDsV9vPRQpnJzJ0wB7oZAWT96xFc6', 'User', '1691521941614-marge.png', '2023-08-08 19:12:22', '2023-08-08 19:12:22', '2023-08-10 21:37:06'),
-('e6c8cbd7-ca96-47de-b2ea-33a4cc85bdb8', 'Francisco Gaetano', 'luisa@gmail.comsdf', 'test', '$2a$12$aBbaPUEkoOSVbefwWjXpP.lU5M5Keubz/jR3Djc6q7gaulSBsGiKC', 'User', '1692396829322-camilo_serio.jpeg', '2023-08-18 22:13:49', '2023-08-18 22:13:49', NULL),
-('eafa68c8-a615-423b-b1d1-2353597bb61d', 'Diablo', 'infierno@gmail.com', 'satanas123', '$2a$12$ALOVFo6Z7x7c1obrkPj0DOmKCYvt3eBZ4EuNid7qn7vJcO.Z9NDIG', 'User', '1691703527658-diablo.jpg', '2023-08-10 21:38:47', '2023-08-10 21:39:23', '2023-08-10 21:39:52'),
-('f01d96b7-b3f9-44e3-b59b-d64216f60366', 'Francisco Gaetano', 'fran@gmail.com', 'fran', '$2a$12$UvWCoKF3TPVk6b1B3PD3PO2DxHfbsQmujWPm3lq3nCdjOEfsbwm1a', 'Admin', '1691456937946-foto perfil.png', '2023-08-08 01:08:58', '2023-08-10 21:42:01', NULL);
+('12ee483d-adef-457b-8d45-9289f0d682db', 'Maximiliano', 'max@gmail.com', 'maxito', '$2a$12$IPgVUTWWue65GSdOGijS0OJyOastlv6FDwgLMub1D.KSpw5w3MUpq', 'User', '1694575080212-image_2023-09-12_221714422.png', '2023-09-13 03:18:00', '2023-09-13 03:18:00', NULL),
+('2f85aa4e-cbb3-46e8-966a-6f982a6dc74c', 'Lucas Merlano', 'lucas@gmail.com', 'Luquitas', '$2a$12$apZ5Fk1p1KxXAZmmoMDFne0/ZfbgPZ5l1i.42Aabvxs50rzs1bfWC', 'User', '1694573661473-image_2023-09-12_215410843.png', '2023-09-13 02:54:21', '2023-09-13 02:54:21', NULL),
+('45f482b8-cd3f-4d32-86e9-588ca5b61bbf', 'Luisa Toro', 'luisa@gmail.com', 'Luisita', '$2a$12$6u3THVZQYigUz5fn3K6qa.vSUVZt/MRtBXo2szx6ZVt54a0ZZyUd.', 'User', '1694573038066-niÃ±axd.jpg', '2023-09-13 02:42:18', '2023-09-13 02:43:58', NULL),
+('4a7ee2f8-e9b5-417e-b14f-db62e73a8246', 'Toby', 'toby@dundermifflin.com', 'toby', '$2a$12$ZLHRCChzMkLBHm6RVV.qC.4x1/RTIqyhI9FhDXYvyAcTCD9Jw0Ywe', 'User', '1694621370438-toby.jpeg', '2023-09-13 16:09:30', '2023-09-13 16:09:30', NULL),
+('4b26fb23-d82f-4de6-b469-0dc8bdf04f62', 'Pam Beesly', 'pam.beesly@dundermifflin.com', 'ArtisticPam', '$2a$12$CiU67SzlqEKQyLLlsEnwMePJUJfdsp/U/1IReomsNDbZ9JQlTuwpK', 'User', '1694573967040-Pam Beesly.jpeg', '2023-09-13 02:59:27', '2023-09-13 02:59:27', NULL),
+('4f533820-0a15-4c0a-9d92-f063bcab862a', 'Fernan', 'fer@gmail.com', 'fernan', '$2a$12$mI91zKJoL/PP/r2EJegb3.YvbId5F/wyPfHZct1fBg/kDEVwrlF0.', 'User', '1694575311104-image_2023-09-12_222145716.png', '2023-09-13 03:21:51', '2023-09-13 03:21:51', NULL),
+('524dbfcd-3fcf-421c-9bdb-c92404d607d3', 'David', 'david@gmail.com', 'davidsito', '$2a$12$GbGwJLlY1BOMuK7GUxj85ODI2dBeJJiZlgukatyC/8qxptgLmNBHu', 'User', '1694574739205-image_2023-09-12_221214088.png', '2023-09-13 03:12:19', '2023-09-13 03:12:19', NULL),
+('529750d8-837b-492b-8c09-bf452467765c', 'Luis', 'luis@gmail.com', 'Luisca', '$2a$12$lixmUVJMgmgmQjqQe0redeDiq8dE4md1j/RaHcoptFZ7hFXQ69wpy', 'User', '1694628509718-image_2023-09-13_130823961.png', '2023-09-13 18:08:29', '2023-09-13 18:08:29', NULL),
+('576209a2-4ec0-4b25-b0cf-62c5ba997b41', 'Oscar Martinez', 'oscar.martinez@dundermifflin.com', 'AccountantOscar', '$2a$12$wcbB3jcpp69sJg/ZfVNnW.LCDKCZh.y1UrQEeh6kWESTs9ObZ5moG', 'User', '1694620978709-Oscar Martinez.jpeg', '2023-09-13 16:02:58', '2023-09-13 16:02:58', NULL),
+('5ac38dc3-c333-4e2e-8431-daacbc3afa3c', 'Laidy ', 'laidy@gmail.com', 'laidy', '$2a$12$5kNuvg9ON6gVXrObQ/gmpei6CbpuzwSqKc5qS4GymqmMgz.SShSi2', 'User', '1694573896553-image_2023-09-12_215750448.png', '2023-09-13 02:58:16', '2023-09-13 02:58:16', NULL),
+('60f52377-e009-4c9c-befe-a27fd04098ca', 'Kevin Malone', 'kevin.malone@dundermifflin.com', 'MunchiesKing', '$2a$12$EhKL1zrqEZK0dZ33g.AHPeCmlr4IPbbj2HYJ7uGkHCTAIvv1AKoTm', 'User', '1694621227280-Kevin Malone.jpeg', '2023-09-13 16:07:07', '2023-09-13 16:07:07', NULL),
+('68fa5056-fd80-44a1-8fb7-b1842eff5b43', 'Norma', 'norma@gmail.com', 'Normi', '$2a$12$YtuS3cNB7yosb3oW5n4jIuT0jDXOpqsURp4r3mlq2RaWmA9AUko82', 'User', '1694622311481-norma.jpg', '2023-09-13 16:25:11', '2023-09-13 16:25:11', NULL),
+('6c6ce7f4-c5aa-4f0b-a6b1-c5e3a3327b08', 'Kelly Kapoor', 'kelly.kapoor@dundermifflin.com', 'FashionistaKelly', '$2a$12$IlSNpiTxQ1dtW5WAXFlhVORwpdUi5ahK3.PAWfNFaJUbX9zkn9DTm', 'User', '1694620453728-Kelly.jpeg', '2023-09-13 15:54:13', '2023-09-13 15:54:13', NULL),
+('74c77740-42b7-4f24-b443-2a560e0334e8', 'Martin Zanetti', 'martin@martin.com', 'tincho', '$2a$12$p8ui0qINRPHkbKz3w2FtVOc9BsRV9JzfpiFCDl027X0mhKIonCk/2', 'User', '1694575242782-Bart_simpson.jpg', '2023-09-13 03:20:43', '2023-09-13 03:20:43', NULL),
+('9ffaa411-c225-46ad-8011-bca433988f05', 'Benjamin', 'banja@gmail.com', 'bengi', '$2a$12$67l24lZhkF1Lu0v7nAXmT.yJ8Bvk1i7Q2MFjKV4ztqsMzbxxRIBfm', 'User', '1694628439872-image_2023-09-13_130710210.png', '2023-09-13 18:07:20', '2023-09-13 18:07:20', NULL),
+('a195fe61-dfea-4ff5-be4b-a987e502da26', 'tomas', 'tomas@gmail.com', 'tomi', '$2a$12$uPRjm0EDe.ElV62jeJT8zOB.oM9asJ6PdvXlSuBa6g82FwumxanjK', 'User', '1694621315450-tomas.jpg', '2023-09-13 16:08:35', '2023-09-13 16:08:35', NULL),
+('ab5b4fdc-65bb-49b2-8fd7-35b5f641736e', 'Alejandra ', 'aleja@gmail.com', 'Aleja', '$2a$12$/XGuRII3EqqdYTmEboDO2eM3gx9Ar5v7jYud1FFEwp8nKm3nNMhx.', 'User', '1694573379758-image_2023-09-12_214933063.png', '2023-09-13 02:49:40', '2023-09-13 02:49:40', NULL),
+('ac1f99c0-f5a5-495b-b201-34baa2572f53', 'Stanley Hudson', 'stanley.hudson@dundermifflin.com', 'CrosswordStanley', '$2a$12$ogYR2trvIYiWGEEBuffCBOak/lMvkfj8dqbgQ59wj4gkGQMLmH1dy', 'User', '1694621547503-Stanley Hudson.jpeg', '2023-09-13 16:12:27', '2023-09-13 16:12:27', NULL),
+('bebc5527-cd6b-460e-b40b-906969487572', 'Charles Chapplin', 'charles@gmail.com', 'chapplin', '$2a$12$YpWxewM1lRMlba57yG3p/udalOmDc1s/m4EAr7Aa.XQdCSF7kMvAG', 'User', '1694574111045-image_2023-09-12_220146001.png', '2023-09-13 03:01:51', '2023-09-13 03:01:51', NULL),
+('c3216a0a-8f5c-44de-b60a-25100b0a0990', 'Carlos Andres', 'carlos@gmail.com', 'carlitos', '$2a$12$JI0.THuYbrcJlPX6rme.quyMqB3zjXxmMo6Ki3MeKWIAKe5qIV9Oe', 'User', '1694574564090-image_2023-09-12_220917920.png', '2023-09-13 03:09:24', '2023-09-13 03:09:24', NULL),
+('ce8af538-a818-4ed4-9c8a-09369c3afff5', 'Alonso Fernandez', 'alonso@gmail.com', 'Alonso', '$2a$12$l6y5jwDXmVClqbKOh2O7q.XSwzkitrDt4gJwYKRJRkzScQOduy62K', 'User', '1694619851938-image_2023-09-13_104406783.png', '2023-09-13 15:44:12', '2023-09-13 15:44:12', NULL),
+('d1f6d5e0-7709-4683-903a-d1ba3d8f33e0', 'Juan Camilo', 'camilo@gmail.com', 'Juanca', '$2a$12$8rwePzD9NRo3.0WM1VeJt.XFUVyPwJCOqkybl9wFsH.FKBngqP5JS', 'Admin', '1694571639696-foto_camilo.jpg', '2023-09-13 02:20:39', '2023-09-13 02:20:39', NULL),
+('da69e395-9b78-40de-b419-f815649aab88', 'Dwight Schrute', 'dwight.schrute@dundermifflin.com', 'BeetFarmer', '$2a$12$VpezyC61AQP3leytF3yhauCzqHyWLt4KqTGykbX.0EoRW8aZOHRja', 'User', '1694574087400-Dwight Schrute.jpeg', '2023-09-13 03:01:27', '2023-09-13 03:01:27', NULL),
+('dd15696d-84db-4a63-8c26-6e71aa47fed4', 'Jim Halpert', 'jim.halpert@dundermifflin.com', 'PranksMaster', '$2a$12$hKyeh0u6bRoM9fYh.b1E6e9m.x4QHNxkEUkcI4/5vztgYzCiuQqZm', 'User', '1694573398058-Jim Halpert.jpeg', '2023-09-13 02:49:58', '2023-09-13 02:49:58', NULL),
+('e83c3f03-ad74-4ab6-96c6-556bdaf96d89', 'Michael Scott', 'michael.scott@dundermifflin.com', 'michael scott', '$2a$12$GULmA6IVIiIJ1fswNRpkN.w65fcRGRgGEOez4GV.MjKizT/ALvnZu', 'Admin', '1694572827614-michael.jpeg', '2023-09-13 02:40:27', '2023-09-13 18:34:17', NULL),
+('f15b6cce-9edf-4808-b10b-e737b35a04fb', 'Angela Martin', 'angela.martin@dundermifflin.com', 'nelson', '$2a$12$vVY96fwIbWEMtria6XvXn.U7QOlwE95bZuT05lPLkp.hCrH9jPzGG', 'User', '1694620152293-Angela Martin.jpeg', '2023-09-13 15:49:12', '2023-09-13 18:34:30', NULL),
+('f4439ec3-8b8b-4428-accf-2c3d9690a226', 'gatoo', 'gato1@gmail.com', 'gato1', '$2a$12$twYm/vecBjcjABi/AJqAK.k1QGaSnW1j2zqyN69twbFhxks0MIFV6', 'User', '1694574820584-Barbie.jpg', '2023-09-13 03:13:42', '2023-09-13 03:13:42', NULL);
 
 --
 -- Indexes for dumped tables
@@ -281,19 +307,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `products_cart`
 --
 ALTER TABLE `products_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- Constraints for dumped tables
