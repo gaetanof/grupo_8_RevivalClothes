@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
             const allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
             const isImageValid = allowedExtensions.test(file.name);
-           
+
 
 
             if (!isImageValid) {
@@ -42,23 +42,23 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     //validacion descripcion
-const productDescription = formularioProducts.querySelector(".formulario-product-description")
-productDescription.oninput = (e) => {
-    const error = formularioProducts.querySelector(".error-productDescription")
-    const input = e.target.value
-    if (input.length <= 20) {
-        error.classList.add("error-style")
-        error.innerText = "La descripcion del producto debe tener minimo 20 caracteres"
-    } else {
-        error.classList.remove("error-style")
-        error.innerText = ""
+    const productDescription = formularioProducts.querySelector(".formulario-product-description")
+    productDescription.oninput = (e) => {
+        const error = formularioProducts.querySelector(".error-productDescription")
+        const input = e.target.value
+        if (input.length <= 20) {
+            error.classList.add("error-style")
+            error.innerText = "La descripcion del producto debe tener minimo 20 caracteres"
+        } else {
+            error.classList.remove("error-style")
+            error.innerText = ""
+        }
     }
-}
-formularioProducts.onsubmit = (e) => {
-    console.log(formularioProducts.querySelector('.error-style'));
-    if (formularioProducts.querySelector('.error-style') !== null) {
-        e.preventDefault();
+    formularioProducts.onsubmit = (e) => {
+        console.log(formularioProducts.querySelector('.error-style'));
+        if (formularioProducts.querySelector('.error-style') !== null) {
+            e.preventDefault();
+        }
     }
-}
 
 })

@@ -15,12 +15,20 @@
 
   <main class="main-signin">
     <div class="container-signin">
-      Estas a punto de eliminar tu cuenta para siempre, seguro que quieres hacerlo?
+      <h1>Estas a punto de eliminar tu cuenta para siempre, seguro que quieres hacerlo?</h1>
+      <script>
+        alert("Vas a eliminar tu cuenta")
+      </script>
     </div>
     <div class="botones-delete">
       <form action="/user/<%= user.id %>/delete?_method=DELETE" method="POST">
         <button type="submit" class="lista-usuarios-deleteuser">Eliminar</button>
       </form>
+      <br>
+      <br>
+      <br>
+      <br>
+
       <a href="/" class="button-home-deleteuser">Home</a>
     </div>
   </main>

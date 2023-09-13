@@ -39,6 +39,7 @@ function UserTable() {
             <Table hover>
                 <thead>
                     <tr>
+                        <th>Imagen</th>
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Apodo</th>
@@ -47,7 +48,7 @@ function UserTable() {
                 </thead>
                 <tbody>
                     {users.map((el, i) => (
-                        <RowTableUsers key={el.id + i} col1={el.id} col2={el.full_name} col3={el.user_name} col4={el.email} id={el.id} />
+                        <RowTableUsers key={el.id + i} col1={el.id} col2={el.full_name} col3={el.user_name} col4={el.image} col5={el.email} id={el.id} />
                     ))}
                 </tbody>
             </Table>

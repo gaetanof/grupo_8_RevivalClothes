@@ -132,7 +132,6 @@ const controllers = {
 		}
 		catch (error) { console.log(error) }
 	}
-	// getProductsPages: async (req, res) => {
 	// 	const page = req.query.page || 1
 	// 	console.log(page);
 	// 	const user = req.session.user;
@@ -143,6 +142,7 @@ const controllers = {
 	// 	}
 	// 	catch (error) { console.log(error) }
 	// }
-}
+
+};
 
 module.exports = controllers;

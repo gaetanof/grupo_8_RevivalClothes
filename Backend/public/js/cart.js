@@ -77,6 +77,7 @@ checkoutCart.onsubmit = (e) => {
 		.then((product) => {
 			if (product.ok) {
 				vaciarCarrito();
+				alert("¡Compra realizada con exito!");
 				location.href = '/products/productlist';
 			}
 		})

@@ -27,7 +27,7 @@ const productsMiddleware = {
 
         const response = await axios.get(endpoint);
 
-        if (req.session.user.id === response.data.id_user) {
+        if (req.session.user.id === response.data.id_user || req.session.user.type === "Admin") {
             next();
         } else {
             res.redirect(`/products/${id}/detalle`);

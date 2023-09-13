@@ -994,7 +994,7 @@ footer {
 
 .botones-delete{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     text-align: center;    
@@ -1528,6 +1528,7 @@ footer {
     position:fixed;
     bottom: 6%;
     left: 90%;
+    transform: translate(-80%, -10%);
   }
   
   .sparkle {
@@ -1547,7 +1548,7 @@ footer {
     inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
     0px 0px 0px 4px rgba(255, 255, 255, 0.2),
     0px 0px 180px 0px #9917FF;
-    transform: translateY(-2px);
+    transform: translate(-80%, -10%);
   }
   
   .btn-pl:hover .text-pl {
@@ -1818,6 +1819,13 @@ footer {
         border-radius: 50%;
         font-size: 12px;
     }
+    .btn-pl {
+        transform: translate(-40%, -10%);
+      }
+    .btn-pl:hover {
+        transform: translate(-40%, -10%);
+    }
+
 }
     /* Fin detalle producto */
 
@@ -1911,11 +1919,23 @@ footer {
     #descripcion-detalle-desktop {
         display: block;
     }
+    .btn-pl {
+        transform: translate(-20%, -10%);
+      }
+    .btn-pl:hover {
+        transform: translate(-20%, -10%);
+    }
 }
 
 @media (min-width: 1400px) {
     .contenedor-article {
         max-width: 340px;
+    }
+    .btn-pl {
+        transform: translate(-10%, -10%);
+      }
+    .btn-pl:hover {
+        transform: translate(-10%, -10%);
     }
 
     /* .info {
@@ -1926,6 +1946,12 @@ footer {
 @media (min-width: 1600px) {
     .contenedor-article {
         max-width: 380px;
+    }
+    .btn-pl {
+        transform: translate(-1%, -10%);
+      }
+    .btn-pl:hover {
+        transform: translate(-1%, -10%);
     }
 
     /* .info {

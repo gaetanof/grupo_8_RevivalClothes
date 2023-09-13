@@ -39,6 +39,7 @@ function ProductTable() {
             <Table hover>
                 <thead>
                     <tr>
+                        <th>Imagen</th>
                         <th>Titulo</th>
                         <th>Precio</th>
                         <th>Talla</th>
@@ -47,7 +48,7 @@ function ProductTable() {
                 </thead>
                 <tbody>
                     {products.map((el, i) => (
-                        <RowTableProducts key={el.title + i} col1={el.title} col2={el.price} col3={el.size} col4={el.genre} id={el.id} />
+                        <RowTableProducts key={el.title + i} col1={el.title} col2={el.price} col3={el.size} col4={el.image} col5={el.genre} id={el.id} />
                     ))}
                 </tbody>
             </Table>

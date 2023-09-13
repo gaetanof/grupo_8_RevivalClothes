@@ -62,18 +62,21 @@
                         </h2>
                         <span class="price" hidden>$<%= product.price %></span>
 
-                        <p style="padding: 0px; margin: 0px;">
-                            <button class="add-to-cart" data-id="<%= product.id %>">
-                                Agregar al carrito
-                            </button>
-                        </p>
-                        <form action="#" method="">
-                            <button type="submit">Comprar ahora</button>
-                        </form>
+                        <% if ((locals.user && user.id)!==product.id_user) { %>
+
+                            <p style="padding: 0px; margin: 0px;">
+                                <button class="add-to-cart" data-id="<%= product.id %>">
+                                    Agregar al carrito
+                                </button>
+                            </p>
+                            <form action="#" method="">
+                                <button type="submit">Comprar ahora</button>
+                            </form>
+                            <% } %>
                     </article>
 
                     <article class="article-botones-detalle">
-                        <% if ((locals.user && user.id)===product.id_user) { %>
+                        <% if ((locals.user && user.id)===product.id_user || user.type==="Admin" ) { %>
                             <a href="/products/<%=product.id%>/editar">Editar producto</a>
 
                             <form action="/products/<%= product.id %>/delete?_method=DELETE" method="POST">
