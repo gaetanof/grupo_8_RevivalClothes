@@ -825,6 +825,7 @@ footer {
 .description-text {
     text-transform: lowercase;
     font-weight: 600;
+    max-width: 500px;
 }
 
 .descripcion-producto-detalle {
