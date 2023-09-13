@@ -76,7 +76,7 @@
                     </article>
 
                     <article class="article-botones-detalle">
-                        <% if ((locals.user && user.id)===product.id_user || user.type==="Admin" ) { %>
+                        <% if ((locals.user && user.id)===product.id_user || (locals.user && user.type)==="Admin" ) { %>
                             <a href="/products/<%=product.id%>/editar">Editar producto</a>
 
                             <form action="/products/<%= product.id %>/delete?_method=DELETE" method="POST">
