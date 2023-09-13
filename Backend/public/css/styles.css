@@ -825,6 +825,7 @@ footer {
 .description-text {
     text-transform: lowercase;
     font-weight: 600;
+    max-width: 500px;
 }
 
 .descripcion-producto-detalle {
@@ -1510,6 +1511,53 @@ footer {
 .image-signin-default {
     max-width: 120px;
 }
+
+.btn-pl {
+    border: none;
+    width: 7.5em;
+    height: 2.5em;
+    border-radius: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #d87645;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+    text-decoration: none;
+    position:fixed;
+    bottom: 6%;
+    left: 90%;
+  }
+  
+  .sparkle {
+    fill: #ffffff;
+    transition: all 800ms ease;
+  }
+  
+  .text-pl {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: medium;
+  }
+  
+  .btn-pl:hover {
+    background: linear-gradient(0deg,#A47CF3,#683FEA);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #9917FF;
+    transform: translateY(-2px);
+  }
+  
+  .btn-pl:hover .text-pl {
+    color: white;
+  }
+  
+  .btn-pl:hover .sparkle {
+    fill: white;
+    transform: scale(1.2);
+  } 
 
 @media (min-width: 768px) {
 
