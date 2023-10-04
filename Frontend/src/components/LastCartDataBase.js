@@ -38,8 +38,8 @@ function LastUserDataBase() {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>{cart.id_user}</td>
                                         <td>{cart.id}</td>
+                                        <td>{cart.id_user}</td>
                                         <td>{cart.shippingMethod}</td>
                                         <td>{cart.paymentMethod}</td>
                                         <td>{cart.total}</td>

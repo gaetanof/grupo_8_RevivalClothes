@@ -1,4 +1,4 @@
-function recuerdame (req, res, next) {
+function recuerdame(req, res, next) {
     if (req.cookies.email) {
         const userModel = require('../models/user');
 
