@@ -35,7 +35,7 @@ const controller = {
             contNino
         }
 
-        response.map(el => el.detaii = `/products/${el.id}/detalle`)
+        response.map(el => el.detaii = `http://localhost:5001/products/${el.id}/detalle`)
 
         return res.json({
             total: response.length,
