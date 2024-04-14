@@ -25,7 +25,8 @@
                             <form action="/user/login" method="POST" class="form-login formulario-login">
                                 <div class="email-login">
                                     <label>Email:</label>
-                                    <input type="mail" name="email" class="control-login formulario-login-email"
+                                    <input type="mail" required name="email"
+                                        class="control-login formulario-login-email"
                                         value="<%= locals.old ? old.email : '' %>">
                                     <span class="error-email error-style"></span>
                                     <% if (locals.errors) { %>

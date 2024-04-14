@@ -42,11 +42,11 @@ const model = {
 
         return userToEdit;
     },
-    editUserById: function(id, newData) {
+    editUserById: function (id, newData) {
         let users = this.findAll()
 
         const indice = users.findIndex(el => el.id === id);
-        
+
 
         // Actualizamos los datos del producto que corresponda, con los datos que nos pasaron por parámetros
         users[indice].fullname = newData.fullname;
@@ -68,7 +68,7 @@ const model = {
         let users = this.findAll();
 
         users = users.map(el => {
-            if(el.id === id) {
+            if (el.id === id) {
                 el.delete = 1;
             }
             return el;
